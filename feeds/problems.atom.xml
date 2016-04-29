@@ -232,7 +232,7 @@ F'(1) &amp;amp;= m \left( 1 - \psi^{(0)} - \gamma\right) - 1\nonumber\\
 to give us the answer by re-aranging the sum.  Plugging this all in to &lt;span class="math"&gt;\((\ref{mean})\)&lt;/span&gt;, we finally get&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 G'(1) &amp;amp;= \operatorname{Mean}\nonumber\\
-      &amp;amp;= m - \left(m + m H_{m-1} - 1 \right)\nonumber\\
+      &amp;amp;= m - \left(m - m H_{m-1} - 1 \right)\nonumber\\
       &amp;amp;= 1 + m H_{m-1}\nonumber\\
       &amp;amp;= mH_m\\
 \end{align}&lt;/div&gt;
