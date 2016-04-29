@@ -16,7 +16,7 @@ you a long way, provided you have the machinery to get you there.&lt;/p&gt;
 &lt;h3&gt;Flipping a coin to see both sides&lt;/h3&gt;
 &lt;p&gt;The first matter of business was to pose the question in a way that was actually solvable.  First,
 think about the case of the coin, or a &lt;span class="math"&gt;\(2\)&lt;/span&gt;-die.  If you had to pick a single number of times to
-flip it, knowing nothing about the coin, and your life depended on getting it right, you'd obviously
+flip it, knowing nothing about the coin, and your life depended on seeing both sides, you'd obviously
 want to pick the biggest number you could.  A more interesting question along those lines is: what
 is the smallest number you could pick to have a reasonable probability of success? If we take this a
 step further and treat this more like a stopping problem, we would think about doing experiments

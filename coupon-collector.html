@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="/coupon-collector.html">
+<link rel="canonical" href="http://stelfer.github.io/coupon-collector.html">
 
         <meta name="author" content="Soren Telfer" />
         <meta name="keywords" content="Generating Functions,Probability,Combinatorics" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="memoize.me" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="The Coupon Collector"/>
-        <meta property="og:url" content="/coupon-collector.html"/>
+        <meta property="og:url" content="http://stelfer.github.io/coupon-collector.html"/>
         <meta property="og:description" content="The Coupon Collector"/>
         <meta property="article:published_time" content="2016-04-27" />
             <meta property="article:section" content="problems" />
@@ -29,15 +29,19 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.readable.min.css" type="text/css"/>
-    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://stelfer.github.io/theme/css/bootstrap.readable.min.css" type="text/css"/>
+    <link href="http://stelfer.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+    <link href="http://stelfer.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://stelfer.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://stelfer.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="memoize.me ATOM Feed"/>
 
 
 
-
+        <link href="http://stelfer.github.io/feeds/problems.atom.xml" type="application/atom+xml" rel="alternate"
+              title="memoize.me problems ATOM Feed"/>
 
 </head>
 <body>
@@ -51,20 +55,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/" class="navbar-brand">
+            <a href="http://stelfer.github.io/" class="navbar-brand">
 memoize.me            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="/pages/about.html">
+                         <li><a href="http://stelfer.github.io/pages/about.html">
                              About me
                           </a></li>
                         <li class="active">
-                            <a href="/category/problems.html">Problems</a>
+                            <a href="http://stelfer.github.io/category/problems.html">Problems</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="http://stelfer.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -79,7 +83,7 @@ memoize.me            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="/coupon-collector.html"
+                    <a href="http://stelfer.github.io/coupon-collector.html"
                        rel="bookmark"
                        title="Permalink to The Coupon Collector">
                         The Coupon Collector
@@ -100,11 +104,11 @@ memoize.me            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="/tag/generating-functions.html">Generating Functions</a>
+	<a href="http://stelfer.github.io/tag/generating-functions.html">Generating Functions</a>
         /
-	<a href="/tag/probability.html">Probability</a>
+	<a href="http://stelfer.github.io/tag/probability.html">Probability</a>
         /
-	<a href="/tag/combinatorics.html">Combinatorics</a>
+	<a href="http://stelfer.github.io/tag/combinatorics.html">Combinatorics</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -125,7 +129,7 @@ you a long way, provided you have the machinery to get you there.</p>
 <h3>Flipping a coin to see both sides</h3>
 <p>The first matter of business was to pose the question in a way that was actually solvable.  First,
 think about the case of the coin, or a <span class="math">\(2\)</span>-die.  If you had to pick a single number of times to
-flip it, knowing nothing about the coin, and your life depended on getting it right, you'd obviously
+flip it, knowing nothing about the coin, and your life depended on seeing both sides, you'd obviously
 want to pick the biggest number you could.  A more interesting question along those lines is: what
 is the smallest number you could pick to have a reasonable probability of success? If we take this a
 step further and treat this more like a stopping problem, we would think about doing experiments
@@ -255,7 +259,7 @@ G'(1)&amp;= \frac{p(1-p) - (2p -2p^2 - 1)}{p(1-p)}\nonumber\\
 <p>We return now to the hint that <em>Knuth et. al.</em> gave us about using finite automata to help generate
 our <span class="math">\(S\)</span>'s.  If we think about the coin problem we've been considering, a first stab at at
 state machine could look something like this.</p>
-<p><img alt="Alt Text" src="/images/coin.png" /></p>
+<p><img alt="Alt Text" src="http://stelfer.github.io/images/coin.png" /></p>
 <p>I hope by now you are comfortable and see the value in writing down a sum <span class="math">\(S\)</span>. So let's try it:
 </p>
 <div class="math">\begin{align}
@@ -276,7 +280,7 @@ S &amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\nonumber.\\
 <h3>The <span class="math">\(m\)</span>-die with equal probabilities</h3>
 <p>We are now prepared to take on the type <span class="math">\((\ref{typeA})\)</span> problem for arbitrary <span class="math">\(m\)</span>.  As before, define a
 finite automata to describe the process.</p>
-<p><img alt="" src="/images/m-die.png" /></p>
+<p><img alt="" src="http://stelfer.github.io/images/m-die.png" /></p>
 <p>In this case we identify each state by
 the number of <span class="math">\(m\)</span> types we have seen. Then, as before we can read off the proto PGF</p>
 <div class="math">\begin{align}
@@ -460,15 +464,15 @@ when the <span class="math">\(p_i\)</span> don't have this specific relationship
       </div>
    </div>
 </footer>
-<script src="/theme/js/jquery.min.js"></script>
+<script src="http://stelfer.github.io/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/theme/js/bootstrap.min.js"></script>
+<script src="http://stelfer.github.io/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="/theme/js/respond.min.js"></script>
+<script src="http://stelfer.github.io/theme/js/respond.min.js"></script>
 
-    <script src="/theme/js/bodypadding.js"></script>
+    <script src="http://stelfer.github.io/theme/js/bodypadding.js"></script>
 
 </body>
 </html>
