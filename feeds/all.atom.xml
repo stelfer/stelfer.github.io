@@ -92,7 +92,7 @@ converges in a sense that it is simply not silly to act like it does:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 G(z) &amp;amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\label{gf_def}\\ 
 \end{align}&lt;/div&gt;
-&lt;p&gt;Suppose you have a recurrence relation for &lt;span class="math"&gt;\(c_j = f(\left\{c*i : i &amp;lt; j\right\})\)&lt;/span&gt;.  There is
+&lt;p&gt;Suppose you have a recurrence relation for &lt;span class="math"&gt;\(c_j = f(\left\{c_i : i &amp;lt; j\right\})\)&lt;/span&gt;.  There is
 an arsenal not unlike that avaiable for Fourier or Lapace transforms that allow you to derive from
 that recurrence an analytic function &lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;, which can be expanded into the form &lt;span class="math"&gt;\((\ref{gf_def})\)&lt;/span&gt;.
 Then, a &lt;em&gt;closed-form&lt;/em&gt; version of &lt;span class="math"&gt;\(c_j\)&lt;/span&gt; can read off from the &lt;span class="math"&gt;\(c_k\)&lt;/span&gt; in the series expansion.&lt;/p&gt;
@@ -115,7 +115,7 @@ G(1) &amp;amp;= \sum_{k=0}^{\infty} p_k 1^k\nonumber\\
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 G'(z) &amp;amp;= \sum_{k=1}^{\infty} k p_k z^{k-1}\nonumber\\
-&amp;amp;\implies G'(1) = \sum_{k=1}^{\infty} k p_k = \operatorname{Mean}.\nonumber\\
+&amp;amp;\implies G'(1) = \sum_{k=1}^{\infty} k p_k = E[n].\nonumber\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Now this is useful!  If we are trying to do something like we tried in &lt;span class="math"&gt;\((\ref{old_way})\)&lt;/span&gt;, then now
 have a general method. You may or may not believe me when I say this. Before I show you, let's
@@ -197,7 +197,7 @@ G(z) &amp;amp;= \frac{m!}{m^m} z^m \prod_{k=1}^{m-1} (1-kz/m)^{-1}.\nonumber\\
 &lt;p&gt;Also, as before, we make the substitution &lt;span class="math"&gt;\(G=z^{m}/F\)&lt;/span&gt; and recall that
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-\operatorname{Mean} = G'(1) = \frac{m - F'(1)}{F(1)} \label{mean}\\
+E[n] = G'(1) = \frac{m - F'(1)}{F(1)} \label{mean}\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Then
 &lt;/p&gt;
@@ -231,32 +231,30 @@ F'(1) &amp;amp;= m \left( 1 - \psi^{(0)} - \gamma\right) - 1\nonumber\\
 &lt;p&gt;using the fact that &lt;span class="math"&gt;\(\psi^{(0)} = H_{m-1} - \gamma\)&lt;/span&gt;. Of course, this fact is exactly what Alpha used
 to give us the answer by re-aranging the sum.  Plugging this all in to &lt;span class="math"&gt;\((\ref{mean})\)&lt;/span&gt;, we finally get&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G'(1) &amp;amp;= \operatorname{Mean}\nonumber\\
-      &amp;amp;= m - \left(m - m H_{m-1} - 1 \right)\nonumber\\
+G'(1) &amp;amp;= E[n]\nonumber\\
+      &amp;amp;= m - \left(m + m H_{m-1} - 1 \right)\nonumber\\
       &amp;amp;= 1 + m H_{m-1}\nonumber\\
       &amp;amp;= mH_m\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;using &lt;span class="math"&gt;\(H_m = H_{m-1} + 1/m\)&lt;/span&gt;. This was our goal. &lt;/p&gt;
-&lt;p&gt;Now to answer the original question for the equally weighted &lt;span class="math"&gt;\(n!\)&lt;/span&gt;-die.  We can establish the
-probability that if we decide to run the flip/roll/run the algorithm &lt;span class="math"&gt;\(kmH_m\)&lt;/span&gt; times, the probability
-that you have seen all of the sides of the &lt;span class="math"&gt;\(n\)&lt;/span&gt;-die&lt;/p&gt;
+&lt;p&gt;Now to answer the original question for the equally weighted &lt;span class="math"&gt;\(m!\)&lt;/span&gt;-die.  In general we can get a
+on-sided confidence interval for &lt;span class="math"&gt;\(n\)&lt;/span&gt;, the number of times we "roll" until success, by using &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt;
+and Markov's inequality.  If we could be bothered to valculate the variance using the formula's
+above, we could use Chebyshev's to get a two sided confidence interval. Anwyay,&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 P(n &amp;gt; k m H_m) &amp;amp;\leq \frac{E[n]}{k m H_m}\nonumber\\
-&amp;amp;\leq \frac{1}{k}\nonumber\\
-P(n \leq k m H_m) &amp;amp;\geq 1 - \frac{1}{k}.\nonumber\\
+&amp;amp;\leq \frac{1}{k}.\nonumber\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;So, for example, for a equally weighted &lt;span class="math"&gt;\(6\)&lt;/span&gt;-sided die, then &lt;span class="math"&gt;\(\left\lceil m!H_m! \right\rceil = 5154\)&lt;/span&gt; and &lt;span class="math"&gt;\(P(n \leq 10308) \geq 1/2\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;In general, for large &lt;span class="math"&gt;\(m\)&lt;/span&gt;, &lt;span class="math"&gt;\(H_m \sim \ln{m} + \gamma\)&lt;/span&gt;, so &lt;span class="math"&gt;\(\operatorname{Mean} \sim m\left( \ln{m} +
-\gamma \right)\)&lt;/span&gt;, and so for our permutations of &lt;span class="math"&gt;\(n\)&lt;/span&gt; items,&lt;/p&gt;
+&lt;p&gt;Setting &lt;span class="math"&gt;\(1/k = 0.05 \implies k = 20\)&lt;/span&gt;. For example, for a six-sided die, for &lt;span class="math"&gt;\(\epsilon = kmH_m\)&lt;/span&gt;,&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-\operatorname{Mean} &amp;amp;\approx n!\left(\ln{n!} + \gamma \right)\\
-&amp;amp;\approx n n! \ln{ne^{\gamma/n - 1}}\\
+P(n &amp;gt; \epsilon) &amp;amp;\leq 0.05\nonumber\\
+\epsilon &amp;amp;\approx 300 
 \end{align}&lt;/div&gt;
-&lt;p&gt;We can see how much faster this count grows than &lt;span class="math"&gt;\(n!\)&lt;/span&gt; by taking the ratio:
-&lt;/p&gt;
+&lt;p&gt;For a permutation of order &lt;span class="math"&gt;\(6\)&lt;/span&gt;, the 95% threshold is &lt;span class="math"&gt;\(\approx 200000\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, for large &lt;span class="math"&gt;\(m\)&lt;/span&gt;, &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-\frac{\frac{d}{dn}{n!\,\ln{n!}}}{\frac{d}{dn}n!} &amp;amp;= \ln{n!} + 1\nonumber\\
-&amp;amp;\approx n\ln{n} - n + 1.\nonumber\\
+H_m &amp;amp;\approx \ln{m} + \gamma\nonumber\\
+E[n] &amp;amp;\approx m\left( \ln{m} + \gamma \right)\nonumber\\
 \end{align}&lt;/div&gt;
 &lt;h3&gt;The Coupon Collector&lt;/h3&gt;
 &lt;p&gt;You are probably wondering why this article is called Coupon Collector. At this point I will link
