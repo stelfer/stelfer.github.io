@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>stelfer</title><link href="http://stelfer.github.io/" rel="alternate"></link><link href="http://stelfer.github.io/feeds/problems.atom.xml" rel="self"></link><id>http://stelfer.github.io/</id><updated>2016-04-27T00:00:00-07:00</updated><entry><title>The Coupon Collector</title><link href="http://stelfer.github.io/coupon-collector.html" rel="alternate"></link><published>2016-04-27T00:00:00-07:00</published><author><name>stelfer</name></author><id>tag:stelfer.github.io,2016-04-27:coupon-collector.html</id><summary type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="http://stelfer.github.io/" rel="alternate"></link><link href="http://stelfer.github.io/feeds/problems.atom.xml" rel="self"></link><id>http://stelfer.github.io/</id><updated>2016-04-27T00:00:00-07:00</updated><entry><title>The Coupon Collector</title><link href="http://stelfer.github.io/coupon-collector.html" rel="alternate"></link><published>2016-04-27T00:00:00-07:00</published><author><name>Soren Telfer</name></author><id>tag:stelfer.github.io,2016-04-27:coupon-collector.html</id><summary type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Once during a meeting in which we were discussing the
 &lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt;, someone asked:
 "How many times do we need to run the algorithm to see every permutation?"  It immediately occurred
@@ -259,13 +259,14 @@ P(n \leq k m H_m) &amp;amp;\geq 1 - \frac{1}{k}.\nonumber\\
 &amp;amp;\approx n\ln{n} - n + 1.\nonumber\\
 \end{align}&lt;/div&gt;
 &lt;h3&gt;The Coupon Collector&lt;/h3&gt;
-&lt;p&gt;At this point I will link the Wikipedia article on the
-&lt;a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem"&gt;Coupon Collector&lt;/a&gt;, because you've been
-patient and frankly, it can't harm you now.  We didn't actually look at the answer to the type
-&lt;span class="math"&gt;\((\ref{typeA})\)&lt;/span&gt; problem until long after we got the answer.  The derivation there clearly works, but
-I find it unsettling.  In case you didn't care to click, they model the number of coupons &lt;span class="math"&gt;\(N\)&lt;/span&gt; to get
-a complete collection as a sum of &lt;span class="math"&gt;\(m\)&lt;/span&gt; geometrically distributed variables &lt;span class="math"&gt;\(n_i\)&lt;/span&gt; each with a
-different &lt;span class="math"&gt;\(p_i\)&lt;/span&gt;. Then&lt;/p&gt;
+&lt;p&gt;You are probably wondering why this article is called Coupon Collector. At this point I will link
+the Wikipedia article on the
+&lt;a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem"&gt;Coupon Collector Problem&lt;/a&gt;, because
+you've been patient and frankly, it can't harm you now.  We didn't actually look at the answer to
+the type &lt;span class="math"&gt;\((\ref{typeA})\)&lt;/span&gt; problem until long after we got the answer.  The derivation there clearly
+works, but I find it unsettling.  In case you didn't care to click, they model the number of coupons
+&lt;span class="math"&gt;\(N\)&lt;/span&gt; to get a complete collection as a sum of &lt;span class="math"&gt;\(m\)&lt;/span&gt; geometrically distributed variables &lt;span class="math"&gt;\(n_i\)&lt;/span&gt; each with
+a different &lt;span class="math"&gt;\(p_i\)&lt;/span&gt;. Then&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 E[n] &amp;amp;= \sum_{i=1}^m E[n_i] = \sum_{i=1}^m \frac{1}{p_i}\nonumber\\
  &amp;amp;= \frac{m}{m} + \frac{m}{m-1} + ... + \frac{m}{1}\nonumber\\

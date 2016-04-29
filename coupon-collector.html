@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>The Coupon Collector - stelfer</title>
+    <title>The Coupon Collector - memoize.me</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,39 +9,35 @@
 
 
 
-<link rel="canonical" href="http://stelfer.github.io/coupon-collector.html">
+<link rel="canonical" href="/coupon-collector.html">
 
-        <meta name="author" content="stelfer" />
+        <meta name="author" content="Soren Telfer" />
         <meta name="keywords" content="Generating Functions,Probability,Combinatorics" />
         <meta name="description" content="The Coupon Collector" />
 
-        <meta property="og:site_name" content="stelfer" />
+        <meta property="og:site_name" content="memoize.me" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="The Coupon Collector"/>
-        <meta property="og:url" content="http://stelfer.github.io/coupon-collector.html"/>
+        <meta property="og:url" content="/coupon-collector.html"/>
         <meta property="og:description" content="The Coupon Collector"/>
         <meta property="article:published_time" content="2016-04-27" />
             <meta property="article:section" content="problems" />
             <meta property="article:tag" content="Generating Functions" />
             <meta property="article:tag" content="Probability" />
             <meta property="article:tag" content="Combinatorics" />
-            <meta property="article:author" content="stelfer" />
+            <meta property="article:author" content="Soren Telfer" />
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://stelfer.github.io/theme/css/bootstrap.readable.min.css" type="text/css"/>
-    <link href="http://stelfer.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/theme/css/bootstrap.readable.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="http://stelfer.github.io/theme/css/pygments/native.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://stelfer.github.io/theme/css/style.css" type="text/css"/>
-
-        <link href="http://stelfer.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="stelfer ATOM Feed"/>
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
 
 
 
-        <link href="http://stelfer.github.io/feeds/problems.atom.xml" type="application/atom+xml" rel="alternate"
-              title="stelfer problems ATOM Feed"/>
+
 
 </head>
 <body>
@@ -55,20 +51,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="http://stelfer.github.io/" class="navbar-brand">
-stelfer            </a>
+            <a href="/" class="navbar-brand">
+memoize.me            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
-                            <a href="http://stelfer.github.io/category/anything.html">Anything</a>
-                        </li>
+                         <li><a href="/pages/about.html">
+                             About me
+                          </a></li>
                         <li class="active">
-                            <a href="http://stelfer.github.io/category/problems.html">Problems</a>
+                            <a href="/category/problems.html">Problems</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://stelfer.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -83,7 +79,7 @@ stelfer            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://stelfer.github.io/coupon-collector.html"
+                    <a href="/coupon-collector.html"
                        rel="bookmark"
                        title="Permalink to The Coupon Collector">
                         The Coupon Collector
@@ -104,11 +100,11 @@ stelfer            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="http://stelfer.github.io/tag/generating-functions.html">Generating Functions</a>
+	<a href="/tag/generating-functions.html">Generating Functions</a>
         /
-	<a href="http://stelfer.github.io/tag/probability.html">Probability</a>
+	<a href="/tag/probability.html">Probability</a>
         /
-	<a href="http://stelfer.github.io/tag/combinatorics.html">Combinatorics</a>
+	<a href="/tag/combinatorics.html">Combinatorics</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -259,7 +255,7 @@ G'(1)&amp;= \frac{p(1-p) - (2p -2p^2 - 1)}{p(1-p)}\nonumber\\
 <p>We return now to the hint that <em>Knuth et. al.</em> gave us about using finite automata to help generate
 our <span class="math">\(S\)</span>'s.  If we think about the coin problem we've been considering, a first stab at at
 state machine could look something like this.</p>
-<p><img alt="Alt Text" src="http://stelfer.github.io/images/coin.png" /></p>
+<p><img alt="Alt Text" src="/images/coin.png" /></p>
 <p>I hope by now you are comfortable and see the value in writing down a sum <span class="math">\(S\)</span>. So let's try it:
 </p>
 <div class="math">\begin{align}
@@ -280,7 +276,7 @@ S &amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\nonumber.\\
 <h3>The <span class="math">\(m\)</span>-die with equal probabilities</h3>
 <p>We are now prepared to take on the type <span class="math">\((\ref{typeA})\)</span> problem for arbitrary <span class="math">\(m\)</span>.  As before, define a
 finite automata to describe the process.</p>
-<p><img alt="" src="http://stelfer.github.io/images/m-die.png" /></p>
+<p><img alt="" src="/images/m-die.png" /></p>
 <p>In this case we identify each state by
 the number of <span class="math">\(m\)</span> types we have seen. Then, as before we can read off the proto PGF</p>
 <div class="math">\begin{align}
@@ -372,13 +368,14 @@ P(n \leq k m H_m) &amp;\geq 1 - \frac{1}{k}.\nonumber\\
 &amp;\approx n\ln{n} - n + 1.\nonumber\\
 \end{align}</div>
 <h3>The Coupon Collector</h3>
-<p>At this point I will link the Wikipedia article on the
-<a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem">Coupon Collector</a>, because you've been
-patient and frankly, it can't harm you now.  We didn't actually look at the answer to the type
-<span class="math">\((\ref{typeA})\)</span> problem until long after we got the answer.  The derivation there clearly works, but
-I find it unsettling.  In case you didn't care to click, they model the number of coupons <span class="math">\(N\)</span> to get
-a complete collection as a sum of <span class="math">\(m\)</span> geometrically distributed variables <span class="math">\(n_i\)</span> each with a
-different <span class="math">\(p_i\)</span>. Then</p>
+<p>You are probably wondering why this article is called Coupon Collector. At this point I will link
+the Wikipedia article on the
+<a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem">Coupon Collector Problem</a>, because
+you've been patient and frankly, it can't harm you now.  We didn't actually look at the answer to
+the type <span class="math">\((\ref{typeA})\)</span> problem until long after we got the answer.  The derivation there clearly
+works, but I find it unsettling.  In case you didn't care to click, they model the number of coupons
+<span class="math">\(N\)</span> to get a complete collection as a sum of <span class="math">\(m\)</span> geometrically distributed variables <span class="math">\(n_i\)</span> each with
+a different <span class="math">\(p_i\)</span>. Then</p>
 <div class="math">\begin{align}
 E[n] &amp;= \sum_{i=1}^m E[n_i] = \sum_{i=1}^m \frac{1}{p_i}\nonumber\\
  &amp;= \frac{m}{m} + \frac{m}{m-1} + ... + \frac{m}{1}\nonumber\\
@@ -455,7 +452,7 @@ when the <span class="math">\(p_i\)</span> don't have this specific relationship
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2016 stelfer
+         <div class="col-xs-10">&copy; 2016 Soren Telfer
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
@@ -463,14 +460,15 @@ when the <span class="math">\(p_i\)</span> don't have this specific relationship
       </div>
    </div>
 </footer>
-<script src="http://stelfer.github.io/theme/js/jquery.min.js"></script>
+<script src="/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://stelfer.github.io/theme/js/bootstrap.min.js"></script>
+<script src="/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://stelfer.github.io/theme/js/respond.min.js"></script>
+<script src="/theme/js/respond.min.js"></script>
 
+    <script src="/theme/js/bodypadding.js"></script>
 
 </body>
 </html>
