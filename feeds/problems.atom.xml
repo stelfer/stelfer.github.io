@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>stelfer</title><link href="http://stelfer.github.io/" rel="alternate"></link><link href="http://stelfer.github.io/feeds/all.atom.xml" rel="self"></link><id>http://stelfer.github.io/</id><updated>2016-04-27T00:00:00-07:00</updated><entry><title>The Coupon Collector</title><link href="http://stelfer.github.io/coupon-collector.html" rel="alternate"></link><published>2016-04-27T00:00:00-07:00</published><author><name>stelfer</name></author><id>tag:stelfer.github.io,2016-04-27:coupon-collector.html</id><summary type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>stelfer</title><link href="http://stelfer.github.io/" rel="alternate"></link><link href="http://stelfer.github.io/feeds/problems.atom.xml" rel="self"></link><id>http://stelfer.github.io/</id><updated>2016-04-27T00:00:00-07:00</updated><entry><title>The Coupon Collector</title><link href="http://stelfer.github.io/coupon-collector.html" rel="alternate"></link><published>2016-04-27T00:00:00-07:00</published><author><name>stelfer</name></author><id>tag:stelfer.github.io,2016-04-27:coupon-collector.html</id><summary type="html">&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Once during a meeting in which we were discussing the
 &lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt;, someone asked:
 "How many times do we need to run the algorithm to see every permutation?"  It immediately occurred
@@ -329,65 +329,4 @@ when the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; don't have this specific 
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</summary><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry><entry><title>Test post</title><link href="http://stelfer.github.io/my-super-post2.html" rel="alternate"></link><published>2015-12-03T10:20:00-08:00</published><author><name>stelfer</name></author><id>tag:stelfer.github.io,2015-12-03:my-super-post2.html</id><summary type="html">&lt;p&gt;&lt;span class="math"&gt;\(e = mc^2\)&lt;/span&gt;&lt;/p&gt;
-&lt;h2&gt;A header&lt;/h2&gt;
-&lt;p&gt;\begin{equation}&lt;/p&gt;
-&lt;p&gt;x^2&lt;/p&gt;
-&lt;p&gt;\end{equation}&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "left",
-        indent = "2em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry></feed>
+&lt;/script&gt;</summary><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry></feed>
