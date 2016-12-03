@@ -13,15 +13,15 @@
 
         <meta name="author" content="Soren Telfer" />
         <meta name="keywords" content="Generating Functions,Probability,Combinatorics" />
-        <meta name="description" content="Introduction Once during a meeting in which we were discussing the Fischer-Yates shuffle, someone asked: &#34;How many times do we need to run the algorithm to see every permutation?&#34; It immediately occurred to me that, well, I didn&#39;t know. Feeling my hands begin wave, instinctively, I fired back, I thought, quite cleverly: &#34;How many times do you need to flip a coin to see both sides?&#34;. Of course, both questions are somewhat non-sensical, but the intent of the former question, unlike the latter, was clear. I didn&#39;t know the answer, but I&#39;ve always said that stopping problems are the best problems, so even though I didn&#39;t have a great answer in the moment, I resolved to find something satisfying. At this point I will confess that I am an enthusiastic yet rank amateur combinatorialist. For whatever reason, I had never heard of the Coupon Collector. This will take you on a seemingly circuitous path towards something that is in the end very simple, and very beautiful. I think it also proves that when all else fails, brute force counting can take you a long way, provided you have the machinery to get you there. Flipping a ..." />
+        <meta name="description" content="Once during a meeting in which we were discussing the Fischer-Yates shuffle, someone asked: &#34;How many times do we need to run the algorithm to see every permutation?&#34; It immediately occurred to me that, well, I didn&#39;t know. Feeling my hands begin wave, instinctively, I fired back, I thought, quite cleverly: &#34;How many times do you need to flip a coin to see both sides?&#34;. Of course, both questions are somewhat non-sensical, but the intent of the former question, unlike the latter, was clear. I didn&#39;t know the answer, but I&#39;ve always said that stopping problems are the best problems, so even though I didn&#39;t have a great answer in the moment, I resolved to find something satisfying. At this point I will confess that I am an enthusiastic yet rank amateur combinatorialist. For whatever reason, I had never heard of the Coupon Collector. This will take you on a seemingly circuitous path towards something that is in the end very simple, and very beautiful. I think it also proves that when all else fails, brute force counting can take you a long way, provided you have the machinery to get you there. Flipping a coin ..." />
 
         <meta property="og:site_name" content="memoize.me" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="The Coupon Collector"/>
         <meta property="og:url" content="/coupon-collector.html"/>
-        <meta property="og:description" content="Introduction Once during a meeting in which we were discussing the Fischer-Yates shuffle, someone asked: &#34;How many times do we need to run the algorithm to see every permutation?&#34; It immediately occurred to me that, well, I didn&#39;t know. Feeling my hands begin wave, instinctively, I fired back, I thought, quite cleverly: &#34;How many times do you need to flip a coin to see both sides?&#34;. Of course, both questions are somewhat non-sensical, but the intent of the former question, unlike the latter, was clear. I didn&#39;t know the answer, but I&#39;ve always said that stopping problems are the best problems, so even though I didn&#39;t have a great answer in the moment, I resolved to find something satisfying. At this point I will confess that I am an enthusiastic yet rank amateur combinatorialist. For whatever reason, I had never heard of the Coupon Collector. This will take you on a seemingly circuitous path towards something that is in the end very simple, and very beautiful. I think it also proves that when all else fails, brute force counting can take you a long way, provided you have the machinery to get you there. Flipping a ..."/>
+        <meta property="og:description" content="Once during a meeting in which we were discussing the Fischer-Yates shuffle, someone asked: &#34;How many times do we need to run the algorithm to see every permutation?&#34; It immediately occurred to me that, well, I didn&#39;t know. Feeling my hands begin wave, instinctively, I fired back, I thought, quite cleverly: &#34;How many times do you need to flip a coin to see both sides?&#34;. Of course, both questions are somewhat non-sensical, but the intent of the former question, unlike the latter, was clear. I didn&#39;t know the answer, but I&#39;ve always said that stopping problems are the best problems, so even though I didn&#39;t have a great answer in the moment, I resolved to find something satisfying. At this point I will confess that I am an enthusiastic yet rank amateur combinatorialist. For whatever reason, I had never heard of the Coupon Collector. This will take you on a seemingly circuitous path towards something that is in the end very simple, and very beautiful. I think it also proves that when all else fails, brute force counting can take you a long way, provided you have the machinery to get you there. Flipping a coin ..."/>
         <meta property="article:published_time" content="2016-04-27" />
-            <meta property="article:section" content="problems" />
+            <meta property="article:section" content="Probability and Statistics" />
             <meta property="article:tag" content="Generating Functions" />
             <meta property="article:tag" content="Probability" />
             <meta property="article:tag" content="Combinatorics" />
@@ -29,11 +29,12 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.readable.min.css" type="text/css"/>
+        <link rel="stylesheet" href="/theme/css/bootstrap.yeti.min.css" type="text/css"/>
     <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="/theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+        <link href="/static/custom.css" rel="stylesheet">
 
 
 
@@ -43,7 +44,7 @@
 <body>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+	<div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -59,12 +60,6 @@ memoize.me            </a>
                          <li><a href="/pages/about.html">
                              About me
                           </a></li>
-                        <li >
-                            <a href="/category/papers.html">Papers</a>
-                        </li>
-                        <li class="active">
-                            <a href="/category/problems.html">Problems</a>
-                        </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
@@ -74,9 +69,9 @@ memoize.me            </a>
 </div> <!-- /.navbar -->
 <!-- Banner -->
 <!-- End Banner -->
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-sm-9">
     <section id="content">
         <article>
             <header class="page-header">
@@ -110,8 +105,7 @@ memoize.me            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2>Introduction</h2>
-<p>Once during a meeting in which we were discussing the
+                <p>Once during a meeting in which we were discussing the
 <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fischer-Yates shuffle</a>, someone asked:
 "How many times do we need to run the algorithm to see every permutation?"  It immediately occurred
 to me that, well, I didn't know.  Feeling my hands begin wave, instinctively, I fired back, I
@@ -132,7 +126,7 @@ want to pick the biggest number you could.  A more interesting question along th
 is the smallest number you could pick to have a reasonable probability of success? If we take this a
 step further and treat this more like a stopping problem, we would think about doing experiments
 which generate sequences in which the <span class="math">\(m\)</span>-th event is <span class="math">\(H\)</span> or <span class="math">\(T\)</span> and the <span class="math">\(m-1\)</span> are all either <span class="math">\(T\)</span> or
-<span class="math">\(H\)</span> respectively.  Then a meaningful probabilitistic statement about the situation is to ask: Let
+<span class="math">\(H\)</span> respectively.  Then a meaningful probabilistic statement about the situation is to ask: Let
 <span class="math">\(X\)</span> be a random variable which represents length <span class="math">\(n\)</span> of sequences generated by flipping a coin until
 you see both sides. What is <span class="math">\(E[n]\)</span>? We proceeded by brute force.</p>
 <p>If we start enumerating the possibilities, we can see the patterns of different length.  For the
@@ -178,7 +172,7 @@ E[n] &amp;= q\left(2p + 3p^2 + \ldots mp^{m-1} + \ldots\right) + p\left(2q + 3p^
 <p>This was new to me. For <span class="math">\(p = q\)</span> we have that <span class="math">\(E[n] = 3\)</span>. </p>
 <h3>Working our way towards <span class="math">\(n!\)</span></h3>
 <p>Having solved the problem for <span class="math">\(m = 2\)</span>, the next thing to do was to try for higher <span class="math">\(m\)</span>'s.  There
-seeemed to be three immediately interesting cases to explore, potentially for each <span class="math">\(m\)</span>: </p>
+seemed to be three immediately interesting cases to explore, potentially for each <span class="math">\(m\)</span>: </p>
 <div class="math">\begin{align}
 &amp;\text{All equal probabilities, i.e. } p_k = 1/m \text{ for } 1 \leq k \leq m\label{typeA}\tag{A}.\\
 &amp;\text{One distinctive } p_j \text{ and all other } p \text{'s equal.}\label{typeB}\tag{B}.\\
@@ -204,7 +198,7 @@ converges in a sense that it is simply not silly to act like it does:</p>
 G(z) &amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\label{gf_def}\\ 
 \end{align}</div>
 <p>Suppose you have a recurrence relation for <span class="math">\(c_j = f(\left\{c_i : i &lt; j\right\})\)</span>.  There is
-an arsenal not unlike that avaiable for Fourier or Lapace transforms that allow you to derive from
+an arsenal not unlike that available for Fourier or Laplace transforms that allow you to derive from
 that recurrence an analytic function <span class="math">\(G(z)\)</span>, which can be expanded into the form <span class="math">\((\ref{gf_def})\)</span>.
 Then, a <em>closed-form</em> version of <span class="math">\(c_j\)</span> can read off from the <span class="math">\(c_k\)</span> in the series expansion.</p>
 <p>We're not going to do any of that here.  But we are going to take some liberties and use the
@@ -230,7 +224,7 @@ G'(z) &amp;= \sum_{k=1}^{\infty} k p_k z^{k-1}\nonumber\\
 \end{align}</div>
 <p>Now this is useful!  If we are trying to do something like we tried in <span class="math">\((\ref{old_way})\)</span>, then now
 have a general method. You may or may not believe me when I say this. Before I show you, let's
-observe one more fact about PGF's. Suppose we find ourselves in a situation where we have a PGF that
+observe one more fact about PGFs. Suppose we find ourselves in a situation where we have a PGF that
 looks something like this</p>
 <div class="math">\begin{align}
 G(z) &amp;= \frac{P(z)}{F(z)}\nonumber,\\
@@ -280,7 +274,7 @@ S &amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\nonumber.\\
 finite automata to describe the process.</p>
 <p><img alt="" src="/images/m-die.png" /></p>
 <p>In this case we identify each state by
-the number of <span class="math">\(m\)</span> types we have seen. Then, as before we can read off the proto PGF</p>
+the number of <span class="math">\(m\)</span> types we have seen. Then, as before we can read off the proto-PGF</p>
 <div class="math">\begin{align}
 S_0 &amp;= 1\nonumber\\
 S_1 &amp;= m X S_0 + X S_1 = \frac{m}{1-X}\,XS_0\nonumber\\
@@ -340,7 +334,7 @@ F'(1) &amp;= m \left( 1 - \psi^{(0)} - \gamma\right) - 1\nonumber\\
       &amp;= m \left( 1 - H_{m-1} \right) - 1\nonumber\\
 \end{align}</div>
 <p>using the fact that <span class="math">\(\psi^{(0)} = H_{m-1} - \gamma\)</span>. Of course, this fact is exactly what Alpha used
-to give us the answer by re-aranging the sum.  Plugging this all in to <span class="math">\((\ref{mean})\)</span>, we finally get</p>
+to give us the answer by re-arranging the sum.  Plugging this all in to <span class="math">\((\ref{mean})\)</span>, we finally get</p>
 <div class="math">\begin{align}
 G'(1) &amp;= E[n]\nonumber\\
       &amp;= m - \left(m - m H_{m-1} - 1 \right)\nonumber\\
@@ -350,8 +344,8 @@ G'(1) &amp;= E[n]\nonumber\\
 <p>using <span class="math">\(H_m = H_{m-1} + 1/m\)</span>. This was our goal. </p>
 <p>Now to answer the original question for the equally weighted <span class="math">\(m!\)</span>-die.  In general we can get a
 on-sided confidence interval for <span class="math">\(n\)</span>, the number of times we "roll" until success, by using <span class="math">\(E[n]\)</span>
-and Markov's inequality.  If we could be bothered to valculate the variance using the formula's
-above, we could use Chebyshev's to get a two sided confidence interval. Anwyay,</p>
+and Markov's inequality.  If we could be bothered to calculate the variance using the formula's
+above, we could use Chebyshev's to get a two sided confidence interval. Anyway,</p>
 <div class="math">\begin{align}
 P(n &gt; k m H_m) &amp;\leq \frac{E[n]}{k m H_m}\nonumber\\
 &amp;\leq \frac{1}{k}.\nonumber\\
@@ -446,10 +440,73 @@ when the <span class="math">\(p_i\)</span> don't have this specific relationship
     </section>
 
         </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://www.linkedin.com/in/soren-telfer-42426727"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+                <li class="list-group-item"><a href="http://github.com/stelfer"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+              </ul>
+            </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/the-gamma-distribution.html">
+                            Why you should know about the Gamma distribution
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/wir-2016-09-18.html">
+                            What I'm reading September 2016
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/wir-2016-08-03.html">
+                            What I'm reading August 2016
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/wir-2016-06-03.html">
+                            What I'm reading June 2016
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/coupon-collector.html">
+                            The Coupon Collector
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/probability-and-statistics.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Probability and Statistics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/what-im-reading.html">
+                            <i class="fa fa-folder-open fa-lg"></i> What I'm Reading
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    </ul>
+</section>
+            </aside>
+        </div>
     </div>
 </div>
 <footer>
-   <div class="container">
+   <div class="container-fluid">
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Soren Telfer

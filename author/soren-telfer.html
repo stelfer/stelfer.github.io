@@ -21,11 +21,12 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.readable.min.css" type="text/css"/>
+        <link rel="stylesheet" href="/theme/css/bootstrap.yeti.min.css" type="text/css"/>
     <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="/theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+        <link href="/static/custom.css" rel="stylesheet">
 
 
 
@@ -35,7 +36,7 @@
 <body>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+	<div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -51,12 +52,6 @@ memoize.me            </a>
                          <li><a href="/pages/about.html">
                              About me
                           </a></li>
-                        <li >
-                            <a href="/category/papers.html">Papers</a>
-                        </li>
-                        <li >
-                            <a href="/category/problems.html">Problems</a>
-                        </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
@@ -66,9 +61,28 @@ memoize.me            </a>
 </div> <!-- /.navbar -->
 <!-- Banner -->
 <!-- End Banner -->
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="/the-gamma-distribution.html">Why you should know about the Gamma distribution</a></h2>
+                <div class="summary"><p>I am not a statistician by training or by profession. I like to think I know a few useful facts
+about statistics, but the formal background is something that I tend to just backfill over time when
+the occasion arises. This can mean that sometimes I forget (see the
+<a href="/coupon-collector.html">The Coupon Collector</a>), or flat-out just don't know a lot
+of relatively simple things that people with an actual education in the field see easily.  One
+example of this came up recently while working on my current engineering project (which I will write
+about in a future posts in this series).</p>
+<p>I've been staring at exponentially distributed data on a regular basis in one form or another for at
+least the last ten years.  In my previous job, I spent a lot of time with the statistics of VoIP
+phone calls, trying to understand what's "normal", and what are symptoms of system pathologies, or
+even the actions of fraudsters in the telephony networks.  In approaching this subject, I had never
+yet studied queuing theory, but I had a lot of experience with Poisson processes in experimental
+high energy physics. This meant that as I learned I had many ...</p>
+                    <a class="btn btn-default btn-xs" href="/the-gamma-distribution.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
             <article>
                 <h2><a href="/wir-2016-09-18.html">What I'm reading September 2016</a></h2>
                 <div class="summary"><p>This is a list of things that held my attention long enough for me to honestly say I'm "reading" it.</p>
@@ -134,8 +148,7 @@ yourself theoretical computer science is that you get to discover things like th
             <hr/>
             <article>
                 <h2><a href="/coupon-collector.html">The Coupon Collector</a></h2>
-                <div class="summary"><h2>Introduction</h2>
-<p>Once during a meeting in which we were discussing the
+                <div class="summary"><p>Once during a meeting in which we were discussing the
 <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fischer-Yates shuffle</a>, someone asked:
 "How many times do we need to run the algorithm to see every permutation?"  It immediately occurred
 to me that, well, I didn't know.  Feeling my hands begin wave, instinctively, I fired back, I
@@ -148,17 +161,80 @@ combinatorialist.  For whatever reason, I had never heard of the Coupon Collecto
 <p>This will take you on a seemingly circuitous path towards something that is in the end very simple,
 and very beautiful.  I think it also proves that when all else fails, brute force counting can take
 you a long way, provided you have the machinery to get you there.</p>
-<h3>Flipping a ...</h3>
+<h3>Flipping a coin ...</h3>
                     <a class="btn btn-default btn-xs" href="/coupon-collector.html">more ...</a>
                 </div>
             </article>
             <hr/>
 
         </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://www.linkedin.com/in/soren-telfer-42426727"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+                <li class="list-group-item"><a href="http://github.com/stelfer"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+              </ul>
+            </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/the-gamma-distribution.html">
+                            Why you should know about the Gamma distribution
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/wir-2016-09-18.html">
+                            What I'm reading September 2016
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/wir-2016-08-03.html">
+                            What I'm reading August 2016
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/wir-2016-06-03.html">
+                            What I'm reading June 2016
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/coupon-collector.html">
+                            The Coupon Collector
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/probability-and-statistics.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Probability and Statistics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/what-im-reading.html">
+                            <i class="fa fa-folder-open fa-lg"></i> What I'm Reading
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    </ul>
+</section>
+            </aside>
+        </div>
     </div>
 </div>
 <footer>
-   <div class="container">
+   <div class="container-fluid">
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Soren Telfer

@@ -22,11 +22,12 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.readable.min.css" type="text/css"/>
+        <link rel="stylesheet" href="/theme/css/bootstrap.yeti.min.css" type="text/css"/>
     <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="/theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+        <link href="/static/custom.css" rel="stylesheet">
 
 
 
@@ -36,7 +37,7 @@
 <body>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+	<div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -52,12 +53,6 @@ memoize.me            </a>
                          <li><a href="/pages/about.html">
                              About me
                           </a></li>
-                        <li >
-                            <a href="/category/papers.html">Papers</a>
-                        </li>
-                        <li >
-                            <a href="/category/problems.html">Problems</a>
-                        </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
@@ -67,13 +62,12 @@ memoize.me            </a>
 </div> <!-- /.navbar -->
 <!-- Banner -->
 <!-- End Banner -->
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-sm-9">
             <article>
                 <h2><a href="/coupon-collector.html">The Coupon Collector</a></h2>
-                <div class="summary"><h2>Introduction</h2>
-<p>Once during a meeting in which we were discussing the
+                <div class="summary"><p>Once during a meeting in which we were discussing the
 <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fischer-Yates shuffle</a>, someone asked:
 "How many times do we need to run the algorithm to see every permutation?"  It immediately occurred
 to me that, well, I didn't know.  Feeling my hands begin wave, instinctively, I fired back, I
@@ -86,17 +80,60 @@ combinatorialist.  For whatever reason, I had never heard of the Coupon Collecto
 <p>This will take you on a seemingly circuitous path towards something that is in the end very simple,
 and very beautiful.  I think it also proves that when all else fails, brute force counting can take
 you a long way, provided you have the machinery to get you there.</p>
-<h3>Flipping a ...</h3>
+<h3>Flipping a coin ...</h3>
                     <a class="btn btn-default btn-xs" href="/coupon-collector.html">more ...</a>
                 </div>
             </article>
             <hr/>
 
         </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://www.linkedin.com/in/soren-telfer-42426727"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+                <li class="list-group-item"><a href="http://github.com/stelfer"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+              </ul>
+            </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/coupon-collector.html">
+                            The Coupon Collector
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/probability-and-statistics.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Probability and Statistics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/what-im-reading.html">
+                            <i class="fa fa-folder-open fa-lg"></i> What I'm Reading
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    </ul>
+</section>
+            </aside>
+        </div>
     </div>
 </div>
 <footer>
-   <div class="container">
+   <div class="container-fluid">
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Soren Telfer

@@ -21,11 +21,12 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.readable.min.css" type="text/css"/>
+        <link rel="stylesheet" href="/theme/css/bootstrap.yeti.min.css" type="text/css"/>
     <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="/theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+        <link href="/static/custom.css" rel="stylesheet">
 
 
 
@@ -35,7 +36,7 @@
 <body>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
+	<div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -51,12 +52,6 @@ memoize.me            </a>
                          <li><a href="/pages/about.html">
                              About me
                           </a></li>
-                        <li >
-                            <a href="/category/papers.html">Papers</a>
-                        </li>
-                        <li >
-                            <a href="/category/problems.html">Problems</a>
-                        </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
@@ -66,16 +61,79 @@ memoize.me            </a>
 </div> <!-- /.navbar -->
 <!-- Banner -->
 <!-- End Banner -->
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-sm-9">
     <h1>Authors on memoize.me</h1>
-        <li><a href="/author/soren-telfer.html">Soren Telfer</a> (4)</li>
+        <li><a href="/author/soren-telfer.html">Soren Telfer</a> (5)</li>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://www.linkedin.com/in/soren-telfer-42426727"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+                <li class="list-group-item"><a href="http://github.com/stelfer"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+              </ul>
+            </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/the-gamma-distribution.html">
+                            Why you should know about the Gamma distribution
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/wir-2016-09-18.html">
+                            What I'm reading September 2016
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/wir-2016-08-03.html">
+                            What I'm reading August 2016
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/wir-2016-06-03.html">
+                            What I'm reading June 2016
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/coupon-collector.html">
+                            The Coupon Collector
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/probability-and-statistics.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Probability and Statistics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/what-im-reading.html">
+                            <i class="fa fa-folder-open fa-lg"></i> What I'm Reading
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    </ul>
+</section>
+            </aside>
         </div>
     </div>
 </div>
 <footer>
-   <div class="container">
+   <div class="container-fluid">
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Soren Telfer
