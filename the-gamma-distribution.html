@@ -252,8 +252,8 @@ $$</div>
 <p>As mentioned above, one of my current projects started all of this thinking.  I have been working on
 a simple library to do performance-based regression testing, which I will talk more about that in a
 later post, but for now, I present below some of the benchmarking data that I have been working
-with. Each histogram is labeled by the a number which is <span class="math">\(k = log N\)</span> of the total input size of the
-code being tested. Specifically, I am benchmarking a library that uses Intel SSE4.2 specialized
+with. Each histogram is labeled by a number which is <span class="math">\(k = log N\)</span> of the total input size of the code
+being tested. Specifically, I am benchmarking a library that uses Intel SSE4.2 specialized
 instructions to calculate crc32c checksums.</p>
 <p><img alt="A Gamma" src="http://memoize.me/images/hists.png" /></p>
 <p>There are a ton of interesting details going on that I will discuss later, but it should be clear
@@ -269,15 +269,15 @@ since the total test run time is proportional to the number of samples collected
 histogram sets against each other using as few total <span class="math">\(\sum_k n_k\)</span> as possible. Mainly this is
 because in my experience, the probability of a test being manually disabled is proportional to the
 time it takes to run the test. We need a system that no one every think about disabling.  Also, my
-personal development style is to run the entire test-suite at every compile, not just at every
-check-in. So, it needs to be fast.</p>
-<p>Now is a good time to point out that by now most people looking at systems have gone ahead and
-assumed the times are Gaussian and have computed an average.  It is a terrible but fortuitous fact
-of life that the MLE for <span class="math">\(\lambda\)</span> for an exponential distribution is</p>
+personal development style is to run the all dependent test-suites at every compile, not just at
+every check-in. So, it needs to be fast.</p>
+<p>This is a good time to point out that by now most people looking at data like these have gone ahead
+and assumed the values are Gaussian and have computed a <span class="math">\(\mu\)</span> (and probably a <span class="math">\(\sigma\)</span>).  It is a
+terrible but fortuitous fact of life that the MLE for <span class="math">\(\lambda\)</span> for an exponential distribution is</p>
 <div class="math">$$
 \hat{\lambda} = \frac{n}{\sum_i x_i} = \frac{1}{\bar{x}}
 $$</div>
-<p>I'm calling this terrible because it basically lets most people get away with taking averages of
+<p>I'm declaring this terrible because it basically lets most people get away with taking averages of
 data like the above just assuming that they are quote-un-quote Gaussian. But I digress.</p>
 <p>What I need is a meaningful statistical test that can help me detect a change in the code.  Now, I'm
 not a hard-core frequentist, but I can't think of a reason not to use a hypothesis test here if I
@@ -291,7 +291,7 @@ works very well. If <span class="math">\(X_1 \sim \chi^2_{n_1}\)</span> and <spa
 U &amp;= \frac{\frac{2 S_{n'}}{\theta' n'}}{\frac{2 S_n}{\theta n}}\nonumber\\
 &amp;= \frac{\theta}{\theta'} \frac{\bar{x}'}{\bar{x}}\nonumber\\
 \end{align}</div>
-<p>is distributed in <span class="math">\(F(2n',2n)\)</span>.  The we test <span class="math">\(H_0\)</span> vs <span class="math">\(H_1\)</span>:</p>
+<p>is distributed in <span class="math">\(F(2n',2n)\)</span>.  Thus we test <span class="math">\(H_0\)</span> vs <span class="math">\(H_1\)</span>:</p>
 <div class="math">\begin{align}
 H_0 &amp;: \theta/\theta' = 1\nonumber\\
 H_1 &amp;: \theta/\theta' \neq 1.\nonumber\\
