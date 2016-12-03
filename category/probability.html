@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Probability - memoize.me</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <meta name="author" content="Soren Telfer" />
+    <meta name="keywords" content="Probability" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="memoize.me" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="memoize.me"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="memoize.me"/>
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+        <link href="/static/custom.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+memoize.me            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="/pages/about.html">
+                             About me
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="/coupon-collector.html">The Coupon Collector</a></h2>
+                <div class="summary"><p>Once during a meeting in which we were discussing the
+<a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fischer-Yates shuffle</a>, someone asked:
+"How many times do we need to run the algorithm to see every permutation?"  It immediately occurred
+to me that, well, I didn't know.  Feeling my hands begin wave, instinctively, I fired back, I
+thought, quite cleverly: "How many times do you need to flip a coin to see both sides?".  Of course,
+both questions are somewhat non-sensical, but the intent of the former question, unlike the latter,
+was clear. I didn't know the answer, but I've always said that stopping problems are the best
+problems, so even though I didn't have a great answer in the moment, I resolved to find something
+satisfying. At this point I will confess that I am an enthusiastic yet rank amateur
+combinatorialist.  For whatever reason, I had never heard of the Coupon Collector.</p>
+<p>This will take you on a seemingly circuitous path towards something that is in the end very simple,
+and very beautiful.  I think it also proves that when all else fails, brute force counting can take
+you a long way, provided you have the machinery to get you there.</p>
+<h3>Flipping a coin ...</h3>
+                    <a class="btn btn-default btn-xs" href="/coupon-collector.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<div id="aboutme">
+    <p>
+        <strong>About Soren Telfer</strong><br/>
+        Soren
+    </p>
+</div>
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://www.linkedin.com/in/soren-telfer-42426727"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+                <li class="list-group-item"><a href="http://github.com/stelfer"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+              </ul>
+            </li>
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="/coupon-collector.html">
+                            The Coupon Collector
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="/category/probability.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Probability
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/probability-and-statistics.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Probability and Statistics
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="/category/what-im-reading.html">
+                            <i class="fa fa-folder-open fa-lg"></i> What I'm Reading
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                You can modify those links in your config file
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container-fluid">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Soren Telfer
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <script src="/theme/js/bodypadding.js"></script>
+
+</body>
+</html>
