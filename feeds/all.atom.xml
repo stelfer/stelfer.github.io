@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2016-12-02T00:00:00-08:00</updated><entry><title>Why you should know about the Gamma distribution</title><link href="/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:,2016-12-02:the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I am not a statistician by training or by profession. I like to think I know a few useful facts
+<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="http://memoize.me/" rel="alternate"></link><link href="http://memoize.me/feeds/all.atom.xml" rel="self"></link><id>http://memoize.me/</id><updated>2016-12-02T00:00:00-08:00</updated><entry><title>Why you should know about the Gamma distribution</title><link href="http://memoize.me/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-12-02:the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I am not a statistician by training or by profession. I like to think I know a few useful facts
 about statistics, but the formal background is something that I tend to just backfill over time when
 the occasion arises. This can mean that sometimes I forget (see the
-&lt;a href="/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), or flat-out just don't know a lot
+&lt;a href="http://memoize.me/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), or flat-out just don't know a lot
 of relatively simple things that people with an actual education in the field see easily.  One
 example of this came up recently while working on my current engineering project (which I will write
 about in a future posts in this series).&lt;/p&gt;
@@ -19,7 +19,7 @@ machine learning, are unfamiliar with this fact, or why it would be useful to kn
 measure in systems, for you often see a long-tailed distribution where the mode is shifted to the
 right, relative to where the exponential would start. This is what &lt;code&gt;scipy.stats.gamma.rvs(1.99,
 size=1000)&lt;/code&gt; looks like:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A Gamma" src="/images/gamma.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A Gamma" src="http://memoize.me/images/gamma.png" /&gt;&lt;/p&gt;
 &lt;p&gt;The reason this is really helpful to think about is you often find yourself looking at the length of
 the intervals it takes for things to complete: &lt;/p&gt;
 &lt;ul&gt;
@@ -35,7 +35,7 @@ model the individual times as exponentially distributed, we then should expect t
 should follow a gamma-like distribution.  When reasoning about systems, looking at the distribution
 of times tells you a lot about what's happening.  When the data looks exponentially-distributed,
 i.e. the mode is all the way to the left (&lt;code&gt;scipy.stats.expon.rvs(size=1000)&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="An exponential" src="/images/expon.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="An exponential" src="http://memoize.me/images/expon.png" /&gt;&lt;/p&gt;
 &lt;p&gt;then you really have one dominant process contributing to the completion time. Instead, the more you see the mode shifted to the right, the more you can reason that there are a number of processes of equal contribution.  This is a useful way to reason about systems.&lt;/p&gt;
 &lt;p&gt;As I said, learning that the sums of exponentials was distributed as Gamma was a neat and useful
 eureka! moment. However, until recently, I missed an extremely important related fact.  All of this
@@ -68,7 +68,7 @@ conjugate prior for a large number of important distributions: Poisson, Normal, 
 Exponential.&lt;/p&gt;
 &lt;p&gt;But let's get back to proving some neat things about this distribution. Before we can start, we will
 need one additional piece of machinery.  In
-&lt;a href="/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), I showed a useful application for
+&lt;a href="http://memoize.me/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), I showed a useful application for
 probability generating functions (PGFs), which, to review, are&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 G(z) &amp;amp;= \sum_0^\infty p(k)z^k\nonumber\\
@@ -87,7 +87,7 @@ about integrating over the support of &lt;span class="math"&gt;\(f(x)\)&lt;/span
 M_X (t) &amp;amp;= \int_{-\infty}^{\infty} e^{tx} f(x) dx\nonumber\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;which should bring back waves of nostalgia as the two sided Laplace transform of the distribution
-&lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;.  &lt;a href="/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did
+&lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;.  &lt;a href="http://memoize.me/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did
 I do all of these contortions on PGFs" was that taking derivatives gave us nice and easy ways to
 estimate the mean, variance, etc. The MGFs also give us these as the moments of the distribution.
 But the definition above provides us another trick, namely that if we are careful about the the
@@ -147,7 +147,7 @@ later post, but for now, I present below some of the benchmarking data that I ha
 with. Each histogram is labeled by the a number which is &lt;span class="math"&gt;\(k = log N\)&lt;/span&gt; of the total input size of the
 code being tested. Specifically, I am benchmarking a library that uses Intel SSE4.2 specialized
 instructions to calculate crc32c checksums.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A Gamma" src="/images/hists.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A Gamma" src="http://memoize.me/images/hists.png" /&gt;&lt;/p&gt;
 &lt;p&gt;There are a ton of interesting details going on that I will discuss later, but it should be clear
 that for each &lt;span class="math"&gt;\(k\)&lt;/span&gt;, every time I make these measurements I will get different looking
 histograms. They could be different because something changed in the code. Or, they could be
@@ -255,7 +255,7 @@ $$&lt;/div&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</summary><category term="Probability"></category><category term="Statistics"></category><category term="Generating Functions"></category></entry><entry><title>What I'm reading September 2016</title><link href="/wir-2016-09-18.html" rel="alternate"></link><published>2016-09-18T00:00:00-07:00</published><updated>2016-09-18T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:,2016-09-18:wir-2016-09-18.html</id><summary type="html">&lt;p&gt;This is a list of things that held my attention long enough for me to honestly say I'm "reading" it.&lt;/p&gt;
+&lt;/script&gt;</summary><category term="Probability"></category><category term="Statistics"></category><category term="Generating Functions"></category></entry><entry><title>What I'm reading September 2016</title><link href="http://memoize.me/wir-2016-09-18.html" rel="alternate"></link><published>2016-09-18T00:00:00-07:00</published><updated>2016-09-18T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-09-18:wir-2016-09-18.html</id><summary type="html">&lt;p&gt;This is a list of things that held my attention long enough for me to honestly say I'm "reading" it.&lt;/p&gt;
 &lt;h3&gt;Papers&lt;/h3&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href="https://eprint.iacr.org/2016/861"&gt;Secure Stable Matching at Scale&lt;/a&gt;&lt;/dt&gt;
@@ -271,7 +271,7 @@ $$&lt;/div&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href="https://www.amazon.com/gp/product/1107057132"&gt;Understanding Machine Learning&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;By far my favorite machine learning book at this point.  I like it in a way I never liked &lt;a href="https://www.amazon.com/Statistical-Learning-Adaptive-Processing-Communications/dp/8126528923/"&gt;Vapnik&lt;/a&gt;. It also reminds me of &lt;a href="https://www.amazon.com/Classical-Theory-Fields-Fourth-Theoretical/dp/0750627689"&gt;The Classical Theory of Fields&lt;/a&gt;, which was by far my favorite part of my physics education. But I can't really explain why UML reminds me of it.  I got this book from a blog I like a lot &lt;a href="https://blogs.princeton.edu/imabandit/"&gt;I'm a Bandit&lt;/a&gt;.&lt;/dd&gt;
-&lt;/dl&gt;</summary><category term="Papers"></category><category term="Books"></category></entry><entry><title>What I'm reading August 2016</title><link href="/wir-2016-08-03.html" rel="alternate"></link><published>2016-08-03T00:00:00-07:00</published><updated>2016-08-03T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:,2016-08-03:wir-2016-08-03.html</id><summary type="html">&lt;p&gt;This is a list of things that held my attention long enough for me to honestly say I'm "reading" it.&lt;/p&gt;
+&lt;/dl&gt;</summary><category term="Papers"></category><category term="Books"></category></entry><entry><title>What I'm reading August 2016</title><link href="http://memoize.me/wir-2016-08-03.html" rel="alternate"></link><published>2016-08-03T00:00:00-07:00</published><updated>2016-08-03T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-08-03:wir-2016-08-03.html</id><summary type="html">&lt;p&gt;This is a list of things that held my attention long enough for me to honestly say I'm "reading" it.&lt;/p&gt;
 &lt;h3&gt;Papers&lt;/h3&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href="https://eprint.iacr.org/2008/197"&gt;Secure Multiparty Computation for Privacy-Preserving Data Mining&lt;/a&gt;&lt;/dt&gt;
@@ -284,7 +284,7 @@ $$&lt;/div&gt;
 for SC, I somehow ended up with this gem from Shannon. One of the good things about teaching
 yourself theoretical computer science is that you get to discover things like this on your own!&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;h3&gt;Books&lt;/h3&gt;</summary><category term="Papers"></category><category term="Books"></category></entry><entry><title>What I'm reading June 2016</title><link href="/wir-2016-06-03.html" rel="alternate"></link><published>2016-06-03T00:00:00-07:00</published><updated>2016-06-03T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:,2016-06-03:wir-2016-06-03.html</id><summary type="html">&lt;p&gt;This is a list of things that held my attention long enough for me to honestly say I'm "reading" it.&lt;/p&gt;
+&lt;h3&gt;Books&lt;/h3&gt;</summary><category term="Papers"></category><category term="Books"></category></entry><entry><title>What I'm reading June 2016</title><link href="http://memoize.me/wir-2016-06-03.html" rel="alternate"></link><published>2016-06-03T00:00:00-07:00</published><updated>2016-06-03T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-06-03:wir-2016-06-03.html</id><summary type="html">&lt;p&gt;This is a list of things that held my attention long enough for me to honestly say I'm "reading" it.&lt;/p&gt;
 &lt;h3&gt;Papers&lt;/h3&gt;
 &lt;dl&gt;
 &lt;dt&gt;&lt;a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.295.4478&amp;amp;rep=rep1&amp;amp;type=pdf"&gt;The Evolution of the Markov Chain Monte Carlo Methods&lt;/a&gt;&lt;/dt&gt;
@@ -298,7 +298,7 @@ yourself theoretical computer science is that you get to discover things like th
 &lt;dt&gt;&lt;a href="https://eprint.iacr.org/2014/765"&gt;The Bitcoin Backbone Protocol: Analysis and Applications&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;Slowly working my way into security proofs, but this looks way interesting&lt;/dd&gt;
 &lt;/dl&gt;
-&lt;h3&gt;Books&lt;/h3&gt;</summary><category term="Papers"></category><category term="Books"></category></entry><entry><title>The Coupon Collector</title><link href="/coupon-collector.html" rel="alternate"></link><published>2016-04-27T00:00:00-07:00</published><updated>2016-04-27T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:,2016-04-27:coupon-collector.html</id><summary type="html">&lt;p&gt;Once during a meeting in which we were discussing the
+&lt;h3&gt;Books&lt;/h3&gt;</summary><category term="Papers"></category><category term="Books"></category></entry><entry><title>The Coupon Collector</title><link href="http://memoize.me/coupon-collector.html" rel="alternate"></link><published>2016-04-27T00:00:00-07:00</published><updated>2016-04-27T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-04-27:coupon-collector.html</id><summary type="html">&lt;p&gt;Once during a meeting in which we were discussing the
 &lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt;, someone asked:
 "How many times do we need to run the algorithm to see every permutation?"  It immediately occurred
 to me that, well, I didn't know.  Feeling my hands begin wave, instinctively, I fired back, I
@@ -444,7 +444,7 @@ G'(1)&amp;amp;= \frac{p(1-p) - (2p -2p^2 - 1)}{p(1-p)}\nonumber\\
 &lt;p&gt;We return now to the hint that &lt;em&gt;Knuth et. al.&lt;/em&gt; gave us about using finite automata to help generate
 our &lt;span class="math"&gt;\(S\)&lt;/span&gt;'s.  If we think about the coin problem we've been considering, a first stab at at
 state machine could look something like this.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="/images/coin.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Alt Text" src="http://memoize.me/images/coin.png" /&gt;&lt;/p&gt;
 &lt;p&gt;I hope by now you are comfortable and see the value in writing down a sum &lt;span class="math"&gt;\(S\)&lt;/span&gt;. So let's try it:
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
@@ -465,7 +465,7 @@ S &amp;amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\nonumber.\\
 &lt;h3&gt;The &lt;span class="math"&gt;\(m\)&lt;/span&gt;-die with equal probabilities&lt;/h3&gt;
 &lt;p&gt;We are now prepared to take on the type &lt;span class="math"&gt;\((\ref{typeA})\)&lt;/span&gt; problem for arbitrary &lt;span class="math"&gt;\(m\)&lt;/span&gt;.  As before, define a
 finite automata to describe the process.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="/images/m-die.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://memoize.me/images/m-die.png" /&gt;&lt;/p&gt;
 &lt;p&gt;In this case we identify each state by
 the number of &lt;span class="math"&gt;\(m\)&lt;/span&gt; types we have seen. Then, as before we can read off the proto-PGF&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
