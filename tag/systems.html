@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Archives - memoize.me</title>
+    <title>Systems - memoize.me</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -10,7 +10,8 @@
 
 
 
-        <meta name="author" content="Soren Telfer" />
+    <meta name="author" content="Soren Telfer" />
+    <meta name="keywords" content="Systems" />
 
     <!-- Open Graph tags -->
         <meta property="og:site_name" content="memoize.me" />
@@ -66,35 +67,28 @@ memoize.me            </a>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-9">
-    <section id="content">
-        <h1>Archives for memoize.me</h1>
-        <div id="archives">
-                <p>
-                    <span class="categories-timestamp"><time datetime="2016-12-03T00:00:00-08:00">Sat 03 December 2016</time></span>
-                    <a href="/sampling-knife-edge.html">Sampling on a knife edge</a>
-                </p>
-                <p>
-                    <span class="categories-timestamp"><time datetime="2016-12-02T00:00:00-08:00">Fri 02 December 2016</time></span>
-                    <a href="/the-gamma-distribution.html">Why you should know about the Gamma distribution</a>
-                </p>
-                <p>
-                    <span class="categories-timestamp"><time datetime="2016-09-18T00:00:00-07:00">Sun 18 September 2016</time></span>
-                    <a href="/wir-2016-09-18.html">What I'm reading September 2016</a>
-                </p>
-                <p>
-                    <span class="categories-timestamp"><time datetime="2016-08-03T00:00:00-07:00">Wed 03 August 2016</time></span>
-                    <a href="/wir-2016-08-03.html">What I'm reading August 2016</a>
-                </p>
-                <p>
-                    <span class="categories-timestamp"><time datetime="2016-06-03T00:00:00-07:00">Fri 03 June 2016</time></span>
-                    <a href="/wir-2016-06-03.html">What I'm reading June 2016</a>
-                </p>
-                <p>
-                    <span class="categories-timestamp"><time datetime="2016-04-27T00:00:00-07:00">Wed 27 April 2016</time></span>
-                    <a href="/coupon-collector.html">The Coupon Collector</a>
-                </p>
-        </div>
-    </section>
+            <article>
+                <h2><a href="/sampling-knife-edge.html">Sampling on a knife edge</a></h2>
+                <div class="summary"><p>My in-progress performance-based regression testing library got a soft introduction in the
+<a href="/the-gamma-distribution.html">previous</a> post. So, let me take a small step back and
+describe what we're trying to do.</p>
+<p>Our goal is to build good estimator of program run-time for use in performance regression
+testing. This estimator must be sensitive to small changes in the instruction structure of the
+binary under test, so that we are alerted to unintended changes due to modification of the
+algorithm, output of the compiler, or other side effects within the system.  We need this estimator
+to be statistically rigorous, and provide a way to integrate computationally inexpensive code into
+our test suites for use in continuous integration, and during development.  To be successful, we
+need this estimator to be as cheap and easy as possible so that it is used early and often, and is
+so transparent that no one ever thinks about disabling it.  </p>
+<p>We seek to build this estimator in the face of a number of difficult challenges. First, the systems
+introduce measurement noise that injects a large number nuisance variables into our analysis.  Next,
+because of technologies such as CPU frequency scaling, time itself can be stochastic variable.
+Eventually, in ...</p>
+                    <a class="btn btn-default btn-xs" href="/sampling-knife-edge.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -114,26 +108,6 @@ memoize.me            </a>
                     <li class="list-group-item">
                         <a href="/sampling-knife-edge.html">
                             Sampling on a knife edge
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/the-gamma-distribution.html">
-                            Why you should know about the Gamma distribution
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/wir-2016-09-18.html">
-                            What I'm reading September 2016
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/wir-2016-08-03.html">
-                            What I'm reading August 2016
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/wir-2016-06-03.html">
-                            What I'm reading June 2016
                         </a>
                     </li>
                 </ul>
