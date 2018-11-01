@@ -22,13 +22,15 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.lumen.min.css" type="text/css"/>
+        <link rel="stylesheet" href="/theme/css/bootstrap.simplex.min.css" type="text/css"/>
     <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="/theme/css/pygments/native.css" rel="stylesheet">
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
         <link href="/static/custom.css" rel="stylesheet">
 
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="memoize.me ATOM Feed"/>
 
 
 
@@ -50,11 +52,9 @@ memoize.me            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="/pages/about.html">
-                             About me
-                          </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <!-- <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li> -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -64,104 +64,24 @@ memoize.me            </a>
 <!-- End Banner -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-lg-12">
             <article>
-                <h2><a href="/the-gamma-distribution.html">Why you should know about the Gamma distribution</a></h2>
-                <div class="summary"><p>I am not a statistician by training or by profession. I like to think I know a few useful facts
+                <h2><a href="/why-you-should-know-about-the-gamma-distribution.html">Why you should know about the Gamma distribution</a></h2>
+                <div class="summary"><h1>Series: Building a performance-based regression testing library</h1>
+<p>Category: Probability and Statistics
+Tags: Probability, Statistics, Generating Functions
+Slug: the-gamma-distribution</p>
+<p>I am not a statistician by training or by profession. I like to think I know a few useful facts
 about statistics, but the formal background is something that I tend to just backfill over time when
 the occasion arises. This can mean that sometimes I forget (see the
 <a href="/coupon-collector.html">The Coupon Collector</a>), or flat-out just don't know a lot
 of relatively simple things that people with an actual education in the field see easily.  One
-example of this came up recently while working on my current engineering project (which I will write
-about in a future post).</p>
-<p>I've been staring at exponentially distributed data on a regular basis in one form or another for at
-least the last ten years.  In my previous job, I spent a lot of time with the statistics of VoIP
-phone calls, trying to understand what's "normal", and what are symptoms of system pathologies, or
-even the actions of fraudsters in the telephony networks.  In approaching this subject, I had never
-yet studied queuing theory, but I had a lot of experience with Poisson processes in experimental
-high energy physics. This meant that as I learned I had many wonderful eureka! moments ...</p>
-                    <a class="btn btn-default btn-xs" href="/the-gamma-distribution.html">more ...</a>
+example of this came up recently while …</p>
+                    <a class="btn btn-default btn-xs" href="/why-you-should-know-about-the-gamma-distribution.html">more ...</a>
                 </div>
             </article>
             <hr/>
 
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-<div id="aboutme">
-    <p>
-        <strong>About Soren Telfer</strong><br/>
-        Soren
-    </p>
-</div>
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://www.linkedin.com/in/soren-telfer-42426727"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
-                <li class="list-group-item"><a href="http://github.com/stelfer"><i class="fa fa-github-square fa-lg"></i> github</a></li>
-              </ul>
-            </li>
-
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
-                <ul class="list-group" id="recentposts">
-                    <li class="list-group-item">
-                        <a href="/the-gamma-distribution.html">
-                            Why you should know about the Gamma distribution
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="list-group-item"><a href="/"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
-                <ul class="list-group" id="categories">
-                    <li class="list-group-item">
-                        <a href="/category/posts.html">
-                            <i class="fa fa-folder-open fa-lg"></i> posts
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/category/probability.html">
-                            <i class="fa fa-folder-open fa-lg"></i> Probability
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="/category/what-im-reading.html">
-                            <i class="fa fa-folder-open fa-lg"></i> What I'm Reading
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="#" target="_blank">
-                You can modify those links in your config file
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>
-            </aside>
         </div>
     </div>
 </div>
@@ -170,7 +90,7 @@ high energy physics. This meant that as I learned I had many wonderful eureka! m
       <hr>
       <div class="row">
          <div class="col-xs-10">&copy; 2016 Soren Telfer
-            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>

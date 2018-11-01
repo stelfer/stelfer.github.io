@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Why you should know about the Gamma distribution - memoize.me</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/why-you-should-know-about-the-gamma-distribution.html">
+
+        <meta name="author" content="Soren Telfer" />
+        <meta name="description" content="Series: Building a performance-based regression testing library Category: Probability and Statistics Tags: Probability, Statistics, Generating Functions Slug: the-gamma-distribution I am not a statistician by training or by profession. I like to think I know a few useful facts about statistics, but the formal background is something that I tend to just backfill over time when the occasion arises. This can mean that sometimes I forget (see the The Coupon Collector), or flat-out just don&#39;t know a lot of relatively simple things that people with an actual education in the field see easily. One example of this came up recently while …" />
+
+        <meta property="og:site_name" content="memoize.me" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Why you should know about the Gamma distribution"/>
+        <meta property="og:url" content="/why-you-should-know-about-the-gamma-distribution.html"/>
+        <meta property="og:description" content="Series: Building a performance-based regression testing library Category: Probability and Statistics Tags: Probability, Statistics, Generating Functions Slug: the-gamma-distribution I am not a statistician by training or by profession. I like to think I know a few useful facts about statistics, but the formal background is something that I tend to just backfill over time when the occasion arises. This can mean that sometimes I forget (see the The Coupon Collector), or flat-out just don&#39;t know a lot of relatively simple things that people with an actual education in the field see easily. One example of this came up recently while …"/>
+        <meta property="article:published_time" content="2016-12-02" />
+            <meta property="article:section" content="posts" />
+            <meta property="article:author" content="Soren Telfer" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.simplex.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+        <link href="/static/custom.css" rel="stylesheet">
+
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="memoize.me ATOM Feed"/>
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+memoize.me            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <!-- <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li> -->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/why-you-should-know-about-the-gamma-distribution.html"
+                       rel="bookmark"
+                       title="Permalink to Why you should know about the Gamma distribution">
+                        Why you should know about the Gamma distribution
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-12-02T00:00:00-08:00"> Fri 02 December 2016</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h1>Series: Building a performance-based regression testing library</h1>
+<p>Category: Probability and Statistics
+Tags: Probability, Statistics, Generating Functions
+Slug: the-gamma-distribution</p>
+<p>I am not a statistician by training or by profession. I like to think I know a few useful facts
+about statistics, but the formal background is something that I tend to just backfill over time when
+the occasion arises. This can mean that sometimes I forget (see the
+<a href="/coupon-collector.html">The Coupon Collector</a>), or flat-out just don't know a lot
+of relatively simple things that people with an actual education in the field see easily.  One
+example of this came up recently while working on my current engineering project (which I will write
+about in a future posts in this series).</p>
+<p>I've been staring at exponentially distributed data on a regular basis in one form or another for at
+least the last ten years.  In my previous job, I spent a lot of time with the statistics of VoIP
+phone calls, trying to understand what's "normal", and what are symptoms of system pathologies, or
+even the actions of fraudsters in the telephony networks.  In approaching this subject, I had never
+yet studied queuing theory, but I had a lot of experience with Poisson processes in experimental
+high energy physics. This meant that as I learned I had many wonderful eureka! moments.  One of
+these moments was when I learned that the sum of exponentially distributed variables has a gamma
+distribution. I often find that people I mention this to, people in systems, and even often in
+machine learning, are unfamiliar with this fact, or why it would be useful to know.</p>
+<p>In fact, this is a very helpful thing to know when looking at the distributions of many things you
+measure in systems, for you often see a long-tailed distribution where the mode is shifted to the
+right, relative to where the exponential would start. This is what <code>scipy.stats.gamma.rvs(1.99,
+size=1000)</code> looks like:</p>
+<p><img alt="A Gamma" src="/images/gamma.png"></p>
+<p>The reason this is really helpful to think about is you often find yourself looking at the length of
+the intervals it takes for things to complete: </p>
+<ul>
+<li>the time it takes IO requests to complete</li>
+<li>the time it takes a program to run</li>
+<li>the amount of time a lock is held</li>
+<li>the time it takes to resolve a ticket</li>
+</ul>
+<p>One way to think about what is happening behind the scenes is that you are looking at many
+different system components taking part, and each taking some time to do it's job. What you see then
+when you wait for the entire completion is then the sum of many individual component times. When we
+model the individual times as exponentially distributed, we then should expect that what we measure
+should follow a gamma-like distribution.  When reasoning about systems, looking at the distribution
+of times tells you a lot about what's happening.  When the data looks exponentially-distributed,
+i.e. the mode is all the way to the left (<code>scipy.stats.expon.rvs(size=1000)</code>)</p>
+<p><img alt="An exponential" src="/images/expon.png"></p>
+<p>then you really have one dominant process contributing to the completion time. Instead, the more you see the mode shifted to the right, the more you can reason that there are a number of processes of equal contribution.  This is a useful way to reason about systems.</p>
+<p>As I said, learning that the sums of exponentials was distributed as Gamma was a neat and useful
+eureka! moment. However, until recently, I missed an extremely important related fact.  All of this
+came about when I found a need to perform a computationally efficient test to determine if the
+distributions two sets of exponentially distributed data differed. This lead to another eureka!
+moment that I will describe below.</p>
+<h3>The Gamma distribution</h3>
+<p>Most folks are familiar with the Gamma function, which extends the factorial function to real numbers
+</p>
+<div class="math">\begin{align}
+\Gamma(z) &amp;= \int_0^{\infty} t^{z-1} e^{-t} dt\nonumber\\
+&amp;= (z-1)!,\, z \in \mathbb{Z}.\nonumber\\
+\end{align}</div>
+<p>But fewer people seem to know about the Gamma distribution, which is defined to be
+</p>
+<div class="math">\begin{align}
+G(k, \theta) \equiv \frac{1}{\Gamma(k)\,\theta^k} x^{k-1} e^{-x/\theta}\nonumber\\
+\end{align}</div>
+<p>where <span class="math">\(k\)</span> is the scale and <span class="math">\(\theta\)</span> is the shape. The Gamma distribution can be seen as a
+generalization of two other daily-driver type distributions 
+</p>
+<div class="math">\begin{align}
+G(k/2, 2) &amp;= \frac{1}{\Gamma(k/2)\,2^{k/2}} x^{k/2-1} e^{-x/2}\nonumber\\
+&amp;\equiv \chi_k^2\nonumber\\
+G(1, \theta) &amp;= \frac{1}{\theta} e^{-x/\theta}\nonumber\\
+&amp;\equiv Exp(\lambda = 1/\theta)\nonumber\\
+\end{align}</div>
+<p>The generality of the Gamma goes even further. Not only is it is it's own conjugate prior, it's the
+conjugate prior for a large number of important distributions: Poisson, Normal, Pareto, Log-normal,
+Exponential.</p>
+<p>But let's get back to proving some neat things about this distribution. Before we can start, we will
+need one additional piece of machinery.  In
+<a href="/coupon-collector.html">The Coupon Collector</a>), I showed a useful application for
+probability generating functions (PGFs), which, to review, are</p>
+<div class="math">\begin{align}
+G(z) &amp;= \sum_0^\infty p(k)z^k\nonumber\\
+&amp;= \mathbb{E} \left[ z^k \right]\nonumber\\
+\end{align}</div>
+<p>under the discrete distribution <span class="math">\(p_k\)</span>.  A handy generalization of PGFs is create moment generating
+functions (MGFs), by taking</p>
+<div class="math">\begin{align}
+M_X (t) &amp;\equiv G_X(e^t)\nonumber\\
+&amp;= \mathbb{E}\left[ e^{tX}\right].\nonumber\\
+\end{align}</div>
+<p>MGFs have all the nice manipulation tricks of PGFs, have even nicer derivative-taking properties
+than PGFs, and work for both continuous and discrete distributions.  And as long as we are careful
+about integrating over the support of <span class="math">\(f(x)\)</span>, they also have the very interesting expression as</p>
+<div class="math">\begin{align}
+M_X (t) &amp;= \int_{-\infty}^{\infty} e^{tx} f(x) dx\nonumber\\
+\end{align}</div>
+<p>which should bring back waves of nostalgia as the two sided Laplace transform of the distribution
+<span class="math">\(f(x)\)</span>.  <a href="/coupon-collector.html">Previously</a>, we saw that one answer to "why did
+I do all of these contortions on PGFs" was that taking derivatives gave us nice and easy ways to
+estimate the mean, variance, etc. The MGFs also give us these as the moments of the distribution.
+But the definition above provides us another trick, namely that if we are careful about the the
+above definition, we can take the inverse Laplace transform of a MGF to derive a
+distribution. Deriving distributions can be trickery, so this is a nice tool to have in the box. We
+may return to calculating <span class="math">\(\mathcal{L}^{-1}\left\{ M_X(t) \right\}\)</span> in another post.</p>
+<p>So, what is the MGF for the Gamma distribution? By definition we have
+</p>
+<div class="math">\begin{align}
+M_{G(k,\theta)}(t) &amp;= \mathbb{E} \left[ e^{tx} \right]\nonumber\\
+&amp;= \int_0^\infty e^{tx} G\left(x \vert k,\theta\right) dx\nonumber\\
+&amp;= \frac{1}{\Gamma(k)\, \theta^k} \int_0^\infty x^{k-1} e^{-x\left(1/\theta - t\right)} dx, \, t \theta &lt; 1\nonumber\\
+&amp;= \frac{1}{\Gamma(k)\, \theta^k\, (1/\theta - t)^k} \int_0^\infty x^{k-1} e^{-x} dx\nonumber\\
+&amp;= \frac{1}{\Gamma(k)\, \theta^k\, (1/\theta - t)^k} \Gamma(k)\nonumber\\
+&amp;= (1 - \theta t)^{-k}\nonumber\\
+\end{align}</div>
+<p>With that we are ready for the first result.</p>
+<h4>Lemma 1</h4>
+<p>If <span class="math">\(X_i \sim G(a_i, \theta)\)</span>, then
+</p>
+<div class="math">$$ S_n = \sum_n X_i \sim G\left(\sum_{i=1}^n a_i, \theta\right)\nonumber\\ $$</div>
+<h5>Proof</h5>
+<p>By the independence of the <span class="math">\(X_i\)</span>,
+</p>
+<div class="math">\begin{align}
+M_{S_n}(t) &amp;= \mathbb{E}\left[ e^{t S_n} \right]\nonumber\\
+&amp;= \mathbb{E}\left[ \prod_{i=1}^n e^{t x_i} \right]\nonumber\\
+&amp;= \prod_{i=1}^n \mathbb{E}\left[e^{t x_i} \right]\nonumber\\
+&amp;= \prod_{i=1}^n (1- \theta t)^{-a_i} \nonumber\\
+&amp;= (1- \theta t)^{-\sum a_i} \nonumber\\
+&amp;= M_{G(\sum a_i, \theta)}\nonumber.\\
+\end{align}</div>
+<p>We identify the result as the MGF for <span class="math">\(G(\sum a_i, \theta)\)</span>. <span class="math">\(\blacksquare\)</span></p>
+<p>This result implies my original eureka! fact, namely that if <span class="math">\(X_i \sim Exp(\lambda = 1/\theta) =
+G(1, \theta)\)</span>, then </p>
+<div class="math">$$ S_n = \sum_n X_i \sim G\left(n, \theta\right).  $$</div>
+<p>Incidentally this also means that if <span class="math">\(X_i \sim \chi^2_{n_i} = G(n_i/2, 2)\)</span>, then the sum over those variables</p>
+<div class="math">$$ S_n = \sum_n X_i \sim G \left( 1/2 \sum n_i, 2\right) = \chi^2_{\sum n_i} $$</div>
+<p>We need one more interesting property of the Gamma distribution to get to the finish line.</p>
+<h4>Lemma 2</h4>
+<p>If <span class="math">\(X \sim G(k, \theta)\)</span>, then
+</p>
+<div class="math">$$ cX \sim G(k, c \theta). $$</div>
+<p>Using Lemma 2, we see that for <span class="math">\(X_i \sim Exp(\lambda = 1/ \theta)\)</span>,
+</p>
+<div class="math">$$
+S_n = \sum_{i=1}^{n} X_i \sim G(n, \theta) 
+$$</div>
+<p>implies that 
+</p>
+<div class="math">$$ \frac{2}{\theta} S_n \sim G(n, 2) = \chi^2_{2n}. $$</div>
+<p>When I first saw this, I thought it was just amazing.  Now let me explain why.</p>
+<h3>Making sense of program run-times</h3>
+<p>As mentioned above, one of my current projects started all of this thinking.  I have been working on
+a simple library to do performance-based regression testing, which I will talk more about that in a
+later post, but for now, I present below some of the benchmarking data that I have been working
+with. Each histogram is labeled by a number which is <span class="math">\(k = log N\)</span> of the total input size of the code
+being tested. Specifically, I am benchmarking a library that uses Intel SSE4.2 specialized
+instructions to calculate crc32c checksums.</p>
+<p><img alt="A Gamma" src="/images/hists.png"></p>
+<p>There are a ton of interesting details going on that I will discuss later, but it should be clear
+that for each <span class="math">\(k\)</span>, every time I make these measurements I will get different looking
+histograms. They could be different because something changed in the code. Or, they could be
+different just because we are dealing with random variables. All I really want to know is if
+something has changed in the code. This will allow me to fail the regression test with some
+meaningful statistical confidence. For profiling reasons, I might be interested in the parameters,
+but primarily I need to detect changes.</p>
+<p>The usual way to deal with this kind of data situation is to take large number of samples <span class="math">\(n_k\)</span>. But
+because my testing library needs to run very fast, taking a large number of sample is unacceptable
+since the total test run time is proportional to the number of samples collected.  I need to test my
+histogram sets against each other using as few total <span class="math">\(\sum_k n_k\)</span> as possible. Mainly this is
+because in my experience, the probability of a test being manually disabled is proportional to the
+time it takes to run the test. We need a system that no one every think about disabling.  Also, my
+personal development style is to run the all dependent test-suites at every compile, not just at
+every check-in. So, it needs to be fast.</p>
+<p>This is a good time to point out that by now most people looking at data like these have gone ahead
+and assumed the values are Gaussian and have computed a <span class="math">\(\mu\)</span> (and probably a <span class="math">\(\sigma\)</span>).  It is a
+terrible but fortuitous fact of life that the MLE for <span class="math">\(\lambda\)</span> for an exponential distribution is</p>
+<div class="math">$$
+\hat{\lambda} = \frac{n}{\sum_i x_i} = \frac{1}{\bar{x}}
+$$</div>
+<p>I'm declaring this terrible because it basically lets most people get away with taking averages of
+data like the above just assuming that they are quote-un-quote Gaussian. But I digress.</p>
+<p>What I need is a meaningful statistical test that can help me detect a change in the code.  Now, I'm
+not a hard-core frequentist, but I can't think of a reason not to use a hypothesis test here if I
+can get away with it. This brings me to why I got excited when I learned that</p>
+<div class="math">$$ \frac{2}{\theta} S_n \sim G(n, 2) = \chi^2_{2n}. $$</div>
+<p>I'm no expert in statistical testing, but seeing a <span class="math">\(\chi^2\)</span> gives me hope. It turns out that it
+works very well. If <span class="math">\(X_1 \sim \chi^2_{n_1}\)</span> and <span class="math">\(X_2 \sim \chi^2_{n_2}\)</span>, then</p>
+<div class="math">$$ U = \frac{X_1 / n_1}{X_2 / n_2} \sim F(2 n_1, 2 n_2) $$</div>
+<p>where <span class="math">\(F\)</span> is the <span class="math">\(F\)</span>-distribution.  In our case, </p>
+<div class="math">\begin{align}
+U &amp;= \frac{\frac{2 S_{n'}}{\theta' n'}}{\frac{2 S_n}{\theta n}}\nonumber\\
+&amp;= \frac{\theta}{\theta'} \frac{\bar{x}'}{\bar{x}}\nonumber\\
+\end{align}</div>
+<p>is distributed in <span class="math">\(F(2n',2n)\)</span>.  Thus we test <span class="math">\(H_0\)</span> vs <span class="math">\(H_1\)</span>:</p>
+<div class="math">\begin{align}
+H_0 &amp;: \theta/\theta' = 1\nonumber\\
+H_1 &amp;: \theta/\theta' \neq 1.\nonumber\\
+\end{align}</div>
+<p>Using tables or evaluation of <span class="math">\(F\)</span>, we can then derive a two sided <span class="math">\(p\)</span>-value and also confidence
+bounds. The <span class="math">\(p\)</span>-value will be found from</p>
+<div class="math">$$
+p = 2 P(F(2n',2n) &lt; U)
+$$</div>
+<p>whereas the confidence <span class="math">\(95%\)</span> interval is</p>
+<div class="math">$$
+P\left(\frac{U}{T_{0.975}} &lt; \theta/\theta' &lt; \frac{U}{T_{0.025}} \right) = 0.95
+$$</div>
+<p>where <span class="math">\(T_{0.975}\)</span> and <span class="math">\(T_{0.025}\)</span> are the <span class="math">\(m\)</span> quantiles on <span class="math">\(F(2n', 2n)\)</span>.</p>
+<p>That's it for now. I'll explain how I'm using this in another post.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "2em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container-fluid">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Soren Telfer
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+    <script src="/theme/js/bodypadding.js"></script>
+
+</body>
+</html>
