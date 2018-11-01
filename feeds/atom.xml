@@ -1,18 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="http://memoize.me/" rel="alternate"></link><link href="http://memoize.me/feeds/atom.xml" rel="self"></link><id>http://memoize.me/</id><updated>2016-12-02T00:00:00-08:00</updated><entry><title>Why you should know about the Gamma distribution</title><link href="http://memoize.me/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-12-02:/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I am not a statistician by training or by profession. I like to think I know a few useful facts
-about statistics, but the formal background is something that I tend to just backfill over time when
-the occasion arises. This can mean that sometimes I forget (see the
-&lt;a href="http://memoize.me/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), or flat-out just don't know a lot
-of relatively simple things that people with an actual education in the field see easily.  One
-example of this came up recently while working on my current engineering project (which I will write
-about in a future posts in this series …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am not a statistician by training or by profession. I like to think I know a few useful facts
-about statistics, but the formal background is something that I tend to just backfill over time when
-the occasion arises. This can mean that sometimes I forget (see the
-&lt;a href="http://memoize.me/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), or flat-out just don't know a lot
-of relatively simple things that people with an actual education in the field see easily.  One
-example of this came up recently while working on my current engineering project (which I will write
-about in a future posts in this series).&lt;/p&gt;
-&lt;p&gt;I've been staring at exponentially distributed data on a regular basis in one form or another for at
+<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="http://memoize.me/" rel="alternate"></link><link href="http://memoize.me/feeds/atom.xml" rel="self"></link><id>http://memoize.me/</id><updated>2018-11-01T00:00:00-07:00</updated><entry><title>What's coming next...</title><link href="http://memoize.me/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2018-11-01:/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
+&lt;span class="math"&gt;\(v_{0}\)&lt;/span&gt; going into the new year. A short list of what's coming:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;A while back I was messing with &lt;a href="https://en.wikipedia.org/wiki/Eight_queens_puzzle"&gt;n-queens&lt;/a&gt;, and I found myself needing to test board
+permutations against the internal symmetries of chess. That lead me back to one of my favorite
+things to think about, generating permutations. This lead me to looking at
+&lt;a href="https://en.wikipedia.org/wiki/Cayley_graph"&gt;Cayley graphs&lt;/a&gt; of &lt;span class="math"&gt;\(D_4\)&lt;/span&gt;, which lead me to &lt;a href="https://arxiv.org/abs/1203.1835"&gt;bell ringing&lt;/a&gt; from the 17th
+century . I'll explain.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Recently I found myself reading about &lt;a href="https://en.wikipedia.org/wiki/Belief_propagation"&gt;belief …&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
+&lt;span class="math"&gt;\(v_{0}\)&lt;/span&gt; going into the new year. A short list of what's coming:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;A while back I was messing with &lt;a href="https://en.wikipedia.org/wiki/Eight_queens_puzzle"&gt;n-queens&lt;/a&gt;, and I found myself needing to test board
+permutations against the internal symmetries of chess. That lead me back to one of my favorite
+things to think about, generating permutations. This lead me to looking at
+&lt;a href="https://en.wikipedia.org/wiki/Cayley_graph"&gt;Cayley graphs&lt;/a&gt; of &lt;span class="math"&gt;\(D_4\)&lt;/span&gt;, which lead me to &lt;a href="https://arxiv.org/abs/1203.1835"&gt;bell ringing&lt;/a&gt; from the 17th
+century . I'll explain.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Recently I found myself reading about &lt;a href="https://en.wikipedia.org/wiki/Belief_propagation"&gt;belief propagation&lt;/a&gt;. This lead me to a
+&lt;a href="https://arxiv.org/abs/1702.00467"&gt;2017 paper&lt;/a&gt; from &lt;a href="http://tuvalu.santafe.edu/~moore/"&gt;Chris Moore&lt;/a&gt;, talking about the hardness of certain graph
+problems in the setting of statistical physics and random graph theory. It lead me to thinking about
+why Facebook needs trolls. I'm sure this is well trodden ground, but I'll explain my thoughts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I want to write up how I've learned to think about weather, particularly how I think about the
+expected utility of purchasing a ski pass for Tahoe.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I recently read on HackerNews the assertion that "Nakamoto Consensus" was a "CS breakthrough" in
+the &lt;a href="https://en.wikipedia.org/wiki/Byzantine_fault_tolerance#Byzantine_Generals'_Problem"&gt;Byzantine Generals Problem&lt;/a&gt;. That seems to me a bit strong, but I want to
+explore in 2018 how much of that statement is true. I'm also interested how many young engineers out
+there share this view.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;One of the things we think about (and obliquely work on), is the role of Machine Learning in
+entertainment and content creation. There's a narrative out there that Netflix told the creators of
+House of Cards to make a show with Kevin Spacey in it because they knew it would be a hit.  That's
+not &lt;a href="https://www.wired.com/2012/11/netflix-data-gamble/"&gt;actually what happend&lt;/a&gt;.  I'm interested in the history of this myth, vis-a-vis
+the rise of Big Data, and the AI, as SV hype tribes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ultimately, I need to write about innovation. I've been running an innovation center for a $150B+
+company for going on six years now. I have a lot of thoughts to share about innovation programs,
+innovation in general, and the future of R&amp;amp;D.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "left",
+        indent = "2em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Planning"></category><category term="Motivation"></category></entry><entry><title>Why you should know about the Gamma distribution</title><link href="http://memoize.me/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-12-02:/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I've been staring at exponentially distributed data on a regular basis in one form or another for at
+least the last ten years.  In my previous job, I spent a lot of time with the statistics of VoIP
+phone calls, trying to understand what's "normal", and what are symptoms of system pathologies, or
+even the actions of fraudsters in the telephony networks.  In approaching this subject, I had never
+yet studied queuing theory, but I had a lot of experience with Poisson processes in experimental
+high energy physics. This meant that as I learned I had many wonderful eureka! moments …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been staring at exponentially distributed data on a regular basis in one form or another for at
 least the last ten years.  In my previous job, I spent a lot of time with the statistics of VoIP
 phone calls, trying to understand what's "normal", and what are symptoms of system pathologies, or
 even the actions of fraudsters in the telephony networks.  In approaching this subject, I had never
@@ -111,7 +207,7 @@ M_{G(k,\theta)}(t) &amp;amp;= \mathbb{E} \left[ e^{tx} \right]\nonumber\\
 &amp;amp;= (1 - \theta t)^{-k}\nonumber\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;With that we are ready for the first result.&lt;/p&gt;
-&lt;h4&gt;Lemma 1&lt;/h4&gt;
+&lt;h4&gt;Remark 1&lt;/h4&gt;
 &lt;p&gt;If &lt;span class="math"&gt;\(X_i \sim G(a_i, \theta)\)&lt;/span&gt;, then
 &lt;/p&gt;
 &lt;div class="math"&gt;$$ S_n = \sum_n X_i \sim G\left(\sum_{i=1}^n a_i, \theta\right)\nonumber\\ $$&lt;/div&gt;
@@ -133,11 +229,11 @@ G(1, \theta)\)&lt;/span&gt;, then &lt;/p&gt;
 &lt;p&gt;Incidentally this also means that if &lt;span class="math"&gt;\(X_i \sim \chi^2_{n_i} = G(n_i/2, 2)\)&lt;/span&gt;, then the sum over those variables&lt;/p&gt;
 &lt;div class="math"&gt;$$ S_n = \sum_n X_i \sim G \left( 1/2 \sum n_i, 2\right) = \chi^2_{\sum n_i} $$&lt;/div&gt;
 &lt;p&gt;We need one more interesting property of the Gamma distribution to get to the finish line.&lt;/p&gt;
-&lt;h4&gt;Lemma 2&lt;/h4&gt;
+&lt;h4&gt;Remark 2&lt;/h4&gt;
 &lt;p&gt;If &lt;span class="math"&gt;\(X \sim G(k, \theta)\)&lt;/span&gt;, then
 &lt;/p&gt;
 &lt;div class="math"&gt;$$ cX \sim G(k, c \theta). $$&lt;/div&gt;
-&lt;p&gt;Using Lemma 2, we see that for &lt;span class="math"&gt;\(X_i \sim Exp(\lambda = 1/ \theta)\)&lt;/span&gt;,
+&lt;p&gt;Using Remark 2, we see that for &lt;span class="math"&gt;\(X_i \sim Exp(\lambda = 1/ \theta)\)&lt;/span&gt;,
 &lt;/p&gt;
 &lt;div class="math"&gt;$$
 S_n = \sum_{i=1}^{n} X_i \sim G(n, \theta) 
@@ -177,12 +273,11 @@ terrible but fortuitous fact of life that the MLE for &lt;span class="math"&gt;\
 $$&lt;/div&gt;
 &lt;p&gt;I'm declaring this terrible because it basically lets most people get away with taking averages of
 data like the above just assuming that they are quote-un-quote Gaussian. But I digress.&lt;/p&gt;
-&lt;p&gt;What I need is a meaningful statistical test that can help me detect a change in the code.  Now, I'm
-not a hard-core frequentist, but I can't think of a reason not to use a hypothesis test here if I
-can get away with it. This brings me to why I got excited when I learned that&lt;/p&gt;
+&lt;p&gt;What I need is a meaningful statistical test that can help me detect a change in the code.  This
+brings me to why I got excited when I learned that&lt;/p&gt;
 &lt;div class="math"&gt;$$ \frac{2}{\theta} S_n \sim G(n, 2) = \chi^2_{2n}. $$&lt;/div&gt;
-&lt;p&gt;I'm no expert in statistical testing, but seeing a &lt;span class="math"&gt;\(\chi^2\)&lt;/span&gt; gives me hope. It turns out that it
-works very well. If &lt;span class="math"&gt;\(X_1 \sim \chi^2_{n_1}\)&lt;/span&gt; and &lt;span class="math"&gt;\(X_2 \sim \chi^2_{n_2}\)&lt;/span&gt;, then&lt;/p&gt;
+&lt;p&gt;Seeing a &lt;span class="math"&gt;\(\chi^2\)&lt;/span&gt; gives me hope. It turns out that it works very well. If &lt;span class="math"&gt;\(X_1 \sim \chi^2_{n_1}\)&lt;/span&gt;
+and &lt;span class="math"&gt;\(X_2 \sim \chi^2_{n_2}\)&lt;/span&gt;, then&lt;/p&gt;
 &lt;div class="math"&gt;$$ U = \frac{X_1 / n_1}{X_2 / n_2} \sim F(2 n_1, 2 n_2) $$&lt;/div&gt;
 &lt;p&gt;where &lt;span class="math"&gt;\(F\)&lt;/span&gt; is the &lt;span class="math"&gt;\(F\)&lt;/span&gt;-distribution.  In our case, &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
