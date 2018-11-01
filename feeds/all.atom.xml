@@ -50,7 +50,7 @@ innovation in general, and the future of R&amp;amp;D.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "left",
+    var align = "center",
         indent = "2em",
         linebreak = "false";
 
@@ -301,7 +301,7 @@ $$&lt;/div&gt;
 &lt;p&gt;where &lt;span class="math"&gt;\(T_{0.975}\)&lt;/span&gt; and &lt;span class="math"&gt;\(T_{0.025}\)&lt;/span&gt; are the &lt;span class="math"&gt;\(m\)&lt;/span&gt; quantiles on &lt;span class="math"&gt;\(F(2n', 2n)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;That's it for now. I'll explain how I'm using this in another post.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "left",
+    var align = "center",
         indent = "2em",
         linebreak = "false";
 
@@ -634,7 +634,7 @@ E[n] &amp;amp;= \sum_{i=1}^m E[n_i] = \sum_{i=1}^m \frac{1}{p_i}\nonumber\\
 &lt;p&gt;I still don't like thinking about this as a sum of geometric processes.  It also doesn't help us
 when the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; don't have this specific relationship.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "left",
+    var align = "center",
         indent = "2em",
         linebreak = "false";
 
