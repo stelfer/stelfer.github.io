@@ -178,7 +178,7 @@ S_{\infty} &amp;amp;= T\left(H + H^2 + H^3 + \ldots\right) + H\left(T + T^2 + T^
 &amp;amp;= HT\left(\frac{1}{1-H} + \frac{1}{1-T}\right)\label{S}\\
 &amp;amp;= pq \left(\frac{p+q}{pq}\right) = 1.
 \end{align}&lt;/div&gt;
-&lt;p&gt;Whew!  Now to calculate &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt; we promote &lt;span class="math"&gt;\(S_k\)&lt;/span&gt; to a PDF, and evaluate the sum:
+&lt;p&gt;Now to calculate &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt; we interpret &lt;span class="math"&gt;\(S_k\)&lt;/span&gt; as a probability density, and evaluate the sum:
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 E[n] &amp;amp;= \sum_{n} n S_n\\
@@ -195,7 +195,13 @@ E[n] &amp;amp;= q\left(2p + 3p^2 + \ldots mp^{m-1} + \ldots\right) + p\left(2q +
 &amp;amp;= 2 + \frac{p^3 + q^3}{pq}\\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;This was new to me. For &lt;span class="math"&gt;\(p = q\)&lt;/span&gt; we have that &lt;span class="math"&gt;\(E[n] = 3\)&lt;/span&gt;. The average number of times you need to
-flip a coin to see both sides is 3.&lt;/p&gt;
+flip a fair coin to see both sides is 3. If &lt;span class="math"&gt;\(p = 0.25\)&lt;/span&gt;, then &lt;span class="math"&gt;\(E[n] = 4.\bar{33}\)&lt;/span&gt;. If the coin is only
+10% fair, then &lt;span class="math"&gt;\(E[n] \approx 10\)&lt;/span&gt;. If you're interested in how it varies with &lt;span class="math"&gt;\(p\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;
+&lt;img src="images/fair-coin-expectation.png"/&gt;
+&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;This is maybe yet a way of estimating if a coin is &lt;em&gt;extremely&lt;/em&gt; unfair: count the number flips it
+takes to see both sides.&lt;/p&gt;
 &lt;h3&gt;Fine for coins, what about the trinkets?&lt;/h3&gt;
 &lt;p&gt;Having solved the problem for &lt;span class="math"&gt;\(m = 2\)&lt;/span&gt;, the next thing to do was to try for higher &lt;span class="math"&gt;\(m\)&lt;/span&gt;'s.  If I were running a Happy Meal campaign, I might think about how to manipulate the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; in order to maximize &lt;span class="math"&gt;\(E[T]\)&lt;/span&gt;.  Some options here:&lt;/p&gt;
 &lt;ul&gt;
@@ -299,7 +305,7 @@ S &amp;amp;= S_2 + S_4.\\
 &lt;div class="math"&gt;\begin{align}
 S_2 &amp;amp;= \frac{TH}{1-T}\\\
 S_4 &amp;amp;= \frac{TH}{1-H}\\\
-S &amp;amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\.\\
+S &amp;amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;This form should be familiar enough now that I don't have to convince you that this approach worked.&lt;/p&gt;
 &lt;h3&gt;Happy Meals with Equal Probabilities&lt;/h3&gt;

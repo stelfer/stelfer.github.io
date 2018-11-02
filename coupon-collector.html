@@ -178,7 +178,7 @@ S_{\infty} &amp;= T\left(H + H^2 + H^3 + \ldots\right) + H\left(T + T^2 + T^3 + 
 &amp;= HT\left(\frac{1}{1-H} + \frac{1}{1-T}\right)\label{S}\\
 &amp;= pq \left(\frac{p+q}{pq}\right) = 1.
 \end{align}</div>
-<p>Whew!  Now to calculate <span class="math">\(E[n]\)</span> we promote <span class="math">\(S_k\)</span> to a PDF, and evaluate the sum:
+<p>Now to calculate <span class="math">\(E[n]\)</span> we interpret <span class="math">\(S_k\)</span> as a probability density, and evaluate the sum:
 </p>
 <div class="math">\begin{align}
 E[n] &amp;= \sum_{n} n S_n\\
@@ -195,7 +195,13 @@ E[n] &amp;= q\left(2p + 3p^2 + \ldots mp^{m-1} + \ldots\right) + p\left(2q + 3p^
 &amp;= 2 + \frac{p^3 + q^3}{pq}\\\
 \end{align}</div>
 <p>This was new to me. For <span class="math">\(p = q\)</span> we have that <span class="math">\(E[n] = 3\)</span>. The average number of times you need to
-flip a coin to see both sides is 3.</p>
+flip a fair coin to see both sides is 3. If <span class="math">\(p = 0.25\)</span>, then <span class="math">\(E[n] = 4.\bar{33}\)</span>. If the coin is only
+10% fair, then <span class="math">\(E[n] \approx 10\)</span>. If you're interested in how it varies with <span class="math">\(p\)</span>:</p>
+<p><center>
+<img src="images/fair-coin-expectation.png"/>
+</center></p>
+<p>This is maybe yet a way of estimating if a coin is <em>extremely</em> unfair: count the number flips it
+takes to see both sides.</p>
 <h3>Fine for coins, what about the trinkets?</h3>
 <p>Having solved the problem for <span class="math">\(m = 2\)</span>, the next thing to do was to try for higher <span class="math">\(m\)</span>'s.  If I were running a Happy Meal campaign, I might think about how to manipulate the <span class="math">\(p_i\)</span> in order to maximize <span class="math">\(E[T]\)</span>.  Some options here:</p>
 <ul>
@@ -299,7 +305,7 @@ S &amp;= S_2 + S_4.\\
 <div class="math">\begin{align}
 S_2 &amp;= \frac{TH}{1-T}\\\
 S_4 &amp;= \frac{TH}{1-H}\\\
-S &amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\.\\
+S &amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
 \end{align}</div>
 <p>This form should be familiar enough now that I don't have to convince you that this approach worked.</p>
 <h3>Happy Meals with Equal Probabilities</h3>
