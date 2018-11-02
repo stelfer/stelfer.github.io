@@ -200,8 +200,8 @@ flip a fair coin to see both sides is 3. If <span class="math">\(p = 0.25\)</spa
 <p><center>
 <img src="images/fair-coin-expectation.png"/>
 </center></p>
-<p>This is maybe yet a way of estimating if a coin is <em>extremely</em> unfair: count the number flips it
-takes to see both sides.</p>
+<p>This is maybe a way of estimating if a coin is <em>extremely</em> unfair: count the number flips it takes
+to see both sides.</p>
 <h3>Fine for coins, what about the trinkets?</h3>
 <p>Having solved the problem for <span class="math">\(m = 2\)</span>, the next thing to do was to try for higher <span class="math">\(m\)</span>'s.  If I were running a Happy Meal campaign, I might think about how to manipulate the <span class="math">\(p_i\)</span> in order to maximize <span class="math">\(E[T]\)</span>.  Some options here:</p>
 <ul>
@@ -228,7 +228,7 @@ that converges in a sense that it is simply not silly to act like it does:</p>
 <div class="math">\begin{align}
 G(z) &amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\label{gf_def}\\ 
 \end{align}</div>
-<p>Suppose you have a recurrence relation for <span class="math">\(c_j = f(\left\{c_i : i &lt; j\right\})\)</span>.  There is an
+<p>Suppose you also happen to have a recurrence relation for <span class="math">\(c_j = f(\left\{c_i : i &lt; j\right\})\)</span>.  There is an
 arsenal not unlike that available for Fourier or Laplace transforms that allow you to derive from
 that recurrence an analytic function <span class="math">\(G(z)\)</span>, which can be expanded into the form above.  Then, a
 <em>closed-form</em> version of <span class="math">\(c_j\)</span> can read off from the <span class="math">\(c_k\)</span>'s in the series expansion of <span class="math">\(G(z)\)</span>. </p>
@@ -309,7 +309,7 @@ S &amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
 \end{align}</div>
 <p>This form should be familiar enough now that I don't have to convince you that this approach worked.</p>
 <h3>Happy Meals with Equal Probabilities</h3>
-<p>We are now prepared to take on the type problem for arbitrary <span class="math">\(m\)</span> with all <span class="math">\(p_i = 1/m\)</span>.  As before,
+<p>We are now prepared to take on the CC problem for arbitrary <span class="math">\(m\)</span> with all <span class="math">\(p_i = 1/m\)</span>.  As before,
 define a finite automata to describe the process.</p>
 <p><center><img src="/images/m-automata.svg"></center></p>
 <p>Here the states are labeled by the number of distinct trinkets we've seen. The symbol <span class="math">\(X\)</span> takes
@@ -403,7 +403,7 @@ P(n &gt; \epsilon) &amp;\leq 0.05\\\
 H_m &amp;\approx \ln{m} + \gamma\\\
 E[n] &amp;\approx m\left( \ln{m} + \gamma \right)\\\
 \end{align}</div>
-<p>In my weird and twisted way, this is a much more satisfying way to look at the Coupon
+<p>In my weird and twisted way, this is a much more satisfying approach to look at the Coupon
 Collector. Along the way, we practiced a technique that seems to be very powerful. For instance, I'm
 interested to try my hand at using this technique on the <a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">KMP Algorithm</a>. I'm a fan of
 <a href="https://www.ics.uci.edu/~eppstein/">David Eppstein's Notes</a> on algorithms from <a href="https://www.ics.uci.edu/~eppstein/161/syl.html">long ago in internet time</a>,

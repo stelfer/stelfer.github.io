@@ -200,8 +200,8 @@ flip a fair coin to see both sides is 3. If &lt;span class="math"&gt;\(p = 0.25\
 &lt;p&gt;&lt;center&gt;
 &lt;img src="images/fair-coin-expectation.png"/&gt;
 &lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;This is maybe yet a way of estimating if a coin is &lt;em&gt;extremely&lt;/em&gt; unfair: count the number flips it
-takes to see both sides.&lt;/p&gt;
+&lt;p&gt;This is maybe a way of estimating if a coin is &lt;em&gt;extremely&lt;/em&gt; unfair: count the number flips it takes
+to see both sides.&lt;/p&gt;
 &lt;h3&gt;Fine for coins, what about the trinkets?&lt;/h3&gt;
 &lt;p&gt;Having solved the problem for &lt;span class="math"&gt;\(m = 2\)&lt;/span&gt;, the next thing to do was to try for higher &lt;span class="math"&gt;\(m\)&lt;/span&gt;'s.  If I were running a Happy Meal campaign, I might think about how to manipulate the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; in order to maximize &lt;span class="math"&gt;\(E[T]\)&lt;/span&gt;.  Some options here:&lt;/p&gt;
 &lt;ul&gt;
@@ -228,7 +228,7 @@ that converges in a sense that it is simply not silly to act like it does:&lt;/p
 &lt;div class="math"&gt;\begin{align}
 G(z) &amp;amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\label{gf_def}\\ 
 \end{align}&lt;/div&gt;
-&lt;p&gt;Suppose you have a recurrence relation for &lt;span class="math"&gt;\(c_j = f(\left\{c_i : i &amp;lt; j\right\})\)&lt;/span&gt;.  There is an
+&lt;p&gt;Suppose you also happen to have a recurrence relation for &lt;span class="math"&gt;\(c_j = f(\left\{c_i : i &amp;lt; j\right\})\)&lt;/span&gt;.  There is an
 arsenal not unlike that available for Fourier or Laplace transforms that allow you to derive from
 that recurrence an analytic function &lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;, which can be expanded into the form above.  Then, a
 &lt;em&gt;closed-form&lt;/em&gt; version of &lt;span class="math"&gt;\(c_j\)&lt;/span&gt; can read off from the &lt;span class="math"&gt;\(c_k\)&lt;/span&gt;'s in the series expansion of &lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;. &lt;/p&gt;
@@ -309,7 +309,7 @@ S &amp;amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;This form should be familiar enough now that I don't have to convince you that this approach worked.&lt;/p&gt;
 &lt;h3&gt;Happy Meals with Equal Probabilities&lt;/h3&gt;
-&lt;p&gt;We are now prepared to take on the type problem for arbitrary &lt;span class="math"&gt;\(m\)&lt;/span&gt; with all &lt;span class="math"&gt;\(p_i = 1/m\)&lt;/span&gt;.  As before,
+&lt;p&gt;We are now prepared to take on the CC problem for arbitrary &lt;span class="math"&gt;\(m\)&lt;/span&gt; with all &lt;span class="math"&gt;\(p_i = 1/m\)&lt;/span&gt;.  As before,
 define a finite automata to describe the process.&lt;/p&gt;
 &lt;p&gt;&lt;center&gt;&lt;img src="/images/m-automata.svg"&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;Here the states are labeled by the number of distinct trinkets we've seen. The symbol &lt;span class="math"&gt;\(X\)&lt;/span&gt; takes
@@ -403,7 +403,7 @@ P(n &amp;gt; \epsilon) &amp;amp;\leq 0.05\\\
 H_m &amp;amp;\approx \ln{m} + \gamma\\\
 E[n] &amp;amp;\approx m\left( \ln{m} + \gamma \right)\\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;In my weird and twisted way, this is a much more satisfying way to look at the Coupon
+&lt;p&gt;In my weird and twisted way, this is a much more satisfying approach to look at the Coupon
 Collector. Along the way, we practiced a technique that seems to be very powerful. For instance, I'm
 interested to try my hand at using this technique on the &lt;a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm"&gt;KMP Algorithm&lt;/a&gt;. I'm a fan of
 &lt;a href="https://www.ics.uci.edu/~eppstein/"&gt;David Eppstein's Notes&lt;/a&gt; on algorithms from &lt;a href="https://www.ics.uci.edu/~eppstein/161/syl.html"&gt;long ago in internet time&lt;/a&gt;,
