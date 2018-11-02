@@ -417,7 +417,7 @@ particularly where he shows a fsm for KMP:&lt;/p&gt;
 &lt;h3&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;Even though I don't like the canonical explanation, the Wikipedia page on CCP has many wonderful
 links. In particular is one of my favorites by &lt;a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.217.5965&amp;amp;rep=rep1&amp;amp;type=pdf"&gt;&lt;em&gt;Flajolet et. al.&lt;/em&gt;&lt;/a&gt;. That's a truly
-systematic approach to the problem, and shows interesting connects to other allocation problems.&lt;/p&gt;
+systematic approach to the problem, and shows interesting connections to other allocation problems.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "2em",
