@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="http://memoize.me/" rel="alternate"></link><link href="http://memoize.me/feeds/all.atom.xml" rel="self"></link><id>http://memoize.me/</id><updated>2018-11-01T00:00:00-07:00</updated><entry><title>What's coming next...</title><link href="http://memoize.me/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2018-11-01:/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-11-01T00:00:00-07:00</updated><entry><title>What's coming next...</title><link href="/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-11-01:/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
 &lt;span class="math"&gt;\(v_{0}\)&lt;/span&gt; going into the new year. A short list of what's coming:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -103,7 +103,363 @@ innovation in general, and the future of R&amp;amp;D.&lt;/p&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Planning"></category><category term="Motivation"></category></entry><entry><title>Why you should know about the Gamma distribution</title><link href="http://memoize.me/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-12-02:/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I've been staring at exponentially distributed data on a regular basis in one form or another for at
+&lt;/script&gt;</content><category term="Planning"></category><category term="Motivation"></category></entry><entry><title>A Different View on the Coupon Collector Problem</title><link href="/coupon-collector.html" rel="alternate"></link><published>2018-10-27T00:00:00-07:00</published><updated>2018-10-27T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-10-27:/coupon-collector.html</id><summary type="html">&lt;p&gt;Once during a meeting in which we were discussing the &lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt; someone
+asked:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;How many times do we need to run the algorithm to see every permutation?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is a really great question and it caught me off guard. The reason was that since Fischer-Yates
+is a random algorithm, the answer really involves thinking about random processes. So, like, I can't
+really answer that question as it is posed.  While thinking aloud as I struggled to answer, I
+reduced the problem to&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What's the average number of times I need to flip a coin in order to see both …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;Once during a meeting in which we were discussing the &lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt; someone
+asked:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;How many times do we need to run the algorithm to see every permutation?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is a really great question and it caught me off guard. The reason was that since Fischer-Yates
+is a random algorithm, the answer really involves thinking about random processes. So, like, I can't
+really answer that question as it is posed.  While thinking aloud as I struggled to answer, I
+reduced the problem to&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What's the average number of times I need to flip a coin in order to see both sides?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Enter The Coupon Collector&lt;/h3&gt;
+&lt;p&gt;I know it says coupons, and I was just mentioning a coin, but let's talk about
+&lt;a href="https://en.wikipedia.org/wiki/Happy_Meal"&gt;Happy Meals&lt;/a&gt;.  Say you were a child in the 80's and McDonalds started running one of
+their happy meal promotions. They create a number (usually &lt;span class="math"&gt;\(\approx 10\)&lt;/span&gt;) of plastic trinkets that
+you get one of every time you buy a happy meal. You, as the child, love them. Your parents, as the
+ones who have to drive you to McDonalds, are wondering how many more times they need to drive you to
+McDonalds.  It turns out than when you purchase a Happy Meal, instead of letting you pick which
+trinket your child wants, they just randomly give you whichever one comes out of the bin of trinkets
+they have under the counter.  In an earlier, more idyllic America, people apparently had to do this
+with coupons in the newspaper.&lt;/p&gt;
+&lt;p&gt;Regardless of how you want to think about it, let's say that there are &lt;span class="math"&gt;\(m\)&lt;/span&gt; trinkets, to which you
+assign an arbitrary order and index &lt;span class="math"&gt;\(1 \leq i \leq m\)&lt;/span&gt;. The classic way of getting the result is
+provided by &lt;a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem"&gt;Wikipedia&lt;/a&gt;, which asks you to think about &lt;span class="math"&gt;\(t_i\)&lt;/span&gt;, the number of trials to get
+the &lt;span class="math"&gt;\(i\)&lt;/span&gt;-th trinket after having completed the labor of obtaining the previous &lt;span class="math"&gt;\(i - 1\)&lt;/span&gt; trinkets.
+What's the probability of getting the &lt;span class="math"&gt;\(i\)&lt;/span&gt;-th trinket? Well it's &lt;span class="math"&gt;\(p_i = (m - (i-1))/m\)&lt;/span&gt;. Then the
+expected number of trials to get the &lt;span class="math"&gt;\(i\)&lt;/span&gt;-th is &lt;span class="math"&gt;\(1/p_i\)&lt;/span&gt;, just like the expected number of times to
+roll a 1 on a six-sided die is 6. The total number of trials, then, is calculated by adding up all
+of these individual exercises in obtaining trinkets. Let's call this total &lt;span class="math"&gt;\(T\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+E[T] &amp;amp;= \sum_{i=1}^m E[t_i] = \sum_{i=1}^m \frac{1}{p_i}\\\
+ &amp;amp;= \frac{m}{m} + \frac{m}{m-1} + ... + \frac{m}{1}\\\
+ &amp;amp;= m\left(1 + \frac{1}{2} + ... + \frac{1}{m}\right) = m H_m\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;I'll be honest and say that I &lt;em&gt;really&lt;/em&gt; don't like this derivation. It seems like a trick. This
+certainly isn't the way I think about sums of random variables. But this is way most people are
+taught to solve this problem. In any event, I didn't answer the original question about
+Fischer-Yates like this.  The rest of this post will take you on a seemingly circuitous path towards
+something that is in the end very simple, and very beautiful.  I think it also proves that when all
+else fails, brute force counting can take you a long way, provided you have the machinery to get you
+there.&lt;/p&gt;
+&lt;h3&gt;Flipping a coin to see both sides&lt;/h3&gt;
+&lt;p&gt;So, let's get back to the coin. We can model the situation as a sequence of experiments in flipping
+them.  These experiments generate sequences in which the &lt;span class="math"&gt;\(n\)&lt;/span&gt;-th event is &lt;span class="math"&gt;\(H\)&lt;/span&gt; or &lt;span class="math"&gt;\(T\)&lt;/span&gt; and the &lt;span class="math"&gt;\(n-1\)&lt;/span&gt;
+other events are all either &lt;span class="math"&gt;\(T\)&lt;/span&gt; or &lt;span class="math"&gt;\(H\)&lt;/span&gt; respectively. What would these sequences look like?  If we
+start enumerating the possibilities, we can see patterns appear, depending on how long we run the
+experiments.  For the sequences of length at most &lt;span class="math"&gt;\(n\)&lt;/span&gt;,&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+S_n = &amp;amp;HT + TH + \\
+    &amp;amp;HHT + TTH + \ldots \\
+    &amp;amp;H^{n-1}T + T^{n-1}H.\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;It's interesting that the generation of length &lt;span class="math"&gt;\(k\)&lt;/span&gt; is easy to &lt;em&gt;generate&lt;/em&gt; from the &lt;span class="math"&gt;\((k-1)\)&lt;/span&gt;-th by
+simply prepending the opposite of the terminal token, which doesn't change.  The production rule
+here is quite simple.  Anyway, what do we do with this sum? Well, if we think about &lt;span class="math"&gt;\(H\)&lt;/span&gt; and &lt;span class="math"&gt;\(T\)&lt;/span&gt; as
+probabilities &lt;span class="math"&gt;\(P(H) = p\)&lt;/span&gt; and &lt;span class="math"&gt;\(P(T) = q = 1 - p\)&lt;/span&gt;, 
+&lt;span class="math"&gt;\(S_\infty\)&lt;/span&gt; better sum to &lt;span class="math"&gt;\(1\)&lt;/span&gt;, so we can evaluate by
+collecting terms:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+S_{\infty} &amp;amp;= T\left(H + H^2 + H^3 + \ldots\right) + H\left(T + T^2 + T^3 + \ldots\right)\\\
+&amp;amp;= T\left(\frac{1}{1-H} - 1\right) + H\left(\frac{1}{1-T} - 1\right)\\\
+&amp;amp;= HT\left(\frac{1}{1-H} + \frac{1}{1-T}\right)\label{S}\\
+&amp;amp;= pq \left(\frac{p+q}{pq}\right) = 1.
+\end{align}&lt;/div&gt;
+&lt;p&gt;Whew!  Now to calculate &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt; we promote &lt;span class="math"&gt;\(S_k\)&lt;/span&gt; to a PDF, and evaluate the sum:
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+E[n] &amp;amp;= \sum_{n} n S_n\\
+&amp;amp;=\,2(pq + qp)\, + 3(ppq + qqp) + \ldots m(p^{m-1}q + q^{m-1}p) \ldots...
+\end{align}&lt;/div&gt;
+&lt;p&gt;Regrouping a bit, we see that&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+E[n] &amp;amp;= q\left(2p + 3p^2 + \ldots mp^{m-1} + \ldots\right) + p\left(2q + 3p^2 + \ldots mq^{m-1} + \ldots \right) \\\
+    &amp;amp;= \frac{q}{p} \left(\sum_{i=1}^\infty ip^i - p\right) + \frac{p}{q} \left(\sum_{i=1}^\infty iq^i - q\right)\\\
+&amp;amp;= \frac{q}{p}\left(\frac{p}{q^2} - p\right) + \frac{p}{q}\left(\frac{q}{p^2} - q\right)\\\
+&amp;amp;= \frac{p}{q}\left(\frac{1}{1-q} - q\right) + \frac{q}{p}\left(\frac{1}{1-p} - p\right)\\\
+&amp;amp;= \frac{1 - pq}{p(1-p)}\\\
+&amp;amp;= \frac{p^2 - p + 1}{p(1-p)}\label{old_way}\\
+&amp;amp;= 2 + \frac{p^3 + q^3}{pq}\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;This was new to me. For &lt;span class="math"&gt;\(p = q\)&lt;/span&gt; we have that &lt;span class="math"&gt;\(E[n] = 3\)&lt;/span&gt;. The average number of times you need to
+flip a coin to see both sides is 3.&lt;/p&gt;
+&lt;h3&gt;Fine for coins, what about the trinkets?&lt;/h3&gt;
+&lt;p&gt;Having solved the problem for &lt;span class="math"&gt;\(m = 2\)&lt;/span&gt;, the next thing to do was to try for higher &lt;span class="math"&gt;\(m\)&lt;/span&gt;'s.  If I were running a Happy Meal campaign, I might think about how to manipulate the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; in order to maximize &lt;span class="math"&gt;\(E[T]\)&lt;/span&gt;.  Some options here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Naive approach: all equal probabilities, i.e. &lt;span class="math"&gt;\( p_k = 1/m\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Singularly hard to get: One distinctive &lt;span class="math"&gt;\(p_j\)&lt;/span&gt;, but all other &lt;span class="math"&gt;\(p\)&lt;/span&gt;'s equal&lt;/li&gt;
+&lt;li&gt;Anything goes: arbitrary &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; subject to &lt;span class="math"&gt;\(\sum p_i = 1\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I think if you grew up in the 80's you might have felt like McDonalds used the second approach.  But
+it turns out that the first is a lot easier to analyze, and will carry us through to the thing I
+want to show in this post.&lt;/p&gt;
+&lt;p&gt;The first thing that happened when we tried to do brute-force counting for &lt;span class="math"&gt;\(m \gt 2\)&lt;/span&gt;, was that the
+sequences quickly got out of hand. We needed a better approach. You may have noticed that I used the
+word &lt;em&gt;generate&lt;/em&gt; above. That was a hint. &lt;a href="https://en.wikipedia.org/wiki/Generating_function"&gt;Generating Functions&lt;/a&gt; are an incredibly useful
+tool in the toolbox of the brute-forcing amateur combinatorialist community. They're also pretty
+fear-inspiring to a lot of people. For whatever reason, when I got tired of brute force counting the
+sequences for &lt;span class="math"&gt;\(m = 3\)&lt;/span&gt;, I remembered some advice from &lt;a href="http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025"&gt;&lt;em&gt;Knuth et. al.&lt;/em&gt;&lt;/a&gt; to use finite
+automata to keep mayhem from breaking out in the production rules.  But before we get to that, it's
+first useful to introduce the machinery that we will use when we get there.&lt;/p&gt;
+&lt;h3&gt;The coin redux, this time as a PGF&lt;/h3&gt;
+&lt;p&gt;I'm not going to do justice to generating functions in this space. I reccomend &lt;em&gt;Knuth et. al.&lt;/em&gt; as a
+gentle introduction and &lt;a href="https://www.amazon.com/generatingfunctionology-Third-Herbert-S-Wilf/dp/1568812795/"&gt;&lt;em&gt;Wilf&lt;/em&gt;&lt;/a&gt; if you're into that kind of thing.  But I will give the basic
+ideas.  Imagine that you have a function &lt;span class="math"&gt;\(G\)&lt;/span&gt; that you are able to expand in a (complex) power series
+that converges in a sense that it is simply not silly to act like it does:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+G(z) &amp;amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\label{gf_def}\\ 
+\end{align}&lt;/div&gt;
+&lt;p&gt;Suppose you have a recurrence relation for &lt;span class="math"&gt;\(c_j = f(\left\{c_i : i &amp;lt; j\right\})\)&lt;/span&gt;.  There is an
+arsenal not unlike that available for Fourier or Laplace transforms that allow you to derive from
+that recurrence an analytic function &lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;, which can be expanded into the form above.  Then, a
+&lt;em&gt;closed-form&lt;/em&gt; version of &lt;span class="math"&gt;\(c_j\)&lt;/span&gt; can read off from the &lt;span class="math"&gt;\(c_k\)&lt;/span&gt;'s in the series expansion of &lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;. &lt;/p&gt;
+&lt;p&gt;If this is new to you, I'll say that it really helps to see it in action. But, we're not going to do
+any of that here.  Instead, we are going to take some liberties and just use the machinery.  To
+whit, the first thing we are going to do is realize that any series sum that involves powers of
+things can be "converted" to a GF by taking some liberties and making some suitable replacements.&lt;/p&gt;
+&lt;p&gt;Why would we want to do this?  Well, it all depends on how you choose to interpret the coefficients.
+In particular, if you interpret the &lt;span class="math"&gt;\(c_k\)&lt;/span&gt; as &lt;em&gt;probabilities&lt;/em&gt;, then you actually get something that
+is formally known as a probability generating function (PGF).&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+G(z) &amp;amp;= \sum_{k=0}^{\infty} p_k z^k\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Notice a couple of things here: First, that &lt;span class="math"&gt;\(G(1) = 1\)&lt;/span&gt;.  Why? well 
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+G(1) &amp;amp;= \sum_{k=0}^{\infty} p_k 1^k\\\
+    &amp;amp;= \sum_{k=1}^{\infty} p_k = 1\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;for everything that we consider to be a probability.  Also, notice that
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+G'(z) &amp;amp;= \sum_{k=1}^{\infty} k p_k z^{k-1}\\\
+&amp;amp;\implies G'(1) = \sum_{k=1}^{\infty} k p_k = E[n].\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Now this is useful to us. Brute-force counting sequences to calculate &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt; could be replaced by
+calculating the derivitive of the PGF for the process.  If only we knew how to create the
+PGF! Before I show you, let's observe one more fact about PGFs. Suppose we find ourselves in a
+situation where we have a PGF that looks something like this&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+G(z) &amp;amp;= \frac{P(z)}{F(z)}\,\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;where &lt;span class="math"&gt;\(P(z)\)&lt;/span&gt; and &lt;span class="math"&gt;\(F(z)\)&lt;/span&gt; are some analytic functions of &lt;span class="math"&gt;\(z\)&lt;/span&gt;. Observe that&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+&amp;amp;F'(z)\,G(z) + G'(z)\,F(z) = P'(z)\\\
+&amp;amp;\implies G'(1) = \frac{P'(1) - F'(1)}{F(1)}\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;If you have ever spent any time with partial fractions, you will know why we will want this result.
+Now, let's use all of this on an unsuspecting sum to see if it works.  In light of thinking about
+PGFs, our original &lt;span class="math"&gt;\(S_n\)&lt;/span&gt; in terms of &lt;span class="math"&gt;\(T\)&lt;/span&gt; and &lt;span class="math"&gt;\(H\)&lt;/span&gt; is worth talking a look at.So, lets make the
+replacements &lt;span class="math"&gt;\(H \rightarrow pz\)&lt;/span&gt; and &lt;span class="math"&gt;\(T \rightarrow qz\)&lt;/span&gt; and see what happens. This will allow us to
+promote our proto-PGF &lt;span class="math"&gt;\(S \rightarrow G\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+G &amp;amp;= p q z^2 \left(\frac{1}{1-pz} + \frac{1}{1-qz}\right) = \frac{P(z)}{F(z)}\\\
+&amp;amp;= \frac{p q z^2 \left(2-z\right)}{(1-pz)(1-qz)}\\\
+P'(1)&amp;amp;= p(1-p)\\\
+F'(1)&amp;amp;= 2p - 2p^2 -1\\\
+G'(1)&amp;amp;= \frac{p(1-p) - (2p -2p^2 - 1)}{p(1-p)}\\\
+&amp;amp;= \frac{p^2 - p + 1}{p(1-p)}.
+\end{align}&lt;/div&gt;
+&lt;p&gt;If you look back at our earlier calculation of &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt;, you'll see the same exact result.  So, we
+accomplished nothing, except to convince ourselves that our machinery works.&lt;/p&gt;
+&lt;h3&gt;The coin again, this time as a finite automaton&lt;/h3&gt;
+&lt;p&gt;We return now to the hint that &lt;em&gt;Knuth et. al.&lt;/em&gt; gave us about using finite automata to help generate
+our &lt;span class="math"&gt;\(S\)&lt;/span&gt;'s.  If we think about the coin problem we've been considering, a first stab at at
+state machine could look something like this.&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;
+&lt;img alt="Alt Text" src="images/coin-automata.svg"&gt;
+&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;I've labeled the states by number as well. We start in a state &lt;span class="math"&gt;\(0\)&lt;/span&gt; where we haven't seen a flip
+yet. Then we start accumulating flips, moving to &lt;span class="math"&gt;\(1\)&lt;/span&gt; or &lt;span class="math"&gt;\(3\)&lt;/span&gt; initially after a &lt;span class="math"&gt;\(T\)&lt;/span&gt; or &lt;span class="math"&gt;\(H\)&lt;/span&gt;, then
+eventually terminating when we get a flip different from the first flip we saw.  Now comes the
+interesting part. Let's write down the sequence sum, like we did before, this time using the
+subscript on &lt;span class="math"&gt;\(S\)&lt;/span&gt; not to index the number of trials, but to index the state &lt;span class="math"&gt;\(S_n\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+S_0 &amp;amp;= 1\\\
+S_1 &amp;amp;= TS_0 + TS_1 = T(1+S_1)\\\
+S_2 &amp;amp;= HS1\\\
+S_3 &amp;amp;= H(1+S3)\\\
+S_4 &amp;amp;= TS_3\\\
+S &amp;amp;= S_2 + S_4.\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Here we have identified &lt;span class="math"&gt;\(S_2\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_4\)&lt;/span&gt; as our terminal states. Solving we see that&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+S_2 &amp;amp;= \frac{TH}{1-T}\\\
+S_4 &amp;amp;= \frac{TH}{1-H}\\\
+S &amp;amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\.\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;This form should be familiar enough now that I don't have to convince you that this approach worked.&lt;/p&gt;
+&lt;h3&gt;Happy Meals with Equal Probabilities&lt;/h3&gt;
+&lt;p&gt;We are now prepared to take on the type problem for arbitrary &lt;span class="math"&gt;\(m\)&lt;/span&gt; with all &lt;span class="math"&gt;\(p_i = 1/m\)&lt;/span&gt;.  As before,
+define a finite automata to describe the process.&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src="/images/m-automata.svg"&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;Here the states are labeled by the number of distinct trinkets we've seen. The symbol &lt;span class="math"&gt;\(X\)&lt;/span&gt; takes
+the place of the &lt;span class="math"&gt;\(H\)&lt;/span&gt; or &lt;span class="math"&gt;\(T\)&lt;/span&gt; and represents the event of seeing a trinket. At the start, there are
+&lt;span class="math"&gt;\(m\)&lt;/span&gt; ways we can move to state &lt;span class="math"&gt;\(1\)&lt;/span&gt;. Once we are in state &lt;span class="math"&gt;\(1\)&lt;/span&gt;, there is one way we stay in that state,
+and &lt;span class="math"&gt;\((m-1)\)&lt;/span&gt; ways we can move to state &lt;span class="math"&gt;\(2\)&lt;/span&gt;. And so on.&lt;/p&gt;
+&lt;p&gt;Then, as before we can read off the proto-PGF&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+S_0 &amp;amp;= 1\\\
+S_1 &amp;amp;= m X S_0 + X S_1 = \frac{m}{1-X}\,XS_0\\\
+S_2 &amp;amp;= \frac{(m - 1)}{1 - 2 X}\,XS_0\\\
+S_k &amp;amp;= \frac{(m - k + 1)}{1 - k X}\,XS_{k - 1}\\\
+&amp;amp;= f(X,m)_k\,XS_{k-1}\\\
+S_m &amp;amp;= XS_{m-1}.\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Writing down a few terms for small k of the recurrence let's us see a closed form&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+S_4 &amp;amp;= X S_3 \\\
+    &amp;amp;= X^2 f(3)\,S_2 \\\
+    &amp;amp;= X^3 f(3)\,f(2)\,S_1 \\\
+    &amp;amp;= X^4 \prod_{k=1}^{3} f(k). \\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;This leads us to conclude that&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+S_m &amp;amp;= X^m \prod_{k=1}^{m-1} \frac{m - k + 1}{1 - k X}\\\
+    &amp;amp;= m! X^m \prod_{k=1}^{m-1} \left(1 - k X \right)^{-1}.\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;As before, we make the substitution &lt;span class="math"&gt;\( X \rightarrow pz = z/m\)&lt;/span&gt;, and we promote the proto-&lt;span class="math"&gt;\(PGF\)&lt;/span&gt; to a &lt;span class="math"&gt;\(PGF\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+G(z) &amp;amp;= \frac{m!}{m^m} z^m \prod_{k=1}^{m-1} (1-kz/m)^{-1}.\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Also, as before, we make the substitution &lt;span class="math"&gt;\(G=z^{m}/F\)&lt;/span&gt; and recall that
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+E[n] = G'(1) = \frac{m - F'(1)}{F(1)} \label{mean}\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Then
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+F(z) &amp;amp;= \frac{m^m}{m!} \prod_{k=1}^{m-1} (1- kz/m) = \frac{m^m}{m!} Q_m(z)\\\
+F'(z) &amp;amp;= \frac{-m^m}{m!} \frac{z}{m} Q_m(z) \sum_{k=1}^{m-1} \left(\frac{k}{1-kz/m}\right) \\\
+      &amp;amp;= -\frac{z}{m} F(z) \sum_{k=1}^{m-1} \left(\frac{k}{1-kz/m}\right) \\\
+      &amp;amp;= -z F(z) \sum_{k=1}^{m-1} \left(\frac{k}{m - kz}\right) \\\
+      &amp;amp;= z F(z) \sum_{k=1}^{m-1} \left(\frac{1}{z - m/k}\right) \label{Fprime}\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Things are looking very promising.  Now we evaluate &lt;span class="math"&gt;\(Q(1)\)&lt;/span&gt;
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+Q(1) &amp;amp;= \frac{1}{m^{m-1}} \prod_{k=1}^{m-1} \left(m-k\right) \ \\
+     &amp;amp;= \frac{1}{m^{m-1}} \left( (m-1)(m-2) \ldots \left( m - (m - 1) \right) \right)\ \\
+     &amp;amp;= \frac{\left(m-1\right)!}{m^{m-1}}\\\
+     &amp;amp;= \frac{m!}{m^m}.\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Interestingly, this means that &lt;span class="math"&gt;\(F(1) =1\)&lt;/span&gt;, which also means that &lt;span class="math"&gt;\(F\)&lt;/span&gt; also behaves like a PGF.  At any
+rate, we were now left with&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+F'(1) &amp;amp;= \sum_{k=1}^{m-1} \frac{1}{1 - m/k}\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;By now, we are tired and we resort to some &lt;a href="http://www.cs.cmu.edu/~odonnell/toolkit13/how-to-do-math-and-tcs.pdf"&gt;street fighting&lt;/a&gt;, &lt;a href="https://www.wolframalpha.com/input/?i=sum+1%2F(1-m%2Fk),+k%3D1+to+m-1"&gt;Wolfram Alpha&lt;/a&gt;-style, which gives us
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+F'(1) &amp;amp;= m \left( 1 - \psi^{(0)} - \gamma\right) - 1\\\
+      &amp;amp;= m \left( 1 - (H_{m-1} - \gamma) - \gamma \right) - 1\\\
+      &amp;amp;= m \left( 1 - H_{m-1} \right) - 1\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;using the fact that &lt;span class="math"&gt;\(\psi^{(0)} = H_{m-1} - \gamma\)&lt;/span&gt;. Of course, this fact is exactly what Alpha used
+to give us the answer by re-arranging the sum.  Plugging this all in, we finally get&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+G'(1) &amp;amp;= E[n]\\\
+      &amp;amp;= m - \left(m - m H_{m-1} - 1 \right)\\\
+      &amp;amp;= 1 + m H_{m-1}\\\
+      &amp;amp;= mH_m\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;using &lt;span class="math"&gt;\(H_m = H_{m-1} + 1/m\)&lt;/span&gt;. This was our goal. &lt;/p&gt;
+&lt;p&gt;Now to answer the original question for the equally probably Happy Meals.  In general we can get a
+one-sided confidence interval for &lt;span class="math"&gt;\(n\)&lt;/span&gt;, the number of times we "roll" until success, by using &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt;
+and Markov's inequality.  If we could be bothered to calculate the variance using the formula's
+above, we could use Chebyshev's to get a two sided confidence interval and a tighter bound. Anyway,&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+P(n &amp;gt; k m H_m) &amp;amp;\leq \frac{E[n]}{k m H_m}\\\
+&amp;amp;\leq \frac{1}{k}.\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Setting &lt;span class="math"&gt;\(1/k = 0.05 \implies k = 20\)&lt;/span&gt;. For example, for a six-sided die, for &lt;span class="math"&gt;\(\epsilon = kmH_m\)&lt;/span&gt;,&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+P(n &amp;gt; \epsilon) &amp;amp;\leq 0.05\\\
+\epsilon &amp;amp;\approx 300 
+\end{align}&lt;/div&gt;
+&lt;p&gt;For a permutation of order &lt;span class="math"&gt;\(6\)&lt;/span&gt;, the 95% threshold is &lt;span class="math"&gt;\(\approx 200000\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, for large &lt;span class="math"&gt;\(m\)&lt;/span&gt;, &lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+H_m &amp;amp;\approx \ln{m} + \gamma\\\
+E[n] &amp;amp;\approx m\left( \ln{m} + \gamma \right)\\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;In my weird and twisted way, this is a much more satisfying way to look at the Coupon
+Collector. Along the way, we practiced a technique that seems to be very powerful. For instance, I'm
+interested to try my hand at using this technique on the &lt;a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm"&gt;KMP Algorithm&lt;/a&gt;. I'm a fan of
+&lt;a href="https://www.ics.uci.edu/~eppstein/"&gt;David Eppstein's Notes&lt;/a&gt; on algorithms from &lt;a href="https://www.ics.uci.edu/~eppstein/161/syl.html"&gt;long ago in internet time&lt;/a&gt;,
+particularly where he shows a fsm for KMP:&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;
+&lt;img src="https://www.ics.uci.edu/~eppstein/161/kmp.gif"/&gt;
+&lt;/center&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "2em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry><entry><title>Why you should know about the Gamma distribution</title><link href="/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2016-12-02:/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I've been staring at exponentially distributed data on a regular basis in one form or another for at
 least the last ten years.  In my previous job, I spent a lot of time with the statistics of VoIP
 phone calls, trying to understand what's "normal", and what are symptoms of system pathologies, or
 even the actions of fraudsters in the telephony networks.  In approaching this subject, I had never
@@ -121,7 +477,7 @@ machine learning, are unfamiliar with this fact, or why it would be useful to kn
 measure in systems, for you often see a long-tailed distribution where the mode is shifted to the
 right, relative to where the exponential would start. This is what &lt;code&gt;scipy.stats.gamma.rvs(1.99,
 size=1000)&lt;/code&gt; looks like:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A Gamma" src="http://memoize.me/images/gamma.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A Gamma" src="/images/gamma.png"&gt;&lt;/p&gt;
 &lt;p&gt;The reason this is really helpful to think about is you often find yourself looking at the length of
 the intervals it takes for things to complete: &lt;/p&gt;
 &lt;ul&gt;
@@ -137,7 +493,7 @@ model the individual times as exponentially distributed, we then should expect t
 should follow a gamma-like distribution.  When reasoning about systems, looking at the distribution
 of times tells you a lot about what's happening.  When the data looks exponentially-distributed,
 i.e. the mode is all the way to the left (&lt;code&gt;scipy.stats.expon.rvs(size=1000)&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="An exponential" src="http://memoize.me/images/expon.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="An exponential" src="/images/expon.png"&gt;&lt;/p&gt;
 &lt;p&gt;then you really have one dominant process contributing to the completion time. Instead, the more you see the mode shifted to the right, the more you can reason that there are a number of processes of equal contribution.  This is a useful way to reason about systems.&lt;/p&gt;
 &lt;p&gt;As I said, learning that the sums of exponentials was distributed as Gamma was a neat and useful
 eureka! moment. However, until recently, I missed an extremely important related fact.  All of this
@@ -170,7 +526,7 @@ conjugate prior for a large number of important distributions: Poisson, Normal, 
 Exponential.&lt;/p&gt;
 &lt;p&gt;But let's get back to proving some neat things about this distribution. Before we can start, we will
 need one additional piece of machinery.  In
-&lt;a href="http://memoize.me/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), I showed a useful application for
+&lt;a href="/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), I showed a useful application for
 probability generating functions (PGFs), which, to review, are&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 G(z) &amp;amp;= \sum_0^\infty p(k)z^k\nonumber\\
@@ -189,7 +545,7 @@ about integrating over the support of &lt;span class="math"&gt;\(f(x)\)&lt;/span
 M_X (t) &amp;amp;= \int_{-\infty}^{\infty} e^{tx} f(x) dx\nonumber\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;which should bring back waves of nostalgia as the two sided Laplace transform of the distribution
-&lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;.  &lt;a href="http://memoize.me/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did
+&lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;.  &lt;a href="/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did
 I do all of these contortions on PGFs" was that taking derivatives gave us nice and easy ways to
 estimate the mean, variance, etc. The MGFs also give us these as the moments of the distribution.
 But the definition above provides us another trick, namely that if we are careful about the the
@@ -249,7 +605,7 @@ later post, but for now, I present below some of the benchmarking data that I ha
 with. Each histogram is labeled by a number which is &lt;span class="math"&gt;\(k = log N\)&lt;/span&gt; of the total input size of the code
 being tested. Specifically, I am benchmarking a library that uses Intel SSE4.2 specialized
 instructions to calculate crc32c checksums.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A Gamma" src="http://memoize.me/images/hists.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A Gamma" src="/images/hists.png"&gt;&lt;/p&gt;
 &lt;p&gt;There are a ton of interesting details going on that I will discuss later, but it should be clear
 that for each &lt;span class="math"&gt;\(k\)&lt;/span&gt;, every time I make these measurements I will get different looking
 histograms. They could be different because something changed in the code. Or, they could be
@@ -354,337 +710,4 @@ $$&lt;/div&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Probability"></category><category term="Statistics"></category><category term="Generating Functions"></category></entry><entry><title>The Coupon Collector</title><link href="http://memoize.me/coupon-collector.html" rel="alternate"></link><published>2016-04-27T00:00:00-07:00</published><updated>2016-04-27T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-04-27:/coupon-collector.html</id><summary type="html">&lt;p&gt;Once during a meeting in which we were discussing the
-&lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt;, someone asked:
-"How many times do we need to run the algorithm to see every permutation?"  It immediately occurred
-to me that, well, I didn't know.  Feeling my hands begin wave, instinctively, I fired back, I
-thought, quite cleverly: "How many times do you need to flip a coin to see both sides?".  Of course,
-both questions are somewhat non-sensical, but the intent of the former question, unlike the latter,
-was clear. I didn't know the answer, but I've always said that stopping problems are the best
-problems …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Once during a meeting in which we were discussing the
-&lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt;, someone asked:
-"How many times do we need to run the algorithm to see every permutation?"  It immediately occurred
-to me that, well, I didn't know.  Feeling my hands begin wave, instinctively, I fired back, I
-thought, quite cleverly: "How many times do you need to flip a coin to see both sides?".  Of course,
-both questions are somewhat non-sensical, but the intent of the former question, unlike the latter,
-was clear. I didn't know the answer, but I've always said that stopping problems are the best
-problems, so even though I didn't have a great answer in the moment, I resolved to find something
-satisfying. At this point I will confess that I am an enthusiastic yet rank amateur
-combinatorialist.  For whatever reason, I had never heard of the Coupon Collector.&lt;/p&gt;
-&lt;p&gt;This will take you on a seemingly circuitous path towards something that is in the end very simple,
-and very beautiful.  I think it also proves that when all else fails, brute force counting can take
-you a long way, provided you have the machinery to get you there.&lt;/p&gt;
-&lt;h3&gt;Flipping a coin to see both sides&lt;/h3&gt;
-&lt;p&gt;The first matter of business was to pose the question in a way that was actually solvable.  First,
-think about the case of a coin.  If you had to pick a single number of times to flip it, knowing
-nothing about the coin, and your life depended on seeing both sides, you'd obviously want to pick
-the biggest number you could.  A more interesting question along those lines is: what is the
-smallest number you could pick to have a reasonable probability of success? If we take this a step
-further and treat this more like a stopping problem, we would think about doing experiments which
-generate sequences in which the &lt;span class="math"&gt;\(m\)&lt;/span&gt;-th event is &lt;span class="math"&gt;\(H\)&lt;/span&gt; or &lt;span class="math"&gt;\(T\)&lt;/span&gt; and the &lt;span class="math"&gt;\(m-1\)&lt;/span&gt; are all either &lt;span class="math"&gt;\(T\)&lt;/span&gt; or &lt;span class="math"&gt;\(H\)&lt;/span&gt;
-respectively.  This is of course a description of a geometric process.  The essence of our question
-would seem to be: Let &lt;span class="math"&gt;\(X\)&lt;/span&gt; be a random variable which represents length &lt;span class="math"&gt;\(n\)&lt;/span&gt; of sequences generated by
-flipping a coin until you see both sides. What is &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt;? We proceeded by brute force.&lt;/p&gt;
-&lt;p&gt;If we start enumerating the possibilities, we can see the patterns of different length.  For the
-sequences of length at most &lt;span class="math"&gt;\(m\)&lt;/span&gt;,&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-S_m = &amp;amp;HT + TH + \nonumber\\
-    &amp;amp;HHT + TTH + \ldots \nonumber\\
-    &amp;amp;H^{m-1}T + T^{m-1}H. \label{coin_sum}\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;It's interesting that the generation of length &lt;span class="math"&gt;\(k\)&lt;/span&gt; is easy to &lt;em&gt;generate&lt;/em&gt; from the &lt;span class="math"&gt;\(k-1\)&lt;/span&gt;th by simply
-prepending the opposite of the terminal token, which doesn't change.  The production rule here is
-quite simple.  Anyway, if we think about &lt;span class="math"&gt;\(H\)&lt;/span&gt; and &lt;span class="math"&gt;\(T\)&lt;/span&gt; as probabilities, &lt;span class="math"&gt;\(S_\infty\)&lt;/span&gt; better be &lt;span class="math"&gt;\(1\)&lt;/span&gt;, so
-we can evaluate by collecting terms.&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-S_{\infty} &amp;amp;= T\left(H + H^2 + H^3 + \ldots\right) + H\left(T + T^2 + T^3 + \ldots\right)\nonumber\\
-&amp;amp;= T\left(\frac{1}{1-H} - 1\right) + H\left(\frac{1}{1-T} - 1\right)\nonumber\\
-&amp;amp;= HT\left(\frac{1}{1-H} + \frac{1}{1-T}\right)\label{S}\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;At this point, it's probably time to stop treating &lt;span class="math"&gt;\(H\)&lt;/span&gt; and &lt;span class="math"&gt;\(T\)&lt;/span&gt; symbolically and replace them with the probabilities &lt;span class="math"&gt;\(P(H) = p\)&lt;/span&gt;, &lt;span class="math"&gt;\(P(T) = q\)&lt;/span&gt; and &lt;span class="math"&gt;\(p + q = 1\)&lt;/span&gt;. Accordingly, &lt;span class="math"&gt;\(H \rightarrow p\)&lt;/span&gt;, &lt;span class="math"&gt;\(T \rightarrow q\)&lt;/span&gt;:&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-S_\infty &amp;amp;= pq\left(\frac{1}{q} + \frac{1}{p}\right)\nonumber\\
-         &amp;amp;= pq \left(\frac{p+q}{pq}\right) = 1.
-\end{align}&lt;/div&gt;
-&lt;p&gt;Whew!  Now to calculate &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt; we promote &lt;span class="math"&gt;\(S_k\)&lt;/span&gt; to a PDF, and evaluate the sum:
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-E[n] = \,&amp;amp;2(pq + qp)\, + \nonumber\\
-    &amp;amp;3(ppq + qqp) + \ldots \nonumber\\
-    &amp;amp;m(p^{m-1}q + q^{m-1}p) + \ldots\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;
-Reorganizing, we see that
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-E[n] &amp;amp;= q\left(2p + 3p^2 + \ldots mp^{m-1} + \ldots\right) + p\left(2q + 3p^2 + \ldots mq^{m-1} + \ldots \right) \nonumber\\
-    &amp;amp;= \frac{q}{p} \left(\sum_{i=1}^\infty ip^i - p\right) + \frac{p}{q} \left(\sum_{i=1}^\infty iq^i - q\right)\nonumber\\
-&amp;amp;= \frac{q}{p}\left(\frac{p}{q^2} - p\right) + \frac{p}{q}\left(\frac{q}{p^2} - q\right)\nonumber\\
-&amp;amp;= \frac{p}{q}\left(\frac{1}{1-q} - q\right) + \frac{q}{p}\left(\frac{1}{1-p} - p\right)\nonumber\\
-&amp;amp;= \frac{1 - pq}{p(1-p)}\nonumber\\
-&amp;amp;= \frac{p^2 - p + 1}{p(1-p)}\label{old_way}\\
-&amp;amp;= 2 + \frac{p^3 + q^3}{pq}\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;This was new to me. For &lt;span class="math"&gt;\(p = q\)&lt;/span&gt; we have that &lt;span class="math"&gt;\(E[n] = 3\)&lt;/span&gt;. &lt;/p&gt;
-&lt;h3&gt;Working our way towards &lt;span class="math"&gt;\(n!\)&lt;/span&gt;&lt;/h3&gt;
-&lt;p&gt;Having solved the problem for &lt;span class="math"&gt;\(m = 2\)&lt;/span&gt;, the next thing to do was to try for higher &lt;span class="math"&gt;\(m\)&lt;/span&gt;'s.  There
-seemed to be three immediately interesting cases to explore, potentially for each &lt;span class="math"&gt;\(m\)&lt;/span&gt;: &lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-&amp;amp;\text{All equal probabilities, i.e. } p_k = 1/m \text{ for } 1 \leq k \leq m\label{typeA}\tag{A}.\\
-&amp;amp;\text{One distinctive } p_j \text{ and all other } p \text{'s equal.}\label{typeB}\tag{B}.\\
-&amp;amp;\text{Arbitrary } p_k \text{ subject to  } \sum p_k = 1.\label{typeC}\tag{C}\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;These are in increasing order of difficulty. So, case &lt;span class="math"&gt;\((\ref{typeA})\)&lt;/span&gt; was next up.&lt;/p&gt;
-&lt;p&gt;The first thing that happened when we tried do do something like &lt;span class="math"&gt;\((\ref{coin_sum})\)&lt;/span&gt; for &lt;span class="math"&gt;\(m=3\)&lt;/span&gt;, was
-that the production rules really weren't that obvious anymore once we got past a few generations.
-And proceeding this way under cases &lt;span class="math"&gt;\(B\)&lt;/span&gt; and &lt;span class="math"&gt;\(C\)&lt;/span&gt; was fear-inspiring.  We needed a tool to keep things under control.&lt;/p&gt;
-&lt;p&gt;Astute readers will have noticed that I italicized a certain word above, namely &lt;em&gt;generate&lt;/em&gt;, which
-should have tipped you off to what's coming next.
-&lt;a href="http://www.amazon.com/generatingfunctionology-Third-Herbert-S-Wilf/dp/1568812795"&gt;Generating Functions&lt;/a&gt;
-are the &lt;a href="https://en.wikipedia.org/wiki/Caterpillar_D11"&gt;D11&lt;/a&gt; of the brute-forcing amateur
-combinatorialist community.  I remembered some advice from &lt;em&gt;Knuth et. al.&lt;/em&gt; in
-&lt;a href="http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025"&gt;Concrete Mathematics&lt;/a&gt;
-to use finite automata to keep mayhem from breaking out in the production rules.  But before we get
-to that, it's first useful to introduce the machinery that we will use when we get there.&lt;/p&gt;
-&lt;h3&gt;The coin redux, this time as a PGF&lt;/h3&gt;
-&lt;p&gt;I'm not going to do justice to generating functions in this space. But I will give the basic ideas.
-Imagine that you have a function &lt;span class="math"&gt;\(G\)&lt;/span&gt; that you are able to expand in a (complex) power series that
-converges in a sense that it is simply not silly to act like it does:&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-G(z) &amp;amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\label{gf_def}\\ 
-\end{align}&lt;/div&gt;
-&lt;p&gt;Suppose you have a recurrence relation for &lt;span class="math"&gt;\(c_j = f(\left\{c_i : i &amp;lt; j\right\})\)&lt;/span&gt;.  There is
-an arsenal not unlike that available for Fourier or Laplace transforms that allow you to derive from
-that recurrence an analytic function &lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;, which can be expanded into the form &lt;span class="math"&gt;\((\ref{gf_def})\)&lt;/span&gt;.
-Then, a &lt;em&gt;closed-form&lt;/em&gt; version of &lt;span class="math"&gt;\(c_j\)&lt;/span&gt; can read off from the &lt;span class="math"&gt;\(c_k\)&lt;/span&gt; in the series expansion.&lt;/p&gt;
-&lt;p&gt;We're not going to do any of that here.  But we are going to take some liberties and use the
-machinery for our purposes.  To whit, the first thing we are going to do is realize that any series
-sum that involves powers of things can be "converted" to a GF by taking some liberties and making
-some suitable replacements.  Why would we want to do this?  Well, it all depends on how you choose
-to interpret the coefficients.  In particular, if you interpret the &lt;span class="math"&gt;\(c_k\)&lt;/span&gt; as &lt;em&gt;probabilities&lt;/em&gt;, then
-you actually get something that is formally known as a probability generating function (PGF).&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-G(z) &amp;amp;= \sum_{k=0}^{\infty} p_k z^k\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;Notice a couple of things here: First, that &lt;span class="math"&gt;\(G(1) = 1\)&lt;/span&gt;.  Why? well 
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-G(1) &amp;amp;= \sum_{k=0}^{\infty} p_k 1^k\nonumber\\
-    &amp;amp;= \sum_{k=1}^{\infty} p_k = 1\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;for everything that we consider to be a probability.  Also, notice that
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-G'(z) &amp;amp;= \sum_{k=1}^{\infty} k p_k z^{k-1}\nonumber\\
-&amp;amp;\implies G'(1) = \sum_{k=1}^{\infty} k p_k = E[n].\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;Now this is useful!  If we are trying to do something like we tried in &lt;span class="math"&gt;\((\ref{old_way})\)&lt;/span&gt;, then now
-have a general method. You may or may not believe me when I say this. Before I show you, let's
-observe one more fact about PGFs. Suppose we find ourselves in a situation where we have a PGF that
-looks something like this&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-G(z) &amp;amp;= \frac{P(z)}{F(z)}\nonumber,\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;where &lt;span class="math"&gt;\(P(z)\)&lt;/span&gt; and &lt;span class="math"&gt;\(F(z)\)&lt;/span&gt; are some analytic functions of &lt;span class="math"&gt;\(z\)&lt;/span&gt;. Observe that&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-&amp;amp;F'(z)\,G(z) + G'(z)\,F(z) = P'(z)\nonumber\\
-&amp;amp;\implies G'(1) = \frac{P'(1) - F'(1)}{F(1)}\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;If you have ever spent any time with partial fractions, you will know why we will want this result.
-Now, let's use all of this on an unsuspecting sum to see if it works.  Equation &lt;span class="math"&gt;\((\ref{S})\)&lt;/span&gt; was of
-interest to us, and it is clearly a power series.  So, lets make the replacements &lt;span class="math"&gt;\(H \rightarrow pz\)&lt;/span&gt;
-and &lt;span class="math"&gt;\(T \rightarrow qz\)&lt;/span&gt; and see what happens. We will also promote our proto-PGF &lt;span class="math"&gt;\(S \rightarrow G\)&lt;/span&gt;.&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-G &amp;amp;= p q z^2 \left(\frac{1}{1-pz} + \frac{1}{1-qz}\right) = \frac{P(z)}{F(z)}\nonumber\\
-&amp;amp;= \frac{p q z^2 \left(2-z\right)}{(1-pz)(1-qz)}\nonumber\\
-P'(1)&amp;amp;= p(1-p)\nonumber\\
-F'(1)&amp;amp;= 2p - 2p^2 -1\nonumber\\
-G'(1)&amp;amp;= \frac{p(1-p) - (2p -2p^2 - 1)}{p(1-p)}\nonumber\\
-&amp;amp;= \frac{p^2 - p + 1}{p(1-p)}.
-\end{align}&lt;/div&gt;
-&lt;p&gt;We accomplished nothing, except to convince ourselves that our machinery works.&lt;/p&gt;
-&lt;h3&gt;The coin again, this time as a finite automaton&lt;/h3&gt;
-&lt;p&gt;We return now to the hint that &lt;em&gt;Knuth et. al.&lt;/em&gt; gave us about using finite automata to help generate
-our &lt;span class="math"&gt;\(S\)&lt;/span&gt;'s.  If we think about the coin problem we've been considering, a first stab at at
-state machine could look something like this.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Alt Text" src="http://memoize.me/images/coin.png"&gt;&lt;/p&gt;
-&lt;p&gt;I hope by now you are comfortable and see the value in writing down a sum &lt;span class="math"&gt;\(S\)&lt;/span&gt;. So let's try it:
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-S_0 &amp;amp;= 1\nonumber\\
-S_1 &amp;amp;= TS_0 + TS_1 = T(1+S_1)\nonumber\\
-S_2 &amp;amp;= HS1\nonumber\\
-S_3 &amp;amp;= H(1+S3)\nonumber\\
-S_4 &amp;amp;= TS_3\nonumber\\
-S &amp;amp;= S_2 + S_4.\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;Here we have identified &lt;span class="math"&gt;\(S_2\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_4\)&lt;/span&gt; as our terminal states. Solving we see that&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-S_2 &amp;amp;= \frac{TH}{1-T}\nonumber\\
-S_4 &amp;amp;= \frac{TH}{1-H}\nonumber\\
-S &amp;amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\nonumber.\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;This form should be familiar enough now that I don't have to convince you that this approach worked.&lt;/p&gt;
-&lt;h3&gt;The &lt;span class="math"&gt;\(m\)&lt;/span&gt;-die with equal probabilities&lt;/h3&gt;
-&lt;p&gt;We are now prepared to take on the type &lt;span class="math"&gt;\((\ref{typeA})\)&lt;/span&gt; problem for arbitrary &lt;span class="math"&gt;\(m\)&lt;/span&gt;.  As before, define a
-finite automata to describe the process.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="http://memoize.me/images/m-die.png"&gt;&lt;/p&gt;
-&lt;p&gt;In this case we identify each state by
-the number of &lt;span class="math"&gt;\(m\)&lt;/span&gt; types we have seen. Then, as before we can read off the proto-PGF&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-S_0 &amp;amp;= 1\nonumber\\
-S_1 &amp;amp;= m X S_0 + X S_1 = \frac{m}{1-X}\,XS_0\nonumber\\
-S_2 &amp;amp;= \frac{(m - 1)}{1 - 2 X}\,XS_0\nonumber\\
-S_k &amp;amp;= \frac{(m - k + 1)}{1 - k X}\,XS_{k - 1}\nonumber\\
-&amp;amp;= f(X,m)_k\,XS_{k-1}\nonumber\\
-S_m &amp;amp;= XS_{m-1}.\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;Writing down a few terms for small k of the recurrence let's us see a closed form&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-S_4 &amp;amp;= X S_3 \nonumber\\
-    &amp;amp;= X^2 f(3)\,S_2 \nonumber\\
-    &amp;amp;= X^3 f(3)\,f(2)\,S_1 \nonumber\\
-    &amp;amp;= X^4 \prod_{k=1}^{3} f(k). \nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;This leads us to conclude that&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-S_m &amp;amp;= X^m \prod_{k=1}^{m-1} \frac{m - k + 1}{1 - k X}\nonumber\\
-    &amp;amp;= m! X^m \prod_{k=1}^{m-1} \left(1 - k X \right)^{-1}.\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;As before, we make the substitution &lt;span class="math"&gt;\( X \rightarrow pz = z/m\)&lt;/span&gt;, and we promote the proto-&lt;span class="math"&gt;\(PGF\)&lt;/span&gt; to a &lt;span class="math"&gt;\(PGF\)&lt;/span&gt;:&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-G(z) &amp;amp;= \frac{m!}{m^m} z^m \prod_{k=1}^{m-1} (1-kz/m)^{-1}.\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;Also, as before, we make the substitution &lt;span class="math"&gt;\(G=z^{m}/F\)&lt;/span&gt; and recall that
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-E[n] = G'(1) = \frac{m - F'(1)}{F(1)} \label{mean}\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;Then
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-F(z) &amp;amp;= \frac{m^m}{m!} \prod_{k=1}^{m-1} (1- kz/m) = \frac{m^m}{m!} Q_m(z)\nonumber\\
-F'(z) &amp;amp;= \frac{-m^m}{m!} \frac{z}{m} Q_m(z) \sum_{k=1}^{m-1} \left(\frac{k}{1-kz/m}\right) \nonumber\\
-      &amp;amp;= -\frac{z}{m} F(z) \sum_{k=1}^{m-1} \left(\frac{k}{1-kz/m}\right) \nonumber\\
-      &amp;amp;= -z F(z) \sum_{k=1}^{m-1} \left(\frac{k}{m - kz}\right) \nonumber\\
-      &amp;amp;= z F(z) \sum_{k=1}^{m-1} \left(\frac{1}{z - m/k}\right) \label{Fprime}\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;Things are looking very promising.  Now we evaluate &lt;span class="math"&gt;\(Q(1)\)&lt;/span&gt;
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-Q(1) &amp;amp;= \frac{1}{m^{m-1}} \prod_{k=1}^{m-1} \left(m-k\right) \nonumber \\
-     &amp;amp;= \frac{1}{m^{m-1}} \left( (m-1)(m-2) \ldots \left( m - (m - 1) \right) \right)\nonumber \\
-     &amp;amp;= \frac{\left(m-1\right)!}{m^{m-1}}\nonumber\\
-     &amp;amp;= \frac{m!}{m^m}.\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;Interestingly, this means that &lt;span class="math"&gt;\(F(1) =1\)&lt;/span&gt;, which also means that &lt;span class="math"&gt;\(F\)&lt;/span&gt; also behaves like a PGF.  At any
-rate, we were now left with&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-F'(1) &amp;amp;= \sum_{k=1}^{m-1} \frac{1}{1 - m/k}\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;By now, we are tired and we resort to some &lt;a href="http://www.cs.cmu.edu/~odonnell/toolkit13/how-to-do-math-and-tcs.pdf"&gt;street fighting&lt;/a&gt;, &lt;a href="https://www.wolframalpha.com/input/?i=sum+1%2F(1-m%2Fk),+k%3D1+to+m-1"&gt;Wolfram Alpha&lt;/a&gt;-style, which gives us
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-F'(1) &amp;amp;= m \left( 1 - \psi^{(0)} - \gamma\right) - 1\nonumber\\
-      &amp;amp;= m \left( 1 - (H_{m-1} - \gamma) - \gamma \right) - 1\nonumber\\
-      &amp;amp;= m \left( 1 - H_{m-1} \right) - 1\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;using the fact that &lt;span class="math"&gt;\(\psi^{(0)} = H_{m-1} - \gamma\)&lt;/span&gt;. Of course, this fact is exactly what Alpha used
-to give us the answer by re-arranging the sum.  Plugging this all in to &lt;span class="math"&gt;\((\ref{mean})\)&lt;/span&gt;, we finally get&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-G'(1) &amp;amp;= E[n]\nonumber\\
-      &amp;amp;= m - \left(m - m H_{m-1} - 1 \right)\nonumber\\
-      &amp;amp;= 1 + m H_{m-1}\nonumber\\
-      &amp;amp;= mH_m\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;using &lt;span class="math"&gt;\(H_m = H_{m-1} + 1/m\)&lt;/span&gt;. This was our goal. &lt;/p&gt;
-&lt;p&gt;Now to answer the original question for the equally weighted &lt;span class="math"&gt;\(m!\)&lt;/span&gt;-die.  In general we can get a
-one-sided confidence interval for &lt;span class="math"&gt;\(n\)&lt;/span&gt;, the number of times we "roll" until success, by using &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt;
-and Markov's inequality.  If we could be bothered to calculate the variance using the formula's
-above, we could use Chebyshev's to get a two sided confidence interval. Anyway,&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-P(n &amp;gt; k m H_m) &amp;amp;\leq \frac{E[n]}{k m H_m}\nonumber\\
-&amp;amp;\leq \frac{1}{k}.\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;Setting &lt;span class="math"&gt;\(1/k = 0.05 \implies k = 20\)&lt;/span&gt;. For example, for a six-sided die, for &lt;span class="math"&gt;\(\epsilon = kmH_m\)&lt;/span&gt;,&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-P(n &amp;gt; \epsilon) &amp;amp;\leq 0.05\nonumber\\
-\epsilon &amp;amp;\approx 300 
-\end{align}&lt;/div&gt;
-&lt;p&gt;For a permutation of order &lt;span class="math"&gt;\(6\)&lt;/span&gt;, the 95% threshold is &lt;span class="math"&gt;\(\approx 200000\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;Finally, for large &lt;span class="math"&gt;\(m\)&lt;/span&gt;, &lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-H_m &amp;amp;\approx \ln{m} + \gamma\nonumber\\
-E[n] &amp;amp;\approx m\left( \ln{m} + \gamma \right)\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;h3&gt;The Coupon Collector&lt;/h3&gt;
-&lt;p&gt;You are probably wondering why this article is called Coupon Collector. At this point I will link
-the Wikipedia article on the
-&lt;a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem"&gt;Coupon Collector Problem&lt;/a&gt;, because
-you've been patient and frankly, it can't harm you now.  We didn't actually look at the answer to
-the type &lt;span class="math"&gt;\((\ref{typeA})\)&lt;/span&gt; problem until long after we got the answer.  The derivation there clearly
-works, but I find it unsettling.  In case you didn't care to click, they model the number of coupons
-&lt;span class="math"&gt;\(N\)&lt;/span&gt; to get a complete collection as a sum of &lt;span class="math"&gt;\(m\)&lt;/span&gt; geometrically distributed variables &lt;span class="math"&gt;\(n_i\)&lt;/span&gt; each with
-a different &lt;span class="math"&gt;\(p_i\)&lt;/span&gt;. Then&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align}
-E[n] &amp;amp;= \sum_{i=1}^m E[n_i] = \sum_{i=1}^m \frac{1}{p_i}\nonumber\\
- &amp;amp;= \frac{m}{m} + \frac{m}{m-1} + ... + \frac{m}{1}\nonumber\\
- &amp;amp;= m\left(1 + \frac{1}{2} + ... + \frac{1}{m}\right) = m H_m\nonumber\\
-\end{align}&lt;/div&gt;
-&lt;p&gt;I still don't like thinking about this as a sum of geometric processes.  It also doesn't help us
-when the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; don't have this specific relationship.&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "2em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry></feed>
+&lt;/script&gt;</content><category term="Probability"></category><category term="Statistics"></category><category term="Generating Functions"></category></entry></feed>

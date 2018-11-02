@@ -1,0 +1,23 @@
+digraph finite_state_machine {
+    rankdir=LR;
+    // size="8,5"
+
+    node [shape = doublecircle, label=<2:T<SUP>k</SUP>H>] 2;
+    node [shape = doublecircle, label=<4:H<SUP>k</SUP>T>] 4;
+
+    node [shape = circle, label=<0:START>] 0;
+    node [shape = circle, label=<1:T<SUP>k</SUP>>] 1;
+    node [shape = circle, label=<2:H<SUP>k</SUP>>] 2;
+
+    // node [shape = point ]; qi
+    // qi -> 0;
+
+
+    0 -> 1 [ label = "T" ];
+    1 -> 1 [ label = "T" ];
+    1 -> 2 [ label = "H" ];
+    
+    0 -> 3 [ label = "H" ];
+    3 -> 3 [ label = "H" ];
+    3 -> 4 [ label = "T" ];
+}

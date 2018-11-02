@@ -1,4 +1,7 @@
 .MathJax_Display {
-        text-align: left !important;
+//        text-align: left !important;
 }
 
+blockquote {
+    font-size: 15 px;
+}

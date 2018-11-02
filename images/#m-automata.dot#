@@ -1,0 +1,26 @@
+digraph finite_state_machine {
+    rankdir=LR;
+    // size="8,5"
+
+    node [shape = circle, label=<0>] 0;
+    node [shape = circle, label=<1>] 1;
+    node [shape = circle, label=<2>] 2;
+    node [shape = circle, label=<<i>m</i>-1>] m1;
+    node [shape = doublecircle, label=<<i>m</i>>] m;
+
+
+    node [shape = point ]; qi
+    qi -> 0;
+
+
+    0 -> 1 [ label=<<i>mX</i>> ];
+    1 -> 1 [ label=<<i>X</i>> ];    
+    1 -> 2 [ label=<<i>(m-1)X</i>> ];    
+    2 -> 2 [ label=<2<i>X</i>> ];
+    2 -> m1 [ label="..."];
+    m1->m1 [label=<<i>(m-1)X</i> ];
+    m1->m [ label="X"];
+    
+    
+	    
+}
