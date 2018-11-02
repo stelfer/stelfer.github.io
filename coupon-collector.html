@@ -203,7 +203,9 @@ flip a fair coin to see both sides is 3. If <span class="math">\(p = 0.25\)</spa
 <p>This is maybe a way of estimating if a coin is <em>extremely</em> unfair: count the number flips it takes
 to see both sides.</p>
 <h3>Fine for coins, what about the trinkets?</h3>
-<p>Having solved the problem for <span class="math">\(m = 2\)</span>, the next thing to do was to try for higher <span class="math">\(m\)</span>'s.  If I were running a Happy Meal campaign, I might think about how to manipulate the <span class="math">\(p_i\)</span> in order to maximize <span class="math">\(E[T]\)</span>.  Some options here:</p>
+<p>Having solved the problem for <span class="math">\(m = 2\)</span>, the next thing to do was to try for higher <span class="math">\(m\)</span>'s.  If I were
+running a Happy Meal campaign, I might think about how to manipulate the <span class="math">\(p_i\)</span> in order to maximize
+<span class="math">\(E[T]\)</span>.  Some options here:</p>
 <ul>
 <li>Naive approach: all equal probabilities, i.e. <span class="math">\( p_k = 1/m\)</span></li>
 <li>Singularly hard to get: One distinctive <span class="math">\(p_j\)</span>, but all other <span class="math">\(p\)</span>'s equal</li>
@@ -228,10 +230,11 @@ that converges in a sense that it is simply not silly to act like it does:</p>
 <div class="math">\begin{align}
 G(z) &amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\label{gf_def}\\ 
 \end{align}</div>
-<p>Suppose you also happen to have a recurrence relation for <span class="math">\(c_j = f(\left\{c_i : i &lt; j\right\})\)</span>.  There is an
-arsenal not unlike that available for Fourier or Laplace transforms that allow you to derive from
-that recurrence an analytic function <span class="math">\(G(z)\)</span>, which can be expanded into the form above.  Then, a
-<em>closed-form</em> version of <span class="math">\(c_j\)</span> can read off from the <span class="math">\(c_k\)</span>'s in the series expansion of <span class="math">\(G(z)\)</span>. </p>
+<p>Suppose you also happen to have a recurrence relation for <span class="math">\(c_j = f(\left\{c_i : i &lt; j\right\})\)</span>.
+There is an arsenal not unlike that available for Fourier or Laplace transforms that allow you to
+derive from that recurrence an analytic function <span class="math">\(G(z)\)</span>, which can be expanded into the form above.
+Then, a <em>closed-form</em> version of <span class="math">\(c_j\)</span> can read off from the <span class="math">\(c_k\)</span>'s in the series expansion of
+<span class="math">\(G(z)\)</span>.</p>
 <p>If this is new to you, I'll say that it really helps to see it in action. But, we're not going to do
 any of that here.  Instead, we are going to take some liberties and just use the machinery.  To
 whit, the first thing we are going to do is realize that any series sum that involves powers of
@@ -368,8 +371,8 @@ rate, we were now left with</p>
 <div class="math">\begin{align}
 F'(1) &amp;= \sum_{k=1}^{m-1} \frac{1}{1 - m/k}\\\
 \end{align}</div>
-<p>By now, we are tired and we resort to some <a href="http://www.cs.cmu.edu/~odonnell/toolkit13/how-to-do-math-and-tcs.pdf">street fighting</a>, <a href="https://www.wolframalpha.com/input/?i=sum+1%2F(1-m%2Fk),+k%3D1+to+m-1">Wolfram Alpha</a>-style, which gives us
-</p>
+<p>By now, we are tired and we resort to some <a href="http://www.cs.cmu.edu/~odonnell/toolkit13/how-to-do-math-and-tcs.pdf">street fighting</a>,
+<a href="https://www.wolframalpha.com/input/?i=sum+1%2F(1-m%2Fk),+k%3D1+to+m-1">Wolfram Alpha</a>-style, which gives us</p>
 <div class="math">\begin{align}
 F'(1) &amp;= m \left( 1 - \psi^{(0)} - \gamma\right) - 1\\\
       &amp;= m \left( 1 - (H_{m-1} - \gamma) - \gamma \right) - 1\\\

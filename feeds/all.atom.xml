@@ -203,7 +203,9 @@ flip a fair coin to see both sides is 3. If &lt;span class="math"&gt;\(p = 0.25\
 &lt;p&gt;This is maybe a way of estimating if a coin is &lt;em&gt;extremely&lt;/em&gt; unfair: count the number flips it takes
 to see both sides.&lt;/p&gt;
 &lt;h3&gt;Fine for coins, what about the trinkets?&lt;/h3&gt;
-&lt;p&gt;Having solved the problem for &lt;span class="math"&gt;\(m = 2\)&lt;/span&gt;, the next thing to do was to try for higher &lt;span class="math"&gt;\(m\)&lt;/span&gt;'s.  If I were running a Happy Meal campaign, I might think about how to manipulate the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; in order to maximize &lt;span class="math"&gt;\(E[T]\)&lt;/span&gt;.  Some options here:&lt;/p&gt;
+&lt;p&gt;Having solved the problem for &lt;span class="math"&gt;\(m = 2\)&lt;/span&gt;, the next thing to do was to try for higher &lt;span class="math"&gt;\(m\)&lt;/span&gt;'s.  If I were
+running a Happy Meal campaign, I might think about how to manipulate the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; in order to maximize
+&lt;span class="math"&gt;\(E[T]\)&lt;/span&gt;.  Some options here:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Naive approach: all equal probabilities, i.e. &lt;span class="math"&gt;\( p_k = 1/m\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;Singularly hard to get: One distinctive &lt;span class="math"&gt;\(p_j\)&lt;/span&gt;, but all other &lt;span class="math"&gt;\(p\)&lt;/span&gt;'s equal&lt;/li&gt;
@@ -228,10 +230,11 @@ that converges in a sense that it is simply not silly to act like it does:&lt;/p
 &lt;div class="math"&gt;\begin{align}
 G(z) &amp;amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\label{gf_def}\\ 
 \end{align}&lt;/div&gt;
-&lt;p&gt;Suppose you also happen to have a recurrence relation for &lt;span class="math"&gt;\(c_j = f(\left\{c_i : i &amp;lt; j\right\})\)&lt;/span&gt;.  There is an
-arsenal not unlike that available for Fourier or Laplace transforms that allow you to derive from
-that recurrence an analytic function &lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;, which can be expanded into the form above.  Then, a
-&lt;em&gt;closed-form&lt;/em&gt; version of &lt;span class="math"&gt;\(c_j\)&lt;/span&gt; can read off from the &lt;span class="math"&gt;\(c_k\)&lt;/span&gt;'s in the series expansion of &lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;. &lt;/p&gt;
+&lt;p&gt;Suppose you also happen to have a recurrence relation for &lt;span class="math"&gt;\(c_j = f(\left\{c_i : i &amp;lt; j\right\})\)&lt;/span&gt;.
+There is an arsenal not unlike that available for Fourier or Laplace transforms that allow you to
+derive from that recurrence an analytic function &lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;, which can be expanded into the form above.
+Then, a &lt;em&gt;closed-form&lt;/em&gt; version of &lt;span class="math"&gt;\(c_j\)&lt;/span&gt; can read off from the &lt;span class="math"&gt;\(c_k\)&lt;/span&gt;'s in the series expansion of
+&lt;span class="math"&gt;\(G(z)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;If this is new to you, I'll say that it really helps to see it in action. But, we're not going to do
 any of that here.  Instead, we are going to take some liberties and just use the machinery.  To
 whit, the first thing we are going to do is realize that any series sum that involves powers of
@@ -368,8 +371,8 @@ rate, we were now left with&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 F'(1) &amp;amp;= \sum_{k=1}^{m-1} \frac{1}{1 - m/k}\\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;By now, we are tired and we resort to some &lt;a href="http://www.cs.cmu.edu/~odonnell/toolkit13/how-to-do-math-and-tcs.pdf"&gt;street fighting&lt;/a&gt;, &lt;a href="https://www.wolframalpha.com/input/?i=sum+1%2F(1-m%2Fk),+k%3D1+to+m-1"&gt;Wolfram Alpha&lt;/a&gt;-style, which gives us
-&lt;/p&gt;
+&lt;p&gt;By now, we are tired and we resort to some &lt;a href="http://www.cs.cmu.edu/~odonnell/toolkit13/how-to-do-math-and-tcs.pdf"&gt;street fighting&lt;/a&gt;,
+&lt;a href="https://www.wolframalpha.com/input/?i=sum+1%2F(1-m%2Fk),+k%3D1+to+m-1"&gt;Wolfram Alpha&lt;/a&gt;-style, which gives us&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 F'(1) &amp;amp;= m \left( 1 - \psi^{(0)} - \gamma\right) - 1\\\
       &amp;amp;= m \left( 1 - (H_{m-1} - \gamma) - \gamma \right) - 1\\\
