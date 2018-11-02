@@ -125,7 +125,7 @@ reduced the problem to&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What's the average number of times I need to flip a coin in order to see both sides?&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3&gt;Enter The Coupon Collector&lt;/h3&gt;
+&lt;h3&gt;Enter The Coupon Collector Problem (CCP)&lt;/h3&gt;
 &lt;p&gt;I know it says coupons, and I was just mentioning a coin, but let's talk about
 &lt;a href="https://en.wikipedia.org/wiki/Happy_Meal"&gt;Happy Meals&lt;/a&gt;.  Say you were a child in the 80's and McDonalds started running one of
 their happy meal promotions. They create a number (usually &lt;span class="math"&gt;\(\approx 10\)&lt;/span&gt;) of plastic trinkets that
@@ -312,7 +312,7 @@ S &amp;amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;This form should be familiar enough now that I don't have to convince you that this approach worked.&lt;/p&gt;
 &lt;h3&gt;Happy Meals with Equal Probabilities&lt;/h3&gt;
-&lt;p&gt;We are now prepared to take on the CC problem for arbitrary &lt;span class="math"&gt;\(m\)&lt;/span&gt; with all &lt;span class="math"&gt;\(p_i = 1/m\)&lt;/span&gt;.  As before,
+&lt;p&gt;We are now prepared to take on the CCP for arbitrary &lt;span class="math"&gt;\(m\)&lt;/span&gt; with all &lt;span class="math"&gt;\(p_i = 1/m\)&lt;/span&gt;.  As before,
 define a finite automata to describe the process.&lt;/p&gt;
 &lt;p&gt;&lt;center&gt;&lt;img src="/images/m-automata.svg"&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;Here the states are labeled by the number of distinct trinkets we've seen. The symbol &lt;span class="math"&gt;\(X\)&lt;/span&gt; takes
@@ -407,13 +407,17 @@ H_m &amp;amp;\approx \ln{m} + \gamma\\\
 E[n] &amp;amp;\approx m\left( \ln{m} + \gamma \right)\\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;In my weird and twisted way, this is a much more satisfying approach to look at the Coupon
-Collector. Along the way, we practiced a technique that seems to be very powerful. For instance, I'm
+Collector Problem. Along the way, we practiced a technique that seems to be very powerful. For instance, I'm
 interested to try my hand at using this technique on the &lt;a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm"&gt;KMP Algorithm&lt;/a&gt;. I'm a fan of
 &lt;a href="https://www.ics.uci.edu/~eppstein/"&gt;David Eppstein's Notes&lt;/a&gt; on algorithms from &lt;a href="https://www.ics.uci.edu/~eppstein/161/syl.html"&gt;long ago in internet time&lt;/a&gt;,
 particularly where he shows a fsm for KMP:&lt;/p&gt;
 &lt;p&gt;&lt;center&gt;
 &lt;img src="https://www.ics.uci.edu/~eppstein/161/kmp.gif"/&gt;
 &lt;/center&gt;&lt;/p&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Even though I don't like the canonical explanation, the Wikipedia page on CCP has many wonderful
+links. In particular is one of my favorites by &lt;a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.217.5965&amp;amp;rep=rep1&amp;amp;type=pdf"&gt;&lt;em&gt;Flajolet et. al.&lt;/em&gt;&lt;/a&gt;. That's a truly
+systematic approach to the problem, and shows interesting connects to other allocation problems.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "2em",
