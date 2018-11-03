@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-11-02T00:00:00-07:00</updated><entry><title>Hamiltonian Paths in Cayley Graphs</title><link href="/nqueens-cayley.html" rel="alternate"></link><published>2018-11-02T00:00:00-07:00</published><updated>2018-11-02T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-11-02:/nqueens-cayley.html</id><summary type="html">&lt;figure&gt;
-&lt;img src="images/6-queens.png"&gt;
-&lt;figcaption&gt;Hi&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;HERE
-here too&lt;/p&gt;</summary><content type="html">&lt;figure&gt;
-&lt;img src="images/6-queens.png"&gt;
-&lt;figcaption&gt;Hi&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;HERE
-here too&lt;/p&gt;</content><category term="Groups"></category><category term="Combinatorics"></category></entry><entry><title>What's coming next...</title><link href="/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-11-01:/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-11-01T00:00:00-07:00</updated><entry><title>What's coming next...</title><link href="/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-11-01:/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
 &lt;span class="math"&gt;\(v_{0}\)&lt;/span&gt; going into the new year. A short list of what's coming:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
