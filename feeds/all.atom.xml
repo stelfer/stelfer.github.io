@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="http://memoize.me/" rel="alternate"></link><link href="http://memoize.me/feeds/all.atom.xml" rel="self"></link><id>http://memoize.me/</id><updated>2018-11-01T00:00:00-07:00</updated><entry><title>What's coming next...</title><link href="http://memoize.me/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2018-11-01:/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-11-01T00:00:00-07:00</updated><entry><title>What's coming next...</title><link href="/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-11-01:/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
 &lt;span class="math"&gt;\(v_{0}\)&lt;/span&gt; going into the new year. A short list of what's coming:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -157,7 +157,7 @@ innovation in general, and the future of R&amp;amp;D.&lt;/p&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Planning"></category><category term="Motivation"></category></entry><entry><title>A Different View on the Coupon Collector Problem</title><link href="http://memoize.me/coupon-collector.html" rel="alternate"></link><published>2018-10-27T00:00:00-07:00</published><updated>2018-10-27T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2018-10-27:/coupon-collector.html</id><summary type="html">&lt;p&gt;Once during a meeting in which we were discussing the &lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt; someone
+&lt;/script&gt;</content><category term="Planning"></category><category term="Motivation"></category></entry><entry><title>A Different View on the Coupon Collector Problem</title><link href="/coupon-collector.html" rel="alternate"></link><published>2018-10-27T00:00:00-07:00</published><updated>2018-10-27T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-10-27:/coupon-collector.html</id><summary type="html">&lt;p&gt;Once during a meeting in which we were discussing the &lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt; someone
 asked:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How many times do we need to run the algorithm to see every permutation?&lt;/p&gt;
@@ -368,7 +368,7 @@ S &amp;amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
 &lt;h3&gt;Happy Meals with Equal Probabilities&lt;/h3&gt;
 &lt;p&gt;We are now prepared to take on the CCP for arbitrary &lt;span class="math"&gt;\(m\)&lt;/span&gt; with all &lt;span class="math"&gt;\(p_i = 1/m\)&lt;/span&gt;.  As before,
 define a finite automata to describe the process.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img src="http://memoize.me/images/m-automata.svg"&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src="/images/m-automata.svg"&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;p&gt;Here the states are labeled by the number of distinct trinkets we've seen. The symbol &lt;span class="math"&gt;\(X\)&lt;/span&gt; takes
 the place of the &lt;span class="math"&gt;\(H\)&lt;/span&gt; or &lt;span class="math"&gt;\(T\)&lt;/span&gt; and represents the event of seeing a trinket. At the start, there are
 &lt;span class="math"&gt;\(m\)&lt;/span&gt; ways we can move to state &lt;span class="math"&gt;\(1\)&lt;/span&gt;. Once we are in state &lt;span class="math"&gt;\(1\)&lt;/span&gt;, there is one way we stay in that state,
@@ -528,7 +528,7 @@ systematic approach to the problem, and shows interesting connections to other a
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry><entry><title>Why you should know about the Gamma distribution</title><link href="http://memoize.me/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-12-02:/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I've been staring at exponentially distributed data on a regular basis in one form or another for at
+&lt;/script&gt;</content><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry><entry><title>Why you should know about the Gamma distribution</title><link href="/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2016-12-02:/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I've been staring at exponentially distributed data on a regular basis in one form or another for at
 least the last ten years.  In my previous job, I spent a lot of time with the statistics of VoIP
 phone calls, trying to understand what's "normal", and what are symptoms of system pathologies, or
 even the actions of fraudsters in the telephony networks.  In approaching this subject, I had never
@@ -546,7 +546,7 @@ machine learning, are unfamiliar with this fact, or why it would be useful to kn
 measure in systems, for you often see a long-tailed distribution where the mode is shifted to the
 right, relative to where the exponential would start. This is what &lt;code&gt;scipy.stats.gamma.rvs(1.99,
 size=1000)&lt;/code&gt; looks like:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A Gamma" src="http://memoize.me/images/gamma.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A Gamma" src="/images/gamma.png"&gt;&lt;/p&gt;
 &lt;p&gt;The reason this is really helpful to think about is you often find yourself looking at the length of
 the intervals it takes for things to complete: &lt;/p&gt;
 &lt;ul&gt;
@@ -562,7 +562,7 @@ model the individual times as exponentially distributed, we then should expect t
 should follow a gamma-like distribution.  When reasoning about systems, looking at the distribution
 of times tells you a lot about what's happening.  When the data looks exponentially-distributed,
 i.e. the mode is all the way to the left (&lt;code&gt;scipy.stats.expon.rvs(size=1000)&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="An exponential" src="http://memoize.me/images/expon.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="An exponential" src="/images/expon.png"&gt;&lt;/p&gt;
 &lt;p&gt;then you really have one dominant process contributing to the completion time. Instead, the more you see the mode shifted to the right, the more you can reason that there are a number of processes of equal contribution.  This is a useful way to reason about systems.&lt;/p&gt;
 &lt;p&gt;As I said, learning that the sums of exponentials was distributed as Gamma was a neat and useful
 eureka! moment. However, until recently, I missed an extremely important related fact.  All of this
@@ -595,7 +595,7 @@ conjugate prior for a large number of important distributions: Poisson, Normal, 
 Exponential.&lt;/p&gt;
 &lt;p&gt;But let's get back to proving some neat things about this distribution. Before we can start, we will
 need one additional piece of machinery.  In
-&lt;a href="http://memoize.me/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), I showed a useful application for
+&lt;a href="/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), I showed a useful application for
 probability generating functions (PGFs), which, to review, are&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 G(z) &amp;amp;= \sum_0^\infty p(k)z^k\nonumber\\
@@ -614,7 +614,7 @@ about integrating over the support of &lt;span class="math"&gt;\(f(x)\)&lt;/span
 M_X (t) &amp;amp;= \int_{-\infty}^{\infty} e^{tx} f(x) dx\nonumber\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;which should bring back waves of nostalgia as the two sided Laplace transform of the distribution
-&lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;.  &lt;a href="http://memoize.me/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did
+&lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;.  &lt;a href="/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did
 I do all of these contortions on PGFs" was that taking derivatives gave us nice and easy ways to
 estimate the mean, variance, etc. The MGFs also give us these as the moments of the distribution.
 But the definition above provides us another trick, namely that if we are careful about the the
@@ -674,7 +674,7 @@ later post, but for now, I present below some of the benchmarking data that I ha
 with. Each histogram is labeled by a number which is &lt;span class="math"&gt;\(k = log N\)&lt;/span&gt; of the total input size of the code
 being tested. Specifically, I am benchmarking a library that uses Intel SSE4.2 specialized
 instructions to calculate crc32c checksums.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A Gamma" src="http://memoize.me/images/hists.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A Gamma" src="/images/hists.png"&gt;&lt;/p&gt;
 &lt;p&gt;There are a ton of interesting details going on that I will discuss later, but it should be clear
 that for each &lt;span class="math"&gt;\(k\)&lt;/span&gt;, every time I make these measurements I will get different looking
 histograms. They could be different because something changed in the code. Or, they could be
