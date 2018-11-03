@@ -2,14 +2,21 @@ digraph finite_state_machine {
     rankdir=LR;
     // size="8,5"
 
-    node [shape = circle, label=<0>] 0;
-    node [shape = circle, label=<1>] 1;
-    node [shape = circle, label=<2>] 2;
-    node [shape = circle, label=<<i>m</i>-1>] m1;
-    node [shape = doublecircle, label=<<i>m</i>>] m;
+    qi [shape = point ];
+
+node [fixedsize=shape, width=0.75];
+
+    m [shape = doublecircle, label=<<i>m</i>>];
 
 
-    node [shape = point ]; qi
+    node [shape=circle];
+    
+    0 [label=<0>];
+    1 [label=<1>];
+    2 [label=<2>];
+    m1 [label=<<i>m</i>-1>];
+
+
     qi -> 0;
 
 

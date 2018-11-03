@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-11-01T00:00:00-07:00</updated><entry><title>What's coming next...</title><link href="/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-11-01:/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
+<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2018-11-02T00:00:00-07:00</updated><entry><title>Hamiltonian Paths in Cayley Graphs</title><link href="/nqueens-cayley.html" rel="alternate"></link><published>2018-11-02T00:00:00-07:00</published><updated>2018-11-02T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-11-02:/nqueens-cayley.html</id><summary type="html">&lt;figure&gt;
+&lt;img src="images/6-queens.png"&gt;
+&lt;figcaption&gt;Hi&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;HERE
+here too&lt;/p&gt;</summary><content type="html">&lt;figure&gt;
+&lt;img src="images/6-queens.png"&gt;
+&lt;figcaption&gt;Hi&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;HERE
+here too&lt;/p&gt;</content><category term="Groups"></category><category term="Combinatorics"></category></entry><entry><title>What's coming next...</title><link href="/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2018-11-01:/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
 &lt;span class="math"&gt;\(v_{0}\)&lt;/span&gt; going into the new year. A short list of what's coming:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -180,15 +192,15 @@ reduced the problem to&lt;/p&gt;
 &lt;p&gt;What's the average number of times I need to flip a coin in order to see both sides?&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3&gt;Enter The Coupon Collector Problem (CCP)&lt;/h3&gt;
-&lt;p&gt;I know it says coupons, and I was just mentioning a coin, but let's talk about
-&lt;a href="https://en.wikipedia.org/wiki/Happy_Meal"&gt;Happy Meals&lt;/a&gt;.  Say you were a child in the 80's and McDonalds started running one of
-their happy meal promotions. They create a number (usually &lt;span class="math"&gt;\(\approx 10\)&lt;/span&gt;) of plastic trinkets that
-you get one of every time you buy a happy meal. You, as the child, love them. Your parents, as the
-ones who have to drive you to McDonalds, are wondering how many more times they need to drive you to
-McDonalds.  It turns out than when you purchase a Happy Meal, instead of letting you pick which
-trinket your child wants, they just randomly give you whichever one comes out of the bin of trinkets
-they have under the counter.  In an earlier, more idyllic America, people apparently had to do this
-with coupons in the newspaper.&lt;/p&gt;
+&lt;p&gt;I know it says coupons, and I was just mentioning a coin, but let's talk about &lt;a href="https://en.wikipedia.org/wiki/Happy_Meal"&gt;Happy Meals&lt;/a&gt;.
+Say you were a child in the early 80's and McDonald's started running one of their happy meal
+promotions. They create a number (usually &lt;span class="math"&gt;\(\approx 10\)&lt;/span&gt;) of plastic trinkets that you get one of
+every time you buy a happy meal. You, as the child, love them. Your parents, as the ones who have to
+drive you to McDonald's, are wondering how many more times they need to drive you to McDonald's.  It
+turns out than when you purchase a Happy Meal, instead of letting you pick which trinket your child
+wants, they just randomly give you whichever one comes out of the bin of trinkets they have under
+the counter.  In an earlier, more idyllic America, people apparently had to do this with coupons in
+the newspaper.&lt;/p&gt;
 &lt;p&gt;Regardless of how you want to think about it, let's say that there are &lt;span class="math"&gt;\(m\)&lt;/span&gt; trinkets, to which you
 assign an arbitrary order and index &lt;span class="math"&gt;\(1 \leq i \leq m\)&lt;/span&gt;. The classic way of getting the result is
 provided by &lt;a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem"&gt;Wikipedia&lt;/a&gt;, which asks you to think about &lt;span class="math"&gt;\(t_i\)&lt;/span&gt;, the number of trials to get
@@ -198,9 +210,11 @@ expected number of trials to get the &lt;span class="math"&gt;\(i\)&lt;/span&gt;
 roll a 1 on a six-sided die is 6. The total number of trials, then, is calculated by adding up all
 of these individual exercises in obtaining trinkets. Let's call this total &lt;span class="math"&gt;\(T\)&lt;/span&gt;:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-E[T] &amp;amp;= \sum_{i=1}^m E[t_i] = \sum_{i=1}^m \frac{1}{p_i}\\\
- &amp;amp;= \frac{m}{m} + \frac{m}{m-1} + ... + \frac{m}{1}\\\
- &amp;amp;= m\left(1 + \frac{1}{2} + ... + \frac{1}{m}\right) = m H_m\\\
+E[T] &amp;amp;= \sum_{i=1}^m E[t_i] \\
+&amp;amp;= \sum_{i=1}^m \frac{1}{p_i}\\
+&amp;amp;= \frac{m}{m} + \frac{m}{m-1} + ... + \frac{m}{1}\\
+&amp;amp;= m\left(1 + \frac{1}{2} + ... + \frac{1}{m}\right)\\
+&amp;amp;= m H_m\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;I'll be honest and say that I &lt;em&gt;really&lt;/em&gt; don't like this derivation. It seems like a trick. This
 certainly isn't the way I think about sums of random variables. But this is way most people are
@@ -216,73 +230,84 @@ other events are all either &lt;span class="math"&gt;\(T\)&lt;/span&gt; or &lt;s
 start enumerating the possibilities, we can see patterns appear, depending on how long we run the
 experiments.  For the sequences of length at most &lt;span class="math"&gt;\(n\)&lt;/span&gt;,&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-S_n = &amp;amp;HT + TH + \\
-    &amp;amp;HHT + TTH + \ldots \\
-    &amp;amp;H^{n-1}T + T^{n-1}H.\\
+S_n = \,&amp;amp;HT &amp;amp;&amp;amp;+ TH\\
+    + &amp;amp;HHT  &amp;amp;&amp;amp;+ TTH\\
+    + &amp;amp;\ldots\\
+    + &amp;amp;H^{n-1}T &amp;amp;&amp;amp;+ T^{n-1}H.\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;It's interesting that the generation of length &lt;span class="math"&gt;\(k\)&lt;/span&gt; is easy to &lt;em&gt;generate&lt;/em&gt; from the &lt;span class="math"&gt;\((k-1)\)&lt;/span&gt;-th by
 simply prepending the opposite of the terminal token, which doesn't change.  The production rule
 here is quite simple.  Anyway, what do we do with this sum? Well, if we think about &lt;span class="math"&gt;\(H\)&lt;/span&gt; and &lt;span class="math"&gt;\(T\)&lt;/span&gt; as
-probabilities &lt;span class="math"&gt;\(P(H) = p\)&lt;/span&gt; and &lt;span class="math"&gt;\(P(T) = q = 1 - p\)&lt;/span&gt;, 
-&lt;span class="math"&gt;\(S_\infty\)&lt;/span&gt; better sum to &lt;span class="math"&gt;\(1\)&lt;/span&gt;, so we can evaluate by
-collecting terms:&lt;/p&gt;
+probabilities &lt;span class="math"&gt;\(P(H) = p\)&lt;/span&gt; and &lt;span class="math"&gt;\(P(T) = q = 1 - p\)&lt;/span&gt;, then &lt;span class="math"&gt;\(S_\infty\)&lt;/span&gt; better sum to &lt;span class="math"&gt;\(1\)&lt;/span&gt;. So let's check
+this by collecting terms:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-S_{\infty} &amp;amp;= T\left(H + H^2 + H^3 + \ldots\right) + H\left(T + T^2 + T^3 + \ldots\right)\\\
-&amp;amp;= T\left(\frac{1}{1-H} - 1\right) + H\left(\frac{1}{1-T} - 1\right)\\\
-&amp;amp;= HT\left(\frac{1}{1-H} + \frac{1}{1-T}\right)\label{S}\\
-&amp;amp;= pq \left(\frac{p+q}{pq}\right) = 1.
+S_{\infty} &amp;amp;= T\left(H + H^2 + H^3 + \ldots\right) + H\left(T + T^2 + T^3 + \ldots\right)\\
+&amp;amp;= T\left(\frac{1}{1-H} - 1\right) + H\left(\frac{1}{1-T} - 1\right)\\
+&amp;amp;= HT\left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
+&amp;amp;= pq \left(\frac{p+q}{pq}\right)\\
+&amp;amp;= 1.\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;Now to calculate &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt; we interpret &lt;span class="math"&gt;\(S_k\)&lt;/span&gt; as a probability density, and evaluate the sum:
-&lt;/p&gt;
+&lt;p&gt;On the second step, we've inserted the series representation for &lt;span class="math"&gt;\(\frac{1}{1-x}\)&lt;/span&gt; for &lt;span class="math"&gt;\(x \lt
+1\)&lt;/span&gt;. Since we're thinking about &lt;span class="math"&gt;\(H\)&lt;/span&gt; and &lt;span class="math"&gt;\(T\)&lt;/span&gt; as probabilities here, we should feel OK about this. Pay
+special attention to the third step, because we'll be using it again.  Now to calculate &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt; we
+interpret &lt;span class="math"&gt;\(S_n\)&lt;/span&gt; as a probability density, and evaluate the sum: &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-E[n] &amp;amp;= \sum_{n} n S_n\\
-&amp;amp;=\,2(pq + qp)\, + 3(ppq + qqp) + \ldots m(p^{m-1}q + q^{m-1}p) \ldots...
+E[n] &amp;amp;= \sum_{n=2}^\infty n S_n\\ 
+&amp;amp;=\,2(pq + qp)\, + 3(ppq + qqp) + \ldots m(p^{m-1}q + q^{m-1}p) \ldots...\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;Regrouping a bit, we see that&lt;/p&gt;
+&lt;p&gt;We start the sum for &lt;span class="math"&gt;\(n=2\)&lt;/span&gt; since &lt;span class="math"&gt;\(S_n\)&lt;/span&gt; does not have support for &lt;span class="math"&gt;\(n &amp;lt; 2\)&lt;/span&gt;. We can't see both sides of
+a coin by doing a single flip. Regrouping a bit, we see that&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-E[n] &amp;amp;= q\left(2p + 3p^2 + \ldots mp^{m-1} + \ldots\right) + p\left(2q + 3p^2 + \ldots mq^{m-1} + \ldots \right) \\\
-    &amp;amp;= \frac{q}{p} \left(\sum_{i=1}^\infty ip^i - p\right) + \frac{p}{q} \left(\sum_{i=1}^\infty iq^i - q\right)\\\
-&amp;amp;= \frac{q}{p}\left(\frac{p}{q^2} - p\right) + \frac{p}{q}\left(\frac{q}{p^2} - q\right)\\\
-&amp;amp;= \frac{p}{q}\left(\frac{1}{1-q} - q\right) + \frac{q}{p}\left(\frac{1}{1-p} - p\right)\\\
-&amp;amp;= \frac{1 - pq}{p(1-p)}\\\
-&amp;amp;= \frac{p^2 - p + 1}{p(1-p)}\label{old_way}\\
-&amp;amp;= 2 + \frac{p^3 + q^3}{pq}\\\
+E[n] &amp;amp;= q\left(2p + 3p^2 + \ldots mp^{m-1} + \ldots\right) + p\left(2q + 3p^2 + \ldots mq^{m-1} + \ldots \right) \\
+    &amp;amp;= \frac{q}{p} \left(\sum_{i=1}^\infty ip^i - p\right) + \frac{p}{q} \left(\sum_{i=1}^\infty iq^i - q\right)\\
+&amp;amp;= \frac{q}{p}\left(\frac{p}{q^2} - p\right) + \frac{p}{q}\left(\frac{q}{p^2} - q\right)\\
+&amp;amp;= \frac{p}{q}\left(\frac{1}{1-q} - q\right) + \frac{q}{p}\left(\frac{1}{1-p} - p\right)\\
+&amp;amp;= \frac{1 - pq}{p(1-p)}\\
+&amp;amp;= \frac{p^2 - p + 1}{p(1-p)}\\
+&amp;amp;= 2 + \frac{p^3 + q^3}{pq}\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;This was new to me. For &lt;span class="math"&gt;\(p = q\)&lt;/span&gt; we have that &lt;span class="math"&gt;\(E[n] = 3\)&lt;/span&gt;. The average number of times you need to
-flip a fair coin to see both sides is 3. If &lt;span class="math"&gt;\(p = 0.25\)&lt;/span&gt;, then &lt;span class="math"&gt;\(E[n] = 4.\bar{33}\)&lt;/span&gt;. If the coin is only
-10% fair, then &lt;span class="math"&gt;\(E[n] \approx 10\)&lt;/span&gt;. If you're interested in how it varies with &lt;span class="math"&gt;\(p\)&lt;/span&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;
+&lt;p&gt;For &lt;span class="math"&gt;\(p = q\)&lt;/span&gt; we have that &lt;span class="math"&gt;\(E[n] = 3\)&lt;/span&gt;. The average number of times you need to flip a fair coin to see
+both sides is 3. If &lt;span class="math"&gt;\(p = 0.25\)&lt;/span&gt;, then &lt;span class="math"&gt;\(E[n] = 4.\bar{33}\)&lt;/span&gt;. If the coin is only 10% fair, then &lt;span class="math"&gt;\(E[n]
+\approx 10\)&lt;/span&gt;. If you're interested in how it varies with &lt;span class="math"&gt;\(p\)&lt;/span&gt;:&lt;/p&gt;
+&lt;figure&gt;
+&lt;a name="fair-coin-expectation"&gt;&lt;/a&gt;
 &lt;img src="images/fair-coin-expectation.png"/&gt;
-&lt;/center&gt;&lt;/p&gt;
-&lt;p&gt;This is maybe a way of estimating if a coin is &lt;em&gt;extremely&lt;/em&gt; unfair: count the number flips it takes
-to see both sides.&lt;/p&gt;
-&lt;h3&gt;Fine for coins, what about the trinkets?&lt;/h3&gt;
-&lt;p&gt;Having solved the problem for &lt;span class="math"&gt;\(m = 2\)&lt;/span&gt;, the next thing to do was to try for higher &lt;span class="math"&gt;\(m\)&lt;/span&gt;'s.  If I were
-running a Happy Meal campaign, I might think about how to manipulate the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; in order to maximize
-&lt;span class="math"&gt;\(E[T]\)&lt;/span&gt;.  Some options here:&lt;/p&gt;
+&lt;figcaption&gt;
+Expected number of flips of a coin to see both sides as a function of the bias of the coin.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;This is maybe a way of estimating if a coin is &lt;em&gt;extremely&lt;/em&gt; unfair: build an estimator based on the
+number flips it takes to see both sides.&lt;/p&gt;
+&lt;h3&gt;Fine for coins, but what about the trinkets?&lt;/h3&gt;
+&lt;p&gt;Having solved the problem for &lt;span class="math"&gt;\(m = 2\)&lt;/span&gt;, the next thing to do was to try for &lt;span class="math"&gt;\(m &amp;gt; 2\)&lt;/span&gt;.  First, though,
+we need to think about the &lt;span class="math"&gt;\(p_k\)&lt;/span&gt;, since that's where it might get harry. If I were running a Happy
+Meal campaign, I might think about how to manipulate the &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; in order to maximize &lt;span class="math"&gt;\(E[T]\)&lt;/span&gt;.  Some
+options here:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Naive approach: all equal probabilities, i.e. &lt;span class="math"&gt;\( p_k = 1/m\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Naive approach: all equal probabilities, i.e. &lt;span class="math"&gt;\( p_i = 1/m\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;Singularly hard to get: One distinctive &lt;span class="math"&gt;\(p_j\)&lt;/span&gt;, but all other &lt;span class="math"&gt;\(p\)&lt;/span&gt;'s equal&lt;/li&gt;
 &lt;li&gt;Anything goes: arbitrary &lt;span class="math"&gt;\(p_i\)&lt;/span&gt; subject to &lt;span class="math"&gt;\(\sum p_i = 1\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I think if you grew up in the 80's you might have felt like McDonalds used the second approach.  But
-it turns out that the first is a lot easier to analyze, and will carry us through to the thing I
-want to show in this post.&lt;/p&gt;
+&lt;p&gt;I think if you grew up in the early 80's you might have felt like McDonald's used the second
+approach.  But it turns out that the first is a lot easier to analyze, and will carry us through to
+the thing I want to show in this post.&lt;/p&gt;
 &lt;p&gt;The first thing that happened when we tried to do brute-force counting for &lt;span class="math"&gt;\(m \gt 2\)&lt;/span&gt;, was that the
 sequences quickly got out of hand. We needed a better approach. You may have noticed that I used the
 word &lt;em&gt;generate&lt;/em&gt; above. That was a hint. &lt;a href="https://en.wikipedia.org/wiki/Generating_function"&gt;Generating Functions&lt;/a&gt; are an incredibly useful
-tool in the toolbox of the brute-forcing amateur combinatorialist community. They're also pretty
-fear-inspiring to a lot of people. For whatever reason, when I got tired of brute force counting the
-sequences for &lt;span class="math"&gt;\(m = 3\)&lt;/span&gt;, I remembered some advice from &lt;a href="http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025"&gt;&lt;em&gt;Knuth et. al.&lt;/em&gt;&lt;/a&gt; to use finite
-automata to keep mayhem from breaking out in the production rules.  But before we get to that, it's
-first useful to introduce the machinery that we will use when we get there.&lt;/p&gt;
+tool in the toolbox of the brute-forcing recreational combinatorialist. They're also pretty
+fear-inspiring to a lot of people. &lt;/p&gt;
+&lt;p&gt;When I got tired of brute force counting the sequences for &lt;span class="math"&gt;\(m = 3\)&lt;/span&gt;, I remembered some advice from
+&lt;a href="http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025"&gt;&lt;em&gt;Knuth et. al.&lt;/em&gt;&lt;/a&gt; to use finite automata to help organize generating functions for
+counting exercises like this. But before we get to that, it's first useful to introduce the
+machinery that we will use when we get there.&lt;/p&gt;
 &lt;h3&gt;The coin redux, this time as a PGF&lt;/h3&gt;
-&lt;p&gt;I'm not going to do justice to generating functions in this space. I reccomend &lt;em&gt;Knuth et. al.&lt;/em&gt; as a
+&lt;p&gt;I'm not going to do justice to generating functions in this space. I recommend &lt;em&gt;Knuth et. al.&lt;/em&gt; as a
 gentle introduction and &lt;a href="https://www.amazon.com/generatingfunctionology-Third-Herbert-S-Wilf/dp/1568812795/"&gt;&lt;em&gt;Wilf&lt;/em&gt;&lt;/a&gt; if you're into that kind of thing.  But I will give the basic
 ideas.  Imagine that you have a function &lt;span class="math"&gt;\(G\)&lt;/span&gt; that you are able to expand in a (complex) power series
 that converges in a sense that it is simply not silly to act like it does:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G(z) &amp;amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\label{gf_def}\\ 
+G(z) &amp;amp;= \sum_{k=0}^{\infty} c_k z^n \lt \infty\\ 
 \end{align}&lt;/div&gt;
 &lt;p&gt;Suppose you also happen to have a recurrence relation for &lt;span class="math"&gt;\(c_j = f(\left\{c_i : i &amp;lt; j\right\})\)&lt;/span&gt;.
 There is an arsenal not unlike that available for Fourier or Laplace transforms that allow you to
@@ -297,22 +322,22 @@ things can be "converted" to a GF by taking some liberties and making some suita
 In particular, if you interpret the &lt;span class="math"&gt;\(c_k\)&lt;/span&gt; as &lt;em&gt;probabilities&lt;/em&gt;, then you actually get something that
 is formally known as a probability generating function (PGF).&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G(z) &amp;amp;= \sum_{k=0}^{\infty} p_k z^k\\\
+G(z) &amp;amp;= \sum_{k=0}^{\infty} p_k z^k\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Notice a couple of things here: First, that &lt;span class="math"&gt;\(G(1) = 1\)&lt;/span&gt;.  Why? well 
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G(1) &amp;amp;= \sum_{k=0}^{\infty} p_k 1^k\\\
-    &amp;amp;= \sum_{k=1}^{\infty} p_k = 1\\\
+G(1) &amp;amp;= \sum_{k=0}^{\infty} p_k 1^k\\
+    &amp;amp;= \sum_{k=1}^{\infty} p_k = 1\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;for everything that we consider to be a probability.  Also, notice that
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G'(z) &amp;amp;= \sum_{k=1}^{\infty} k p_k z^{k-1}\\\
-G'(1) &amp;amp;= \sum_{k=1}^{\infty} k p_k = E[n].\\\
+G'(z) &amp;amp;= \sum_{k=1}^{\infty} k p_k z^{k-1}\\
+G'(1) &amp;amp;= \sum_{k=1}^{\infty} k p_k = E[n].\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Now this is useful to us. Brute-force counting sequences to calculate &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt; could be replaced by
-calculating the derivitive of the PGF for the process.  If only we knew how to create the
+calculating the derivative of the PGF for the process.  If only we knew how to create the
 PGF! Before I show you, let's observe one more fact about PGFs. Suppose we find ourselves in a
 situation where we have a PGF that looks something like this&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
@@ -320,17 +345,17 @@ G(z) &amp;amp;= \frac{P(z)}{F(z)}\,\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;where &lt;span class="math"&gt;\(P(z)\)&lt;/span&gt; and &lt;span class="math"&gt;\(F(z)\)&lt;/span&gt; are some analytic functions of &lt;span class="math"&gt;\(z\)&lt;/span&gt;. Observe that&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-F'(z)\,G(z) + G'(z)\,F(z) &amp;amp;= P'(z)\\\
+F'(z)\,G(z) + G'(z)\,F(z) &amp;amp;= P'(z)\\
 \Rightarrow G'(1) &amp;amp;= \frac{P'(1) - F'(1)}{F(1)}\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;If you have ever spent any time with partial fractions, you will know why we will want this result.
 Now, let's use all of this on an unsuspecting sum to see if it works.  In light of thinking about
 PGFs, our original &lt;span class="math"&gt;\(S_n\)&lt;/span&gt; in terms of &lt;span class="math"&gt;\(T\)&lt;/span&gt; and &lt;span class="math"&gt;\(H\)&lt;/span&gt; is worth talking a look at.So, lets make the
 replacements &lt;span class="math"&gt;\(H \rightarrow pz\)&lt;/span&gt; and &lt;span class="math"&gt;\(T \rightarrow qz\)&lt;/span&gt; and see what happens. This will allow us to
-promote our proto-PGF to a real PGF.&lt;/p&gt;
+promote &lt;span class="math"&gt;\(S \rightarrow G(z)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 S &amp;amp;= HT\left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
-G &amp;amp;= p q z^2 \left(\frac{1}{1-pz} + \frac{1}{1-qz}\right) &amp;amp;&amp;amp; S \rightarrow G\,,\,H \rightarrow pz\,,\,T \rightarrow qz \\
+G(z) &amp;amp;= p q z^2 \left(\frac{1}{1-pz} + \frac{1}{1-qz}\right) &amp;amp;&amp;amp; S \rightarrow G(z)\,,\,H \rightarrow pz\,,\,T \rightarrow qz \\
 &amp;amp;= \frac{p q z^2 \left(2-z\right)}{(1-pz)(1-qz)}\\
 &amp;amp;= \frac{P(z)}{F(z)}\\
 P'(1) &amp;amp;= p(1-p)\\
@@ -344,102 +369,124 @@ accomplished nothing, except to convince ourselves that our machinery works.&lt;
 &lt;p&gt;We return now to the hint that &lt;em&gt;Knuth et. al.&lt;/em&gt; gave us about using finite automata to help generate
 our &lt;span class="math"&gt;\(S\)&lt;/span&gt;'s.  If we think about the coin problem we've been considering, a first stab at at
 state machine could look something like this.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;
-&lt;img alt="Alt Text" src="images/coin-automata.svg"&gt;
-&lt;/center&gt;&lt;/p&gt;
+&lt;figure&gt;
+&lt;a name="coin-automata"&gt;&lt;/a&gt; &lt;img src="images/coin-automata.svg"/&gt;
+
+&lt;figcaption&gt;
+
+Flipping a coin to see both sides as a state machine. States 1 and 3 mean that we've seen k T's or
+H's respectively.
+
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
 &lt;p&gt;I've labeled the states by number as well. We start in a state &lt;span class="math"&gt;\(0\)&lt;/span&gt; where we haven't seen a flip
 yet. Then we start accumulating flips, moving to &lt;span class="math"&gt;\(1\)&lt;/span&gt; or &lt;span class="math"&gt;\(3\)&lt;/span&gt; initially after a &lt;span class="math"&gt;\(T\)&lt;/span&gt; or &lt;span class="math"&gt;\(H\)&lt;/span&gt;, then
 eventually terminating when we get a flip different from the first flip we saw.  Now comes the
 interesting part. Let's write down the sequence sum, like we did before, this time using the
 subscript on &lt;span class="math"&gt;\(S\)&lt;/span&gt; not to index the number of trials, but to index the state &lt;span class="math"&gt;\(S_n\)&lt;/span&gt;:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-S_0 &amp;amp;= 1\\\
-S_1 &amp;amp;= TS_0 + TS_1 = T(1+S_1)\\\
-S_2 &amp;amp;= HS1\\\
-S_3 &amp;amp;= H(1+S3)\\\
-S_4 &amp;amp;= TS_3\\\
+S_0 &amp;amp;= 1\\
+S_1 &amp;amp;= TS_0 + TS_1 = T(1+S_1)\\
+S_2 &amp;amp;= HS1\\
+S_3 &amp;amp;= H(1+S3)\\
+S_4 &amp;amp;= TS_3\\
 S &amp;amp;= S_2 + S_4.\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Here we have identified &lt;span class="math"&gt;\(S_2\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_4\)&lt;/span&gt; as our terminal states. Solving we see that&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-S_2 &amp;amp;= \frac{TH}{1-T}\\\
-S_4 &amp;amp;= \frac{TH}{1-H}\\\
-S &amp;amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
+S_2 &amp;amp;= \frac{TH}{1-T}\\
+S_4 &amp;amp;= \frac{TH}{1-H}\\
+S &amp;amp; = HT \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;This form should be familiar enough now that I don't have to convince you that this approach worked.&lt;/p&gt;
 &lt;h3&gt;Happy Meals with Equal Probabilities&lt;/h3&gt;
 &lt;p&gt;We are now prepared to take on the CCP for arbitrary &lt;span class="math"&gt;\(m\)&lt;/span&gt; with all &lt;span class="math"&gt;\(p_i = 1/m\)&lt;/span&gt;.  As before,
 define a finite automata to describe the process.&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;&lt;img src="/images/m-automata.svg"&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;figure&gt;
+&lt;a name="m-automata"&gt;&lt;/a&gt; &lt;img src="images/m-automata.svg"/&gt;
+
+&lt;figcaption&gt;
+
+Gathering trinkets as a state machine. The state numbers count the number of distinct trinket's we
+seen.
+
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
 &lt;p&gt;Here the states are labeled by the number of distinct trinkets we've seen. The symbol &lt;span class="math"&gt;\(X\)&lt;/span&gt; takes
 the place of the &lt;span class="math"&gt;\(H\)&lt;/span&gt; or &lt;span class="math"&gt;\(T\)&lt;/span&gt; and represents the event of seeing a trinket. At the start, there are
 &lt;span class="math"&gt;\(m\)&lt;/span&gt; ways we can move to state &lt;span class="math"&gt;\(1\)&lt;/span&gt;. Once we are in state &lt;span class="math"&gt;\(1\)&lt;/span&gt;, there is one way we stay in that state,
-and &lt;span class="math"&gt;\((m-1)\)&lt;/span&gt; ways we can move to state &lt;span class="math"&gt;\(2\)&lt;/span&gt;. And so on.&lt;/p&gt;
-&lt;p&gt;Then, as before we can read off the proto-PGF&lt;/p&gt;
+and &lt;span class="math"&gt;\((m-1)\)&lt;/span&gt; ways we can move to state &lt;span class="math"&gt;\(2\)&lt;/span&gt;. And so on. Then we can read off &lt;span class="math"&gt;\(S\)&lt;/span&gt; as before:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-S_0 &amp;amp;= 1\\\
-S_1 &amp;amp;= m X S_0 + X S_1 = \frac{m}{1-X}\,XS_0\\\
-S_2 &amp;amp;= \frac{(m - 1)}{1 - 2 X}\,XS_0\\\
-S_k &amp;amp;= \frac{(m - k + 1)}{1 - k X}\,XS_{k - 1}\\\
-&amp;amp;= f(X,m)_k\,XS_{k-1}\\\
-S_m &amp;amp;= XS_{m-1}.\\\
+S_0 &amp;amp;= 1\\
+S_1 &amp;amp;= m X S_0 + X S_1\\
+&amp;amp;= \frac{m}{1-X}\,XS_0\\
+S_2 &amp;amp;= \frac{(m - 1)}{1 - 2 X}\,XS_0\\
+S_k &amp;amp;= \frac{(m - k + 1)}{1 - k X}\,XS_{k - 1}\\
+&amp;amp;= f(X,m)_k\,XS_{k-1}\\
+S_m &amp;amp;= XS_{m-1}.\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;Writing down a few terms for small k of the recurrence let's us see a closed form&lt;/p&gt;
+&lt;p&gt;Here &lt;span class="math"&gt;\(f(X,m_k)\)&lt;/span&gt; has been introduced to hold the coefficient. Writing down a few terms for small &lt;span class="math"&gt;\(k\)&lt;/span&gt; of
+the recurrence helps us see a closed form&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-S_4 &amp;amp;= X S_3 \\\
-    &amp;amp;= X^2 f(3)\,S_2 \\\
-    &amp;amp;= X^3 f(3)\,f(2)\,S_1 \\\
-    &amp;amp;= X^4 \prod_{k=1}^{3} f(k). \\\
+S_4 &amp;amp;= X S_3 \\
+    &amp;amp;= X^2 f(3)\,S_2 \\
+    &amp;amp;= X^3 f(3)\,f(2)\,S_1 \\
+    &amp;amp;= X^4 \prod_{k=1}^{3} f(k). \\
 \end{align}&lt;/div&gt;
 &lt;p&gt;This leads us to conclude that&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-S_m &amp;amp;= X^m \prod_{k=1}^{m-1} \frac{m - k + 1}{1 - k X}\\\
-    &amp;amp;= m! X^m \prod_{k=1}^{m-1} \left(1 - k X \right)^{-1}.\\\
+S_m &amp;amp;= X^m \prod_{k=1}^{m-1} \frac{m - k + 1}{1 - k X}\\
+    &amp;amp;= m! X^m \prod_{k=1}^{m-1} \left(1 - k X \right)^{-1}.\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;As before, we make the substitution &lt;span class="math"&gt;\( X \rightarrow pz = z/m\)&lt;/span&gt;, and we promote the proto-&lt;span class="math"&gt;\(PGF\)&lt;/span&gt; to a &lt;span class="math"&gt;\(PGF\)&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;As before, we make the substitution &lt;span class="math"&gt;\( X \rightarrow pz = z/m\)&lt;/span&gt;, and we promote &lt;span class="math"&gt;\(S \rightarrow G(z)\)&lt;/span&gt;:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G(z) &amp;amp;= \frac{m!}{m^m} z^m \prod_{k=1}^{m-1} (1-kz/m)^{-1}.\\\
+G(z) &amp;amp;= \frac{m!}{m^m} z^m \prod_{k=1}^{m-1} (1-kz/m)^{-1}.\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Also, as before, we make the substitution &lt;span class="math"&gt;\(G=z^{m}/F\)&lt;/span&gt; and recall that
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-E[n] = G'(1) = \frac{m - F'(1)}{F(1)} \label{mean}\\
+E[n] = G'(1) = \frac{m - F'(1)}{F(1)} \\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Then
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-F(z) &amp;amp;= \frac{m^m}{m!} \prod_{k=1}^{m-1} (1- kz/m) = \frac{m^m}{m!} Q_m(z)\\\
-F'(z) &amp;amp;= \frac{-m^m}{m!} \frac{z}{m} Q_m(z) \sum_{k=1}^{m-1} \left(\frac{k}{1-kz/m}\right) \\\
-      &amp;amp;= -\frac{z}{m} F(z) \sum_{k=1}^{m-1} \left(\frac{k}{1-kz/m}\right) \\\
-      &amp;amp;= -z F(z) \sum_{k=1}^{m-1} \left(\frac{k}{m - kz}\right) \\\
-      &amp;amp;= z F(z) \sum_{k=1}^{m-1} \left(\frac{1}{z - m/k}\right) \label{Fprime}\\
+F(z) &amp;amp;= \frac{m^m}{m!} \prod_{k=1}^{m-1} (1- kz/m)\\
+&amp;amp;= \frac{m^m}{m!} Q_m(z)\\
+F'(z) &amp;amp;= \frac{-m^m}{m!} \frac{z}{m} Q_m(z) \sum_{k=1}^{m-1} \left(\frac{k}{1-kz/m}\right) \\
+      &amp;amp;= -\frac{z}{m} F(z) \sum_{k=1}^{m-1} \left(\frac{k}{1-kz/m}\right) \\
+      &amp;amp;= -z F(z) \sum_{k=1}^{m-1} \left(\frac{k}{m - kz}\right) \\
+      &amp;amp;= z F(z) \sum_{k=1}^{m-1} \left(\frac{1}{z - m/k}\right) \\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Things are looking very promising.  Now we evaluate &lt;span class="math"&gt;\(Q(1)\)&lt;/span&gt;
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 Q(1) &amp;amp;= \frac{1}{m^{m-1}} \prod_{k=1}^{m-1} \left(m-k\right) \ \\
      &amp;amp;= \frac{1}{m^{m-1}} \left( (m-1)(m-2) \ldots \left( m - (m - 1) \right) \right)\ \\
-     &amp;amp;= \frac{\left(m-1\right)!}{m^{m-1}}\\\
-     &amp;amp;= \frac{m!}{m^m}.\\\
+     &amp;amp;= \frac{\left(m-1\right)!}{m^{m-1}}\\
+     &amp;amp;= \frac{m!}{m^m}.\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Interestingly, this means that &lt;span class="math"&gt;\(F(1) =1\)&lt;/span&gt;, which also means that &lt;span class="math"&gt;\(F\)&lt;/span&gt; also behaves like a PGF.  At any
 rate, we were now left with&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-F'(1) &amp;amp;= \sum_{k=1}^{m-1} \frac{1}{1 - m/k}\\\
+F'(1) &amp;amp;= \sum_{k=1}^{m-1} \frac{1}{1 - m/k}\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;By now, we are tired and we resort to some &lt;a href="http://www.cs.cmu.edu/~odonnell/toolkit13/how-to-do-math-and-tcs.pdf"&gt;street fighting&lt;/a&gt;,
 &lt;a href="https://www.wolframalpha.com/input/?i=sum+1%2F(1-m%2Fk),+k%3D1+to+m-1"&gt;Wolfram Alpha&lt;/a&gt;-style, which gives us&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-F'(1) &amp;amp;= m \left( 1 - \psi^{(0)} - \gamma\right) - 1\\\
-      &amp;amp;= m \left( 1 - (H_{m-1} - \gamma) - \gamma \right) - 1\\\
-      &amp;amp;= m \left( 1 - H_{m-1} \right) - 1\\\
+F'(1) &amp;amp;= m \left( 1 - \psi^{(0)} - \gamma\right) - 1\\
+      &amp;amp;= m \left( 1 - (H_{m-1} - \gamma) - \gamma \right) - 1\\
+      &amp;amp;= m \left( 1 - H_{m-1} \right) - 1\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;using the fact that &lt;span class="math"&gt;\(\psi^{(0)} = H_{m-1} - \gamma\)&lt;/span&gt;. Of course, this fact is exactly what Alpha used
 to give us the answer by re-arranging the sum.  Plugging this all in, we finally get&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G'(1) &amp;amp;= E[n]\\\
-      &amp;amp;= m - \left(m - m H_{m-1} - 1 \right)\\\
-      &amp;amp;= 1 + m H_{m-1}\\\
+G'(1) &amp;amp;= E[n]\\
+      &amp;amp;= m - \left(m - m H_{m-1} - 1 \right)\\
+      &amp;amp;= 1 + m H_{m-1}\\
       &amp;amp;= mH_m\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;using &lt;span class="math"&gt;\(H_m = H_{m-1} + 1/m\)&lt;/span&gt;. This was our goal. &lt;/p&gt;
@@ -448,28 +495,35 @@ one-sided confidence interval for &lt;span class="math"&gt;\(n\)&lt;/span&gt;, t
 and Markov's inequality.  If we could be bothered to calculate the variance using the formula's
 above, we could use Chebyshev's to get a two sided confidence interval and a tighter bound. Anyway,&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-P(n &amp;gt; k m H_m) &amp;amp;\leq \frac{E[n]}{k m H_m}\\\
-&amp;amp;\leq \frac{1}{k}.\\\
+P(n &amp;gt; k m H_m) &amp;amp;\leq \frac{E[n]}{k m H_m}\\
+&amp;amp;\leq \frac{1}{k}.\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Setting &lt;span class="math"&gt;\(1/k = 0.05 \Rightarrow k = 20\)&lt;/span&gt;. For example, for a six-sided die, for &lt;span class="math"&gt;\(\epsilon = kmH_m\)&lt;/span&gt;,&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-P(n &amp;gt; \epsilon) &amp;amp;\leq 0.05\\\
+P(n &amp;gt; \epsilon) &amp;amp;\leq 0.05\\
 \epsilon &amp;amp;\approx 300 
 \end{align}&lt;/div&gt;
 &lt;p&gt;For a permutation of order &lt;span class="math"&gt;\(6\)&lt;/span&gt;, the 95% threshold is &lt;span class="math"&gt;\(\approx 200000\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Finally, for large &lt;span class="math"&gt;\(m\)&lt;/span&gt;, &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-H_m &amp;amp;\approx \ln{m} + \gamma\\\
-E[n] &amp;amp;\approx m\left( \ln{m} + \gamma \right)\\\
+H_m &amp;amp;\approx \ln{m} + \gamma\\
+E[n] &amp;amp;\approx m\left( \ln{m} + \gamma \right)\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;In my weird and twisted way, this is a much more satisfying approach to look at the Coupon
 Collector Problem. Along the way, we practiced a technique that seems to be very powerful. For instance, I'm
 interested to try my hand at using this technique on the &lt;a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm"&gt;KMP Algorithm&lt;/a&gt;. I'm a fan of
 &lt;a href="https://www.ics.uci.edu/~eppstein/"&gt;David Eppstein's Notes&lt;/a&gt; on algorithms from &lt;a href="https://www.ics.uci.edu/~eppstein/161/syl.html"&gt;long ago in internet time&lt;/a&gt;,
-particularly where he shows a fsm for KMP:&lt;/p&gt;
-&lt;p&gt;&lt;center&gt;
+particularly where he shows a state machine for KMP:&lt;/p&gt;
+&lt;figure&gt;
 &lt;img src="https://www.ics.uci.edu/~eppstein/161/kmp.gif"/&gt;
-&lt;/center&gt;&lt;/p&gt;
+&lt;figcaption&gt;
+
+A state machine for matching "nano" with &lt;a
+href="https://www.ics.uci.edu/~eppstein/161/960227.html"&gt;KMP&lt;/a&gt;.
+
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;h3&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;Even though I don't like the canonical explanation, the Wikipedia page on CCP has many wonderful
 links. In particular is one of my favorites by &lt;a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.217.5965&amp;amp;rep=rep1&amp;amp;type=pdf"&gt;&lt;em&gt;Flajolet et. al.&lt;/em&gt;&lt;/a&gt;. That's a truly
