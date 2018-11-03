@@ -308,8 +308,8 @@ G(1) &amp;amp;= \sum_{k=0}^{\infty} p_k 1^k\\\
 &lt;p&gt;for everything that we consider to be a probability.  Also, notice that
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-&amp;amp;G'(z) = \sum_{k=1}^{\infty} k p_k z^{k-1}\\\
-\Rightarrow &amp;amp;G'(1) = \sum_{k=1}^{\infty} k p_k = E[n].\\\
+G'(z) &amp;amp;= \sum_{k=1}^{\infty} k p_k z^{k-1}\\\
+G'(1) &amp;amp;= \sum_{k=1}^{\infty} k p_k = E[n].\\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Now this is useful to us. Brute-force counting sequences to calculate &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt; could be replaced by
 calculating the derivitive of the PGF for the process.  If only we knew how to create the
@@ -327,13 +327,15 @@ G(z) &amp;amp;= \frac{P(z)}{F(z)}\,\\
 Now, let's use all of this on an unsuspecting sum to see if it works.  In light of thinking about
 PGFs, our original &lt;span class="math"&gt;\(S_n\)&lt;/span&gt; in terms of &lt;span class="math"&gt;\(T\)&lt;/span&gt; and &lt;span class="math"&gt;\(H\)&lt;/span&gt; is worth talking a look at.So, lets make the
 replacements &lt;span class="math"&gt;\(H \rightarrow pz\)&lt;/span&gt; and &lt;span class="math"&gt;\(T \rightarrow qz\)&lt;/span&gt; and see what happens. This will allow us to
-promote our proto-PGF &lt;span class="math"&gt;\(S \rightarrow G\)&lt;/span&gt;.&lt;/p&gt;
+promote our proto-PGF to a real PGF.&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G &amp;amp;= p q z^2 \left(\frac{1}{1-pz} + \frac{1}{1-qz}\right) = \frac{P(z)}{F(z)}\\\
-&amp;amp;= \frac{p q z^2 \left(2-z\right)}{(1-pz)(1-qz)}\\\
-P'(1)&amp;amp;= p(1-p)\\\
-F'(1)&amp;amp;= 2p - 2p^2 -1\\\
-G'(1)&amp;amp;= \frac{p(1-p) - (2p -2p^2 - 1)}{p(1-p)}\\\
+S &amp;amp;= HT\left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
+G &amp;amp;= p q z^2 \left(\frac{1}{1-pz} + \frac{1}{1-qz}\right) &amp;amp;&amp;amp; S \rightarrow G\,,\,H \rightarrow pz\,,\,T \rightarrow qz \\
+&amp;amp;= \frac{p q z^2 \left(2-z\right)}{(1-pz)(1-qz)}\\
+&amp;amp;= \frac{P(z)}{F(z)}\\
+P'(1) &amp;amp;= p(1-p)\\
+F'(1) &amp;amp;= 2p - 2p^2 -1\\
+G'(1) &amp;amp;= \frac{p(1-p) - (2p -2p^2 - 1)}{p(1-p)}\\
 &amp;amp;= \frac{p^2 - p + 1}{p(1-p)}.
 \end{align}&lt;/div&gt;
 &lt;p&gt;If you look back at our earlier calculation of &lt;span class="math"&gt;\(E[n]\)&lt;/span&gt;, you'll see the same exact result.  So, we

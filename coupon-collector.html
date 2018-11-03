@@ -243,8 +243,8 @@ G(1) &amp;= \sum_{k=0}^{\infty} p_k 1^k\\\
 <p>for everything that we consider to be a probability.  Also, notice that
 </p>
 <div class="math">\begin{align}
-&amp;G'(z) = \sum_{k=1}^{\infty} k p_k z^{k-1}\\\
-\Rightarrow &amp;G'(1) = \sum_{k=1}^{\infty} k p_k = E[n].\\\
+G'(z) &amp;= \sum_{k=1}^{\infty} k p_k z^{k-1}\\\
+G'(1) &amp;= \sum_{k=1}^{\infty} k p_k = E[n].\\\
 \end{align}</div>
 <p>Now this is useful to us. Brute-force counting sequences to calculate <span class="math">\(E[n]\)</span> could be replaced by
 calculating the derivitive of the PGF for the process.  If only we knew how to create the
@@ -262,13 +262,15 @@ G(z) &amp;= \frac{P(z)}{F(z)}\,\\
 Now, let's use all of this on an unsuspecting sum to see if it works.  In light of thinking about
 PGFs, our original <span class="math">\(S_n\)</span> in terms of <span class="math">\(T\)</span> and <span class="math">\(H\)</span> is worth talking a look at.So, lets make the
 replacements <span class="math">\(H \rightarrow pz\)</span> and <span class="math">\(T \rightarrow qz\)</span> and see what happens. This will allow us to
-promote our proto-PGF <span class="math">\(S \rightarrow G\)</span>.</p>
+promote our proto-PGF to a real PGF.</p>
 <div class="math">\begin{align}
-G &amp;= p q z^2 \left(\frac{1}{1-pz} + \frac{1}{1-qz}\right) = \frac{P(z)}{F(z)}\\\
-&amp;= \frac{p q z^2 \left(2-z\right)}{(1-pz)(1-qz)}\\\
-P'(1)&amp;= p(1-p)\\\
-F'(1)&amp;= 2p - 2p^2 -1\\\
-G'(1)&amp;= \frac{p(1-p) - (2p -2p^2 - 1)}{p(1-p)}\\\
+S &amp;= HT\left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
+G &amp;= p q z^2 \left(\frac{1}{1-pz} + \frac{1}{1-qz}\right) &amp;&amp; S \rightarrow G\,,\,H \rightarrow pz\,,\,T \rightarrow qz \\
+&amp;= \frac{p q z^2 \left(2-z\right)}{(1-pz)(1-qz)}\\
+&amp;= \frac{P(z)}{F(z)}\\
+P'(1) &amp;= p(1-p)\\
+F'(1) &amp;= 2p - 2p^2 -1\\
+G'(1) &amp;= \frac{p(1-p) - (2p -2p^2 - 1)}{p(1-p)}\\
 &amp;= \frac{p^2 - p + 1}{p(1-p)}.
 \end{align}</div>
 <p>If you look back at our earlier calculation of <span class="math">\(E[n]\)</span>, you'll see the same exact result.  So, we
