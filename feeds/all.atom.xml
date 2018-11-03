@@ -320,8 +320,8 @@ G(z) &amp;amp;= \frac{P(z)}{F(z)}\,\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;where &lt;span class="math"&gt;\(P(z)\)&lt;/span&gt; and &lt;span class="math"&gt;\(F(z)\)&lt;/span&gt; are some analytic functions of &lt;span class="math"&gt;\(z\)&lt;/span&gt;. Observe that&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-&amp;amp;F'(z)\,G(z) + G'(z)\,F(z) = P'(z)\\\
-\Rightarrow &amp;amp;G'(1) = \frac{P'(1) - F'(1)}{F(1)}\\
+F'(z)\,G(z) + G'(z)\,F(z) &amp;amp;= P'(z)\\\
+\Rightarrow G'(1) &amp;amp;= \frac{P'(1) - F'(1)}{F(1)}\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;If you have ever spent any time with partial fractions, you will know why we will want this result.
 Now, let's use all of this on an unsuspecting sum to see if it works.  In light of thinking about
