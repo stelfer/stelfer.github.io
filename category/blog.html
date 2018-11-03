@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"
- prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
     <title>Blog - memoize.me</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--  -->
 
 
 
@@ -22,20 +20,15 @@
         <meta property="og:url" content=""/>
         <meta property="og:description" content="memoize.me"/>
 
-    <!--  -->
-    <!--  -->
+
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="/theme/css/bootstrap.yeti.min.css" type="text/css"/>
     <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
 
     <link href="/theme/css/pygments/native.css" rel="stylesheet">
-
-
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
-
         <link href="/static/custom.css" rel="stylesheet">
-
 
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="memoize.me ATOM Feed"/>
@@ -47,14 +40,8 @@
 <body>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container-fluid">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a href="/" class="navbar-brand">
 memoize.me            </a>
         </div>
@@ -62,41 +49,105 @@ memoize.me            </a>
             <ul class="nav navbar-nav">
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <!-- <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li> -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
 </div> <!-- /.navbar -->
+
 <!-- Banner -->
 <!-- End Banner -->
+
+<!-- Content Container -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
+            <article>
+                <h2><a href="/2018-11-01-next.html">What's coming next...</a></h2>
+                <div class="summary"><p>I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
+<span class="math">\(v_{0}\)</span> going into the new year. A short list of what's coming:</p>
 <ol>
+<li>
+<p>A while back I was messing with <a href="https://en.wikipedia.org/wiki/Eight_queens_puzzle">n-queens</a>, and I found myself needing to test board
+permutations against the internal symmetries of chess. That lead me back to one of my favorite
+things to think about, generating permutations. This lead me to looking at
+<a href="https://en.wikipedia.org/wiki/Cayley_graph">Cayley graphs</a> of <span class="math">\(D_4\)</span>, which lead me to <a href="https://arxiv.org/abs/1203.1835">bell ringing</a> from the 17th
+century . I'll explain.</p>
+</li>
+<li>
+<p>Recently I found myself reading about <a href="https://en.wikipedia.org/wiki/Belief_propagation">belief …</a></p></li></ol><script type='text/javascript'>if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
 
-<li><h4>
-    <a href="/2018-11-01-next.html">What's coming next...</a>
-    <small class="text-muted"> (01 November 2018 )</small>
-</h4></li>
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
 
-  </ol>
-
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=default";
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+                    <a class="btn btn-default btn-xs" href="/2018-11-01-next.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         </div>
     </div>
 </div>
+<!-- End Content Container -->
+
 <footer>
    <div class="container-fluid">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 Soren Telfer </div>
-	   
-         <!--    &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>, -->
-         <!--    <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>, -->
-         <!--    <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> -->
-         <!-- -->
-         <!-- </div> -->
+         <div class="col-xs-10">&copy; 2018 Soren Telfer
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
          <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
       </div>
    </div>
@@ -108,6 +159,7 @@ memoize.me            </a>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
 <script src="/theme/js/respond.min.js"></script>
+
 
     <!-- Disqus -->
     <script type="text/javascript">
@@ -124,8 +176,6 @@ memoize.me            </a>
         }());
     </script>
     <!-- End Disqus Code -->
-
-
 
 
 </body>
