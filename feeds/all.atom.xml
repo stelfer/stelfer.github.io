@@ -572,25 +572,29 @@ systematic approach to the problem, and shows interesting connections to other a
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry><entry><title>Why you should know about the Gamma distribution</title><link href="/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2016-12-02:/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I've been staring at exponentially distributed data on a regular basis in one form or another for at
-least the last ten years.  In my previous job, I spent a lot of time with the statistics of VoIP
-phone calls, trying to understand what's "normal", and what are symptoms of system pathologies, or
-even the actions of fraudsters in the telephony networks.  In approaching this subject, I had never
-yet studied queuing theory, but I had a lot of experience with Poisson processes in experimental
-high energy physics. This meant that as I learned I had many wonderful eureka! moments …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been staring at exponentially distributed data on a regular basis in one form or another for at
-least the last ten years.  In my previous job, I spent a lot of time with the statistics of VoIP
-phone calls, trying to understand what's "normal", and what are symptoms of system pathologies, or
-even the actions of fraudsters in the telephony networks.  In approaching this subject, I had never
-yet studied queuing theory, but I had a lot of experience with Poisson processes in experimental
-high energy physics. This meant that as I learned I had many wonderful eureka! moments.  One of
-these moments was when I learned that the sum of exponentially distributed variables has a gamma
-distribution. I often find that people I mention this to, people in systems, and even often in
-machine learning, are unfamiliar with this fact, or why it would be useful to know.&lt;/p&gt;
+&lt;/script&gt;</content><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry><entry><title>Why you should know about the Gamma distribution</title><link href="/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:None,2016-12-02:/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I've been staring at exponentially distributed data in various forms for at least the last ten
+years.  In my previous job, I spent a lot of time with the statistics of VoIP phone calls, trying to
+understand what's "normal", and what are symptoms of system pathologies, or even the actions of
+fraudsters in the telephony networks.  In approaching this subject long ago, I had not yet studied
+queuing theory, but I had a lot of experience with Poisson processes in experimental high energy
+physics. This meant that as I learned I had many wonderful eureka! moments.  One of these moments …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been staring at exponentially distributed data in various forms for at least the last ten
+years.  In my previous job, I spent a lot of time with the statistics of VoIP phone calls, trying to
+understand what's "normal", and what are symptoms of system pathologies, or even the actions of
+fraudsters in the telephony networks.  In approaching this subject long ago, I had not yet studied
+queuing theory, but I had a lot of experience with Poisson processes in experimental high energy
+physics. This meant that as I learned I had many wonderful eureka! moments.  One of these moments
+was when I learned that the sum of exponentially distributed variables has a gamma distribution. I
+often find that people I mention this to, people in systems, and even often in machine learning, are
+unfamiliar with this fact, or why it would be useful to know.&lt;/p&gt;
 &lt;p&gt;In fact, this is a very helpful thing to know when looking at the distributions of many things you
 measure in systems, for you often see a long-tailed distribution where the mode is shifted to the
 right, relative to where the exponential would start. This is what &lt;code&gt;scipy.stats.gamma.rvs(1.99,
 size=1000)&lt;/code&gt; looks like:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A Gamma" src="/images/gamma.png"&gt;&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="images/gamma.png" alt="A gamma"/&gt;
+&lt;figcaption&gt;A gamma distribution from Scipy&lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;p&gt;The reason this is really helpful to think about is you often find yourself looking at the length of
 the intervals it takes for things to complete: &lt;/p&gt;
 &lt;ul&gt;
@@ -606,110 +610,111 @@ model the individual times as exponentially distributed, we then should expect t
 should follow a gamma-like distribution.  When reasoning about systems, looking at the distribution
 of times tells you a lot about what's happening.  When the data looks exponentially-distributed,
 i.e. the mode is all the way to the left (&lt;code&gt;scipy.stats.expon.rvs(size=1000)&lt;/code&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="An exponential" src="/images/expon.png"&gt;&lt;/p&gt;
-&lt;p&gt;then you really have one dominant process contributing to the completion time. Instead, the more you see the mode shifted to the right, the more you can reason that there are a number of processes of equal contribution.  This is a useful way to reason about systems.&lt;/p&gt;
-&lt;p&gt;As I said, learning that the sums of exponentials was distributed as Gamma was a neat and useful
+&lt;figure&gt;
+&lt;img src="images/expon.png" alt="An Exponential"/&gt;
+&lt;figcaption&gt;A Exponential distribution from Scipy&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;then you really have one dominant process contributing to the completion time. Instead, the more you
+see the mode shifted to the right, the more you can reason that there are a number of processes of
+equal contribution.  This is a useful way to reason about systems.&lt;/p&gt;
+&lt;p&gt;As I said, learning that the sums of exponentials was distributed as gamma was a neat and useful
 eureka! moment. However, until recently, I missed an extremely important related fact.  All of this
 came about when I found a need to perform a computationally efficient test to determine if the
 distributions two sets of exponentially distributed data differed. This lead to another eureka!
 moment that I will describe below.&lt;/p&gt;
 &lt;h3&gt;The Gamma distribution&lt;/h3&gt;
-&lt;p&gt;Most folks are familiar with the Gamma function, which extends the factorial function to real numbers
+&lt;p&gt;Most folks are familiar with the gamma function, which extends the factorial function to complex numbers with positive real part:
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-\Gamma(z) &amp;amp;= \int_0^{\infty} t^{z-1} e^{-t} dt\nonumber\\
-&amp;amp;= (z-1)!,\, z \in \mathbb{Z}.\nonumber\\
+\Gamma(z) &amp;amp;= \int_0^{\infty} t^{z-1} e^{-t} dt\\
+&amp;amp;= (z-1)!,\, z \in \mathbb{C}, Re(z) &amp;gt; 0.\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;But fewer people seem to know about the Gamma distribution, which is defined to be
+&lt;p&gt;But fewer people seem to know about the gamma distribution, which is defined to be
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G(k, \theta) \equiv \frac{1}{\Gamma(k)\,\theta^k} x^{k-1} e^{-x/\theta}\nonumber\\
+G(k, \theta) = \frac{1}{\Gamma(k)\,\theta^k} x^{k-1} e^{-x/\theta}\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;where &lt;span class="math"&gt;\(k\)&lt;/span&gt; is the scale and &lt;span class="math"&gt;\(\theta\)&lt;/span&gt; is the shape. The Gamma distribution can be seen as a
-generalization of two other daily-driver type distributions 
+&lt;p&gt;where &lt;span class="math"&gt;\(k\)&lt;/span&gt; is the scale and &lt;span class="math"&gt;\(\theta\)&lt;/span&gt; is the shape. The gamma distribution can be seen as a
+generalization of two other commonly encountered distributions, &lt;span class="math"&gt;\(\chi_k^2\)&lt;/span&gt; and &lt;span class="math"&gt;\(Exp(\lambda)\)&lt;/span&gt;:
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G(k/2, 2) &amp;amp;= \frac{1}{\Gamma(k/2)\,2^{k/2}} x^{k/2-1} e^{-x/2}\nonumber\\
-&amp;amp;\equiv \chi_k^2\nonumber\\
-G(1, \theta) &amp;amp;= \frac{1}{\theta} e^{-x/\theta}\nonumber\\
-&amp;amp;\equiv Exp(\lambda = 1/\theta)\nonumber\\
+G(k/2, 2) &amp;amp;= \frac{1}{\Gamma(k/2)\,2^{k/2}} x^{k/2-1} e^{-x/2}\\
+&amp;amp;= \chi_k^2\\
+G(1, \theta) &amp;amp;= \frac{1}{\theta} e^{-x/\theta}\\
+&amp;amp;= Exp(\lambda = 1/\theta)\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;The generality of the Gamma goes even further. Not only is it is it's own conjugate prior, it's the
+&lt;p&gt;The generality of the gamma goes even further. Not only is it is it's own conjugate prior, it's the
 conjugate prior for a large number of important distributions: Poisson, Normal, Pareto, Log-normal,
 Exponential.&lt;/p&gt;
 &lt;p&gt;But let's get back to proving some neat things about this distribution. Before we can start, we will
 need one additional piece of machinery.  In
-&lt;a href="/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;), I showed a useful application for
+&lt;a href="/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;, I showed a useful application for
 probability generating functions (PGFs), which, to review, are&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-G(z) &amp;amp;= \sum_0^\infty p(k)z^k\nonumber\\
-&amp;amp;= \mathbb{E} \left[ z^k \right]\nonumber\\
+G(z) &amp;amp;= \sum_0^\infty f_k z^k\\
+&amp;amp;= \mathbb{E} \left[ z^k \right]\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;under the discrete distribution &lt;span class="math"&gt;\(p_k\)&lt;/span&gt;.  A handy generalization of PGFs is create moment generating
+&lt;p&gt;under the discrete distribution &lt;span class="math"&gt;\(f_k\)&lt;/span&gt;.  A handy generalization of PGFs is create moment generating
 functions (MGFs), by taking&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-M_X (t) &amp;amp;\equiv G_X(e^t)\nonumber\\
-&amp;amp;= \mathbb{E}\left[ e^{tX}\right].\nonumber\\
+M_X (t) &amp;amp;= G_X(e^t)\\
+&amp;amp;= \mathbb{E}\left[ e^{tX}\right].\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;MGFs have all the nice manipulation tricks of PGFs, have even nicer derivative-taking properties
 than PGFs, and work for both continuous and discrete distributions.  And as long as we are careful
 about integrating over the support of &lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;, they also have the very interesting expression as&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-M_X (t) &amp;amp;= \int_{-\infty}^{\infty} e^{tx} f(x) dx\nonumber\\
+M_X (t) &amp;amp;= \int_{-\infty}^{\infty} e^{tx} f(x) dx\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;which should bring back waves of nostalgia as the two sided Laplace transform of the distribution
-&lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;.  &lt;a href="/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did
-I do all of these contortions on PGFs" was that taking derivatives gave us nice and easy ways to
-estimate the mean, variance, etc. The MGFs also give us these as the moments of the distribution.
-But the definition above provides us another trick, namely that if we are careful about the the
-above definition, we can take the inverse Laplace transform of a MGF to derive a
-distribution. Deriving distributions can be trickery, so this is a nice tool to have in the box. We
-may return to calculating &lt;span class="math"&gt;\(\mathcal{L}^{-1}\left\{ M_X(t) \right\}\)&lt;/span&gt; in another post.&lt;/p&gt;
-&lt;p&gt;So, what is the MGF for the Gamma distribution? By definition we have
+&lt;p&gt;which might be recognized as the two-sided Laplace transform of the distribution &lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;.
+ &lt;a href="/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did I do all of
+these contortions on PGFs" was that taking derivatives gave us nice and easy ways to calculate the
+mean, variance, etc. The MGFs also give us these as the moments of the distribution.  But the
+definition above provides us another trick, namely that if we are careful about the the above
+definition, we can take the inverse Laplace transform of a MGF to derive a distribution. Deriving
+distributions can be trickery, so this is a nice tool to have in the box. We may return to
+calculating &lt;span class="math"&gt;\(\mathcal{L}^{-1}\left\{ M_X(t) \right\}\)&lt;/span&gt; in another post.&lt;/p&gt;
+&lt;p&gt;So, what is the MGF for the gamma distribution? By definition we have
 &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-M_{G(k,\theta)}(t) &amp;amp;= \mathbb{E} \left[ e^{tx} \right]\nonumber\\
-&amp;amp;= \int_0^\infty e^{tx} G\left(x \vert k,\theta\right) dx\nonumber\\
-&amp;amp;= \frac{1}{\Gamma(k)\, \theta^k} \int_0^\infty x^{k-1} e^{-x\left(1/\theta - t\right)} dx, \, t \theta &amp;lt; 1\nonumber\\
-&amp;amp;= \frac{1}{\Gamma(k)\, \theta^k\, (1/\theta - t)^k} \int_0^\infty x^{k-1} e^{-x} dx\nonumber\\
-&amp;amp;= \frac{1}{\Gamma(k)\, \theta^k\, (1/\theta - t)^k} \Gamma(k)\nonumber\\
-&amp;amp;= (1 - \theta t)^{-k}\nonumber\\
+M_{G(k,\theta)}(t) &amp;amp;= \mathbb{E} \left[ e^{tx} \right]\\
+&amp;amp;= \int_0^\infty e^{tx} G\left(x \vert k,\theta\right) dx\\
+&amp;amp;= \frac{1}{\Gamma(k)\, \theta^k} \int_0^\infty x^{k-1} e^{-x\left(1/\theta - t\right)} dx, \, t \theta &amp;lt; 1\\
+&amp;amp;= \frac{1}{\Gamma(k)\, \theta^k\, (1/\theta - t)^k} \int_0^\infty x^{k-1} e^{-x} dx\\
+&amp;amp;= \frac{1}{\Gamma(k)\, \theta^k\, (1/\theta - t)^k} \Gamma(k)\\
+&amp;amp;= (1 - \theta t)^{-k}\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;With that we are ready for the first result.&lt;/p&gt;
-&lt;h4&gt;Remark 1&lt;/h4&gt;
-&lt;p&gt;If &lt;span class="math"&gt;\(X_i \sim G(a_i, \theta)\)&lt;/span&gt;, then
-&lt;/p&gt;
-&lt;div class="math"&gt;$$ S_n = \sum_n X_i \sim G\left(\sum_{i=1}^n a_i, \theta\right)\nonumber\\ $$&lt;/div&gt;
-&lt;h5&gt;Proof&lt;/h5&gt;
-&lt;p&gt;By the independence of the &lt;span class="math"&gt;\(X_i\)&lt;/span&gt;,
-&lt;/p&gt;
+&lt;p&gt;With that we are ready to derive the first result we need. Assume we have a set of IID random variables
+&lt;span class="math"&gt;\(X_i \sim G(a_i, \theta)\)&lt;/span&gt; for some arbitrary &lt;span class="math"&gt;\(a_i\)&lt;/span&gt; and fixed &lt;span class="math"&gt;\(\theta\)&lt;/span&gt;. Let's consider the sum of these variables
+&lt;span class="math"&gt;\(S_n = \sum_n X_i\)&lt;/span&gt;. Now looking at the MGF, &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-M_{S_n}(t) &amp;amp;= \mathbb{E}\left[ e^{t S_n} \right]\nonumber\\
-&amp;amp;= \mathbb{E}\left[ \prod_{i=1}^n e^{t x_i} \right]\nonumber\\
-&amp;amp;= \prod_{i=1}^n \mathbb{E}\left[e^{t x_i} \right]\nonumber\\
-&amp;amp;= \prod_{i=1}^n (1- \theta t)^{-a_i} \nonumber\\
-&amp;amp;= (1- \theta t)^{-\sum a_i} \nonumber\\
-&amp;amp;= M_{G(\sum a_i, \theta)}\nonumber.\\
+M_{S_n}(t) &amp;amp;= \mathbb{E}\left[ e^{t S_n} \right]\\
+&amp;amp;= \mathbb{E}\left[ \prod_{i=1}^n e^{t x_i} \right]\\
+&amp;amp;= \prod_{i=1}^n \mathbb{E}\left[e^{t x_i} \right]\\
+&amp;amp;= \prod_{i=1}^n (1- \theta t)^{-a_i} \\
+&amp;amp;= (1- \theta t)^{-\sum a_i} \\
+&amp;amp;= M_{G(\sum a_i, \theta)}.\\
 \end{align}&lt;/div&gt;
-&lt;p&gt;We identify the result as the MGF for &lt;span class="math"&gt;\(G(\sum a_i, \theta)\)&lt;/span&gt;. &lt;span class="math"&gt;\(\blacksquare\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;This result implies my original eureka! fact, namely that if &lt;span class="math"&gt;\(X_i \sim Exp(\lambda = 1/\theta) =
+&lt;p&gt;In the third step we have used the independence of the &lt;span class="math"&gt;\(X_i\)&lt;/span&gt; to move the product outside of the
+expectation. Looking at the last line, we identify the result as the MGF for &lt;span class="math"&gt;\(G(\sum a_i,
+\theta)\)&lt;/span&gt;. We then conclude that&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+S_n &amp;amp;\sim G\left(\sum_{i=1}^n a_i, \theta\right).\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;Which is to say that the sum of gamma distributed variables &lt;span class="math"&gt;\(X_i\)&lt;/span&gt; of scales &lt;span class="math"&gt;\(a_i\)&lt;/span&gt; is distributed as a gamma of scale &lt;span class="math"&gt;\(\sum a_i\)&lt;/span&gt;. This result carries my original eureka! moment, namely that if &lt;span class="math"&gt;\(X_i \sim Exp(\lambda = 1/\theta) =
 G(1, \theta)\)&lt;/span&gt;, then &lt;/p&gt;
 &lt;div class="math"&gt;$$ S_n = \sum_n X_i \sim G\left(n, \theta\right).  $$&lt;/div&gt;
 &lt;p&gt;Incidentally this also means that if &lt;span class="math"&gt;\(X_i \sim \chi^2_{n_i} = G(n_i/2, 2)\)&lt;/span&gt;, then the sum over those variables&lt;/p&gt;
 &lt;div class="math"&gt;$$ S_n = \sum_n X_i \sim G \left( 1/2 \sum n_i, 2\right) = \chi^2_{\sum n_i} $$&lt;/div&gt;
-&lt;p&gt;We need one more interesting property of the Gamma distribution to get to the finish line.&lt;/p&gt;
-&lt;h4&gt;Remark 2&lt;/h4&gt;
-&lt;p&gt;If &lt;span class="math"&gt;\(X \sim G(k, \theta)\)&lt;/span&gt;, then
-&lt;/p&gt;
-&lt;div class="math"&gt;$$ cX \sim G(k, c \theta). $$&lt;/div&gt;
-&lt;p&gt;Using Remark 2, we see that for &lt;span class="math"&gt;\(X_i \sim Exp(\lambda = 1/ \theta)\)&lt;/span&gt;,
-&lt;/p&gt;
-&lt;div class="math"&gt;$$
-S_n = \sum_{i=1}^{n} X_i \sim G(n, \theta) 
-$$&lt;/div&gt;
-&lt;p&gt;implies that 
-&lt;/p&gt;
-&lt;div class="math"&gt;$$ \frac{2}{\theta} S_n \sim G(n, 2) = \chi^2_{2n}. $$&lt;/div&gt;
+&lt;p&gt;A similar calculation to the above gives us another property of &lt;span class="math"&gt;\(G(k,\theta)\)&lt;/span&gt;, namely that if If &lt;span class="math"&gt;\(X \sim G(k, \theta)\)&lt;/span&gt;, then&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+cX &amp;amp;\sim G(k, c \theta).\\
+\end{align}&lt;/div&gt;
+&lt;p&gt;This means that if  &lt;span class="math"&gt;\(X_i \sim Exp(\lambda = 1/ \theta)\)&lt;/span&gt;,&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align}
+\frac{2}{\theta} S_n \sim G(n, 2) = \chi^2_{2n}.\\
+\end{align}&lt;/div&gt;
 &lt;p&gt;When I first saw this, I thought it was just amazing.  Now let me explain why.&lt;/p&gt;
 &lt;h3&gt;Making sense of program run-times&lt;/h3&gt;
 &lt;p&gt;As mentioned above, one of my current projects started all of this thinking.  I have been working on
@@ -718,14 +723,18 @@ later post, but for now, I present below some of the benchmarking data that I ha
 with. Each histogram is labeled by a number which is &lt;span class="math"&gt;\(k = log N\)&lt;/span&gt; of the total input size of the code
 being tested. Specifically, I am benchmarking a library that uses Intel SSE4.2 specialized
 instructions to calculate crc32c checksums.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="A Gamma" src="/images/hists.png"&gt;&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="images/hists.png"/&gt;
+&lt;figcaption&gt;Program runtimes for crc32c checksum calculation using Intel SSE4.2 instructions. Plots are labeled by input size.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
 &lt;p&gt;There are a ton of interesting details going on that I will discuss later, but it should be clear
 that for each &lt;span class="math"&gt;\(k\)&lt;/span&gt;, every time I make these measurements I will get different looking
 histograms. They could be different because something changed in the code. Or, they could be
 different just because we are dealing with random variables. All I really want to know is if
-something has changed in the code. This will allow me to fail the regression test with some
-meaningful statistical confidence. For profiling reasons, I might be interested in the parameters,
-but primarily I need to detect changes.&lt;/p&gt;
+something has changed in the code, assembly, or even underlying architecture. This will allow me to
+fail the regression test with some meaningful statistical confidence. For profiling reasons, I might
+be interested in the parameters, but primarily I need to detect changes.&lt;/p&gt;
 &lt;p&gt;The usual way to deal with this kind of data situation is to take large number of samples &lt;span class="math"&gt;\(n_k\)&lt;/span&gt;. But
 because my testing library needs to run very fast, taking a large number of sample is unacceptable
 since the total test run time is proportional to the number of samples collected.  I need to test my
@@ -736,27 +745,25 @@ personal development style is to run the all dependent test-suites at every comp
 every check-in. So, it needs to be fast.&lt;/p&gt;
 &lt;p&gt;This is a good time to point out that by now most people looking at data like these have gone ahead
 and assumed the values are Gaussian and have computed a &lt;span class="math"&gt;\(\mu\)&lt;/span&gt; (and probably a &lt;span class="math"&gt;\(\sigma\)&lt;/span&gt;).  It is a
-terrible but fortuitous fact of life that the MLE for &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt; for an exponential distribution is&lt;/p&gt;
-&lt;div class="math"&gt;$$
-\hat{\lambda} = \frac{n}{\sum_i x_i} = \frac{1}{\bar{x}}
-$$&lt;/div&gt;
-&lt;p&gt;I'm declaring this terrible because it basically lets most people get away with taking averages of
-data like the above just assuming that they are quote-un-quote Gaussian. But I digress.&lt;/p&gt;
-&lt;p&gt;What I need is a meaningful statistical test that can help me detect a change in the code.  This
-brings me to why I got excited when I learned that&lt;/p&gt;
+happy or sad (depending on your perspective) fact that the MLE for &lt;span class="math"&gt;\(\lambda\)&lt;/span&gt; for an exponential
+distribution is&lt;/p&gt;
+&lt;div class="math"&gt;$$ \hat{\lambda} = \frac{n}{\sum_i x_i} = \frac{1}{\bar{x}} $$&lt;/div&gt;
+&lt;p&gt;For me it's sad because it lets people get away with taking averages of data like the above and
+waving their hands around that they are quote-un-quote Gaussian. But I digress.&lt;/p&gt;
+&lt;p&gt;For my own purposes, what I need is a meaningful statistical test that can help me detect a change
+in the code.  This brings me to why I got excited when I learned that&lt;/p&gt;
 &lt;div class="math"&gt;$$ \frac{2}{\theta} S_n \sim G(n, 2) = \chi^2_{2n}. $$&lt;/div&gt;
-&lt;p&gt;Seeing a &lt;span class="math"&gt;\(\chi^2\)&lt;/span&gt; gives me hope. It turns out that it works very well. If &lt;span class="math"&gt;\(X_1 \sim \chi^2_{n_1}\)&lt;/span&gt;
-and &lt;span class="math"&gt;\(X_2 \sim \chi^2_{n_2}\)&lt;/span&gt;, then&lt;/p&gt;
+&lt;p&gt;Seeing a &lt;span class="math"&gt;\(\chi^2\)&lt;/span&gt; gives me an idea. If &lt;span class="math"&gt;\(X_1 \sim \chi^2_{n_1}\)&lt;/span&gt; and &lt;span class="math"&gt;\(X_2 \sim \chi^2_{n_2}\)&lt;/span&gt;, then&lt;/p&gt;
 &lt;div class="math"&gt;$$ U = \frac{X_1 / n_1}{X_2 / n_2} \sim F(2 n_1, 2 n_2) $$&lt;/div&gt;
 &lt;p&gt;where &lt;span class="math"&gt;\(F\)&lt;/span&gt; is the &lt;span class="math"&gt;\(F\)&lt;/span&gt;-distribution.  In our case, &lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-U &amp;amp;= \frac{\frac{2 S_{n'}}{\theta' n'}}{\frac{2 S_n}{\theta n}}\nonumber\\
-&amp;amp;= \frac{\theta}{\theta'} \frac{\bar{x}'}{\bar{x}}\nonumber\\
+U &amp;amp;= \frac{\frac{2 S_{n'}}{\theta' n'}}{\frac{2 S_n}{\theta n}}\\
+&amp;amp;= \frac{\theta}{\theta'} \frac{\bar{x}'}{\bar{x}}\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;is distributed in &lt;span class="math"&gt;\(F(2n',2n)\)&lt;/span&gt;.  Thus we test &lt;span class="math"&gt;\(H_0\)&lt;/span&gt; vs &lt;span class="math"&gt;\(H_1\)&lt;/span&gt;:&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
-H_0 &amp;amp;: \theta/\theta' = 1\nonumber\\
-H_1 &amp;amp;: \theta/\theta' \neq 1.\nonumber\\
+H_0 &amp;amp;: \theta/\theta' = 1\\
+H_1 &amp;amp;: \theta/\theta' \neq 1.\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;Using tables or evaluation of &lt;span class="math"&gt;\(F\)&lt;/span&gt;, we can then derive a two sided &lt;span class="math"&gt;\(p\)&lt;/span&gt;-value and also confidence
 bounds. The &lt;span class="math"&gt;\(p\)&lt;/span&gt;-value will be found from&lt;/p&gt;
