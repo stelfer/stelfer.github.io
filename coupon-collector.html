@@ -11,7 +11,7 @@
     <!--  -->
 
 
-<link rel="canonical" href="/coupon-collector.html">
+<link rel="canonical" href="http://memoize.me/coupon-collector.html">
 
         <meta name="author" content="Soren Telfer" />
         <meta name="keywords" content="Generating Functions,Probability,Combinatorics" />
@@ -20,7 +20,7 @@
         <meta property="og:site_name" content="memoize.me" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="A Different View on the Coupon Collector Problem"/>
-        <meta property="og:url" content="/coupon-collector.html"/>
+        <meta property="og:url" content="http://memoize.me/coupon-collector.html"/>
         <meta property="og:description" content="Once during a meeting in which we were discussing the Fischer-Yates shuffle someone asked: How many times do we need to run the algorithm to see every permutation? This is a really great question and it caught me off guard. The reason was that since Fischer-Yates is a random algorithm, the answer really involves thinking about random processes. So, like, I can&#39;t really answer that question as it is posed. While thinking aloud as I struggled to answer, I reduced the problem to What&#39;s the average number of times I need to flip a coin in order to see both …"/>
         <meta property="article:published_time" content="2018-10-27" />
             <meta property="article:section" content="Probability and Statistics" />
@@ -33,18 +33,18 @@
     <!--  -->
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="/theme/css/bootstrap.yeti.min.css" type="text/css"/>
-    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://memoize.me/theme/css/bootstrap.yeti.min.css" type="text/css"/>
+    <link href="http://memoize.me/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="/theme/css/pygments/native.css" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
-
-        <link href="/static/custom.css" rel="stylesheet">
+    <link href="http://memoize.me/theme/css/pygments/native.css" rel="stylesheet">
 
 
-        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    <link rel="stylesheet" href="http://memoize.me/theme/css/style.css" type="text/css"/>
+
+        <link href="http://memoize.me/static/custom.css" rel="stylesheet">
+
+
+        <link href="http://memoize.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="memoize.me ATOM Feed"/>
 
 
@@ -62,14 +62,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/" class="navbar-brand">
+            <a href="http://memoize.me/" class="navbar-brand">
 memoize.me            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <!-- <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li> -->
+              <!-- <li><a href="http://memoize.me/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li> -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -84,7 +84,7 @@ memoize.me            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="/coupon-collector.html"
+                    <a href="http://memoize.me/coupon-collector.html"
                        rel="bookmark"
                        title="Permalink to A Different View on the Coupon Collector Problem">
                         A Different View on the Coupon Collector Problem
@@ -105,11 +105,11 @@ memoize.me            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="/tag/generating-functions.html">Generating Functions</a>
+	<a href="http://memoize.me/tag/generating-functions.html">Generating Functions</a>
         /
-	<a href="/tag/probability.html">Probability</a>
+	<a href="http://memoize.me/tag/probability.html">Probability</a>
         /
-	<a href="/tag/combinatorics.html">Combinatorics</a>
+	<a href="http://memoize.me/tag/combinatorics.html">Combinatorics</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -254,8 +254,8 @@ G(1) &amp;= \sum_{k=0}^{\infty} p_k 1^k\\\
 <p>for everything that we consider to be a probability.  Also, notice that
 </p>
 <div class="math">\begin{align}
-G'(z) &amp;= \sum_{k=1}^{\infty} k p_k z^{k-1}\\\
-&amp;\implies G'(1) = \sum_{k=1}^{\infty} k p_k = E[n].\\\
+&amp;G'(z) = \sum_{k=1}^{\infty} k p_k z^{k-1}\\\
+\Rightarrow &amp;G'(1) = \sum_{k=1}^{\infty} k p_k = E[n].\\\
 \end{align}</div>
 <p>Now this is useful to us. Brute-force counting sequences to calculate <span class="math">\(E[n]\)</span> could be replaced by
 calculating the derivitive of the PGF for the process.  If only we knew how to create the
@@ -267,7 +267,7 @@ G(z) &amp;= \frac{P(z)}{F(z)}\,\\
 <p>where <span class="math">\(P(z)\)</span> and <span class="math">\(F(z)\)</span> are some analytic functions of <span class="math">\(z\)</span>. Observe that</p>
 <div class="math">\begin{align}
 &amp;F'(z)\,G(z) + G'(z)\,F(z) = P'(z)\\\
-&amp;\implies G'(1) = \frac{P'(1) - F'(1)}{F(1)}\\
+\Rightarrow &amp;G'(1) = \frac{P'(1) - F'(1)}{F(1)}\\
 \end{align}</div>
 <p>If you have ever spent any time with partial fractions, you will know why we will want this result.
 Now, let's use all of this on an unsuspecting sum to see if it works.  In light of thinking about
@@ -314,7 +314,7 @@ S &amp; = TH \left(\frac{1}{1-H} + \frac{1}{1-T}\right)\\
 <h3>Happy Meals with Equal Probabilities</h3>
 <p>We are now prepared to take on the CCP for arbitrary <span class="math">\(m\)</span> with all <span class="math">\(p_i = 1/m\)</span>.  As before,
 define a finite automata to describe the process.</p>
-<p><center><img src="/images/m-automata.svg"></center></p>
+<p><center><img src="http://memoize.me/images/m-automata.svg"></center></p>
 <p>Here the states are labeled by the number of distinct trinkets we've seen. The symbol <span class="math">\(X\)</span> takes
 the place of the <span class="math">\(H\)</span> or <span class="math">\(T\)</span> and represents the event of seeing a trinket. At the start, there are
 <span class="math">\(m\)</span> ways we can move to state <span class="math">\(1\)</span>. Once we are in state <span class="math">\(1\)</span>, there is one way we stay in that state,
@@ -395,7 +395,7 @@ above, we could use Chebyshev's to get a two sided confidence interval and a tig
 P(n &gt; k m H_m) &amp;\leq \frac{E[n]}{k m H_m}\\\
 &amp;\leq \frac{1}{k}.\\\
 \end{align}</div>
-<p>Setting <span class="math">\(1/k = 0.05 \implies k = 20\)</span>. For example, for a six-sided die, for <span class="math">\(\epsilon = kmH_m\)</span>,</p>
+<p>Setting <span class="math">\(1/k = 0.05 \Rightarrow k = 20\)</span>. For example, for a six-sided die, for <span class="math">\(\epsilon = kmH_m\)</span>,</p>
 <div class="math">\begin{align}
 P(n &gt; \epsilon) &amp;\leq 0.05\\\
 \epsilon &amp;\approx 300 
@@ -418,9 +418,11 @@ particularly where he shows a fsm for KMP:</p>
 <p>Even though I don't like the canonical explanation, the Wikipedia page on CCP has many wonderful
 links. In particular is one of my favorites by <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.217.5965&amp;rep=rep1&amp;type=pdf"><em>Flajolet et. al.</em></a>. That's a truly
 systematic approach to the problem, and shows interesting connections to other allocation problems.</p>
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script> -->
+
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
-        indent = "2em",
+        indent = "0em",
         linebreak = "false";
 
     if (false) {
@@ -432,7 +434,7 @@ systematic approach to the problem, and shows interesting connections to other a
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=default";
     mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
@@ -496,13 +498,13 @@ systematic approach to the problem, and shows interesting connections to other a
       </div>
    </div>
 </footer>
-<script src="/theme/js/jquery.min.js"></script>
+<script src="http://memoize.me/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/theme/js/bootstrap.min.js"></script>
+<script src="http://memoize.me/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="/theme/js/respond.min.js"></script>
+<script src="http://memoize.me/theme/js/respond.min.js"></script>
 
 
 </body>
