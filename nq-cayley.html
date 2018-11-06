@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>N-queens, Hamiltonian cycles in Cayley Graphs, and Bell Ringing - memoize.me</title>
+    <title>N-queens, Hamiltonian paths in Cayley Graphs, and Bell Ringing - memoize.me</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -17,7 +17,7 @@
 
         <meta property="og:site_name" content="memoize.me" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="N-queens, Hamiltonian cycles in Cayley Graphs, and Bell Ringing"/>
+        <meta property="og:title" content="N-queens, Hamiltonian paths in Cayley Graphs, and Bell Ringing"/>
         <meta property="og:url" content="/nq-cayley.html"/>
         <meta property="og:description" content="Every so often, I return to my solvers for combinatorial puzzles like Sudoku. There&#39;s another game that has a storied history in computer science, going back to Djikstra&#39;s introduction of backtracking . The problem is Eight Queens. The idea is to find every position of a chess board that can support the simultaneous placement of eight queen pieces. It turns out that there are 12 distinct positions that solve this problem. But if you look at all of the possible solutions you find by backtracking, you actually find 96 solutions. The difference comes from the internal symmetries of the chess board …"/>
         <meta property="article:published_time" content="2018-11-02" />
@@ -74,8 +74,8 @@ memoize.me            </a>
                 <h1>
                     <a href="/nq-cayley.html"
                        rel="bookmark"
-                       title="Permalink to N-queens, Hamiltonian cycles in Cayley Graphs, and Bell Ringing">
-                        N-queens, Hamiltonian cycles in Cayley Graphs, and Bell Ringing
+                       title="Permalink to N-queens, Hamiltonian paths in Cayley Graphs, and Bell Ringing">
+                        N-queens, Hamiltonian paths in Cayley Graphs, and Bell Ringing
                     </a>
                 </h1>
             </header>
@@ -183,12 +183,12 @@ algorithmically take that board on a tour of every symmetry it has under <span c
 Cayley graph above, you can imagine starting at <span class="math">\(e\)</span> and applying <span class="math">\(a\)</span> and <span class="math">\(b\)</span> in a way to take us to
 every other node. But how do we do this in a systematic way? How can we only visit each node once?
 The answer from that Cayley graph is not obvious.</p>
-<p>In computer science terms, we're asking of there exists at least one Hamiltonian cycle in that
-graph, and if so, how do we find it. Finding Hamiltonian cycles in graphs is one of the classic
+<p>In computer science terms, we're asking of there exists at least one Hamiltonian path in that
+graph, and if so, how do we find it. Finding Hamiltonian paths in graphs is one of the classic
 NP-complete problems of computer science. We don't actually know if every Cayley graph is
 Hamiltonian, but the <a href="https://en.wikipedia.org/wiki/Lov%C3%A1sz_conjecture">Lovász conjecture</a> posits that they are. And, the Lovász conjecture
 has been proven for almost all cases of finite Cayley graphs. So, this gives us hope, but a
-Hamiltonian cycle on Cayley graph for <span class="math">\(D_4\)</span> above it isn't immediately obvious, at least for me.</p>
+Hamiltonian path on Cayley graph for <span class="math">\(D_4\)</span> above it isn't immediately obvious, at least for me.</p>
 <p>Remember that we only used two of the many possible transformations to make that graph. What about
 if we used others, what would happen? Well, Wikipedia is way ahead of us. They display another
 Cayley graph for <span class="math">\(D_4\)</span> on the same page:</p>
@@ -208,14 +208,14 @@ NW (or between the two light grey boxes in the figure above). Notice also that i
 the order of <span class="math">\(a\)</span> and <span class="math">\(b\)</span> matter. Except for <span class="math">\(D_1\)</span> and <span class="math">\(D_2\)</span>, the generators of <span class="math">\(D_n\)</span> do not
 commmute, i.e. <span class="math">\(D_n\)</span> for <span class="math">\(n &gt; 2\)</span> are <a href="https://en.wikipedia.org/wiki/Abelian_group">non abelian</a>. You can see this from the
 figure above. If you look at <span class="math">\(bc\)</span> and <span class="math">\(cb\)</span>, you'll see they aren 't the same thing. The non abelian
-structure generally makes the Cayley graph a hall of mirrors when you are trying to find a cycle through it.</p>
+structure generally makes the Cayley graph a hall of mirrors when you are trying to find a path through it.</p>
 <p>At any rate, in this Cayley graph, you can immediately see the circuit we can take to evaluate all
 of the symmetries of a n-queens position. Typically in an n-queens solver you represent the board as
 an <span class="math">\(n \times n\)</span> matrix. in this setting, evaluating reflections is as simple as swapping matrix
 entries seven times. In my solver, every time I find a solution by backtracking, I quickly check the
 board against solutions that I've saved before. Doing this at the time of finding a solution greatly
 speeds up the backtracking since it substantially prunes the tree.</p>
-<h3>Hamiltonian Cycles for Permutations</h3>
+<h3>Hamiltonian Paths for Permutations</h3>
 <p>As I mentioned before, I've always been interested in generating permutations. Just as the
 symmetries of a square are captured by <span class="math">\(D_4\)</span>, The <span class="math">\(n!\)</span> ways of arranging <span class="math">\(n\)</span> objects is captured by
 the <a href="https://en.wikipedia.org/wiki/Symmetric_group">symmetric group</a> <span class="math">\(S_n\)</span> on <span class="math">\(n\)</span> objects. The symmetric group is of fundamental
@@ -235,12 +235,12 @@ A Cayley graph for S4. Red arrow rotates the items to the right, while the blue 
 
 <p>This time <span class="math">\(e\)</span> is in the bottom left corner at <span class="math">\(1234\)</span>. A red arrow takes every item and moves it one
 position to the right, with the ends wrapping around to the other side.  This type of transformation
-is called a cycle. A blue arrow performs two trandsformations, first swapping the the first and
+is called a path. A blue arrow performs two trandsformations, first swapping the the first and
 second item, then the second and third item. The fourth stays the same. These types of
 transformations are called transpositions, or I call them swaps.</p>
 <p>As another way of visualizing permutations, we can look at the notation used for cycles and
-swaps. Over <span class="math">\(S_3\)</span>, for a cycle that simultaneously moves the first to the second, second to third,
-etc, we write <span class="math">\((123)\)</span>. If we write out the <span class="math">\(3! = 6\)</span> cycles of <span class="math">\(S_3\)</span>, we get </p>
+swaps. Over <span class="math">\(S_3\)</span>, a 3-cycle that simultaneously moves the first to the second, second to third,
+etc, we write <span class="math">\((123)\)</span>. If we write out the <span class="math">\(3! = 6\)</span> 3-cycles of <span class="math">\(S_3\)</span>, we get </p>
 <div class="math">$$ 
 (123)\\
 (132)\\
@@ -324,7 +324,7 @@ process is shown below.</p>
 (34) &amp; \da  &amp;      &amp;      &amp;      &amp;      &amp;      &amp;      &amp;      \\      
      &amp; 1234 &amp; &amp; &amp; &amp; &amp; &amp; &amp;      \\
 \end{array}</div>
-<p>This works for any <span class="math">\(n\)</span>. So, this is an algorithmic way to construct a Hamiltonian cycle on the
+<p>This works for any <span class="math">\(n\)</span>. So, this is an algorithmic way to construct a Hamiltonian path on the
 Cayley graph for <span class="math">\(S_n\)</span>. It allows us to systematically generate permutations. At first I was
 excited, but after some research I learned that this was figured out in the 1960's. This algorithm is
 called the Johnson-Steinhaus-Trotte (JST) solution to the motel problem. The motel problem comes from
@@ -338,7 +338,7 @@ Martin Gardner's <a href="https://www.amazon.com/Time-Travel-Other-Mathematical-
 </blockquote>
 <p><em>McGuire</em> plausibly claims that the method above was actually discovered by bell-ringers in the
 1650's. JST only solves one variant of the large topic of <a href="https://en.wikipedia.org/wiki/Change_ringing">change ringing</a>. <em>McGuire</em>
-provides a nice history of this and ties it back to Hamilton cycles on Cayley graphs. The Simons
+provides a nice history of this and ties it back to Hamilton paths on Cayley graphs. The Simons
 Foundation has a nice <a href="https://www.youtube.com/watch?v=3lyDCUKsWZs">video</a> on the topic.</p>
 <figure>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3lyDCUKsWZs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
