@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="http://memoize.me/blog/" rel="alternate"></link><link href="http://memoize.me/blog/feeds/all.atom.xml" rel="self"></link><id>http://memoize.me/blog/</id><updated>2018-11-02T00:00:00-07:00</updated><entry><title>N-queens, Hamiltonian paths in Cayley Graphs, and Bell Ringing</title><link href="http://memoize.me/blog/nq-cayley.html" rel="alternate"></link><published>2018-11-02T00:00:00-07:00</published><updated>2018-11-02T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2018-11-02:/blog/nq-cayley.html</id><summary type="html">&lt;p&gt;Every so often, I return to my solvers for combinatorial puzzles like Sudoku. There's another game
+<feed xmlns="http://www.w3.org/2005/Atom"><title>memoize.me</title><link href="http://memoizeme.com/blog/" rel="alternate"></link><link href="http://memoizeme.com/blog/feeds/all.atom.xml" rel="self"></link><id>http://memoizeme.com/blog/</id><updated>2018-11-02T00:00:00-07:00</updated><entry><title>N-queens, Hamiltonian paths in Cayley Graphs, and Bell Ringing</title><link href="http://memoizeme.com/blog/nq-cayley.html" rel="alternate"></link><published>2018-11-02T00:00:00-07:00</published><updated>2018-11-02T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoizeme.com,2018-11-02:/blog/nq-cayley.html</id><summary type="html">&lt;p&gt;Every so often, I return to my solvers for combinatorial puzzles like Sudoku. There's another game
 that has a storied history in computer science, going back to Djikstra's
 &lt;a href="https://www.cs.utexas.edu/users/EWD/transcriptions/EWD03xx/EWD316.9.html"&gt;introduction of backtracking&lt;/a&gt; . The problem is &lt;a href="https://en.wikipedia.org/wiki/Eight_queens_puzzle"&gt;Eight Queens&lt;/a&gt;. The idea is to
 find every position of a chess board that can support the simultaneous placement of eight queen
@@ -304,7 +304,7 @@ Foundation has a nice &lt;a href="https://www.youtube.com/watch?v=3lyDCUKsWZs"&g
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Groups"></category><category term="Combinatorics"></category></entry><entry><title>What's coming next...</title><link href="http://memoize.me/blog/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2018-11-01:/blog/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
+&lt;/script&gt;</content><category term="Groups"></category><category term="Combinatorics"></category></entry><entry><title>What's coming next...</title><link href="http://memoizeme.com/blog/2018-11-01-next.html" rel="alternate"></link><published>2018-11-01T00:00:00-07:00</published><updated>2018-11-01T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoizeme.com,2018-11-01:/blog/2018-11-01-next.html</id><summary type="html">&lt;p&gt;I'm going to start doing this regularly in 2019. I'm making this post now to give myself a bit of
 &lt;span class="math"&gt;\(v_{0}\)&lt;/span&gt; going into the new year. A short list of what's coming:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -462,7 +462,7 @@ innovation in general, and the future of R&amp;amp;D.&lt;/p&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Planning"></category><category term="Motivation"></category></entry><entry><title>A Different View on the Coupon Collector Problem</title><link href="http://memoize.me/blog/coupon-collector.html" rel="alternate"></link><published>2018-10-27T00:00:00-07:00</published><updated>2018-10-27T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2018-10-27:/blog/coupon-collector.html</id><summary type="html">&lt;p&gt;Once during a meeting in which we were discussing the &lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt; someone
+&lt;/script&gt;</content><category term="Planning"></category><category term="Motivation"></category></entry><entry><title>A Different View on the Coupon Collector Problem</title><link href="http://memoizeme.com/blog/coupon-collector.html" rel="alternate"></link><published>2018-10-27T00:00:00-07:00</published><updated>2018-10-27T00:00:00-07:00</updated><author><name>Soren Telfer</name></author><id>tag:memoizeme.com,2018-10-27:/blog/coupon-collector.html</id><summary type="html">&lt;p&gt;Once during a meeting in which we were discussing the &lt;a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle"&gt;Fischer-Yates shuffle&lt;/a&gt; someone
 asked:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How many times do we need to run the algorithm to see every permutation?&lt;/p&gt;
@@ -877,7 +877,7 @@ systematic approach to the problem, and shows interesting connections to other a
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry><entry><title>Why you should know about the Gamma distribution</title><link href="http://memoize.me/blog/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:memoize.me,2016-12-02:/blog/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I've been staring at exponentially distributed data in various forms for at least the last ten
+&lt;/script&gt;</content><category term="Generating Functions"></category><category term="Probability"></category><category term="Combinatorics"></category></entry><entry><title>Why you should know about the Gamma distribution</title><link href="http://memoizeme.com/blog/the-gamma-distribution.html" rel="alternate"></link><published>2016-12-02T00:00:00-08:00</published><updated>2016-12-02T00:00:00-08:00</updated><author><name>Soren Telfer</name></author><id>tag:memoizeme.com,2016-12-02:/blog/the-gamma-distribution.html</id><summary type="html">&lt;p&gt;I've been staring at exponentially distributed data in various forms for at least the last ten
 years.  In my previous job, I spent a lot of time with the statistics of VoIP phone calls, trying to
 understand what's "normal", and what are symptoms of system pathologies, or even the actions of
 fraudsters in the telephony networks.  In approaching this subject long ago, I had not yet studied
@@ -954,7 +954,7 @@ conjugate prior for a large number of important distributions: Poisson, Normal, 
 Exponential.&lt;/p&gt;
 &lt;p&gt;But let's get back to proving some neat things about this distribution. Before we can start, we will
 need one additional piece of machinery.  In
-&lt;a href="http://memoize.me/blog/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;, I showed a useful application for
+&lt;a href="http://memoizeme.com/blog/coupon-collector.html"&gt;The Coupon Collector&lt;/a&gt;, I showed a useful application for
 probability generating functions (PGFs), which, to review, are&lt;/p&gt;
 &lt;div class="math"&gt;\begin{align}
 G(z) &amp;amp;= \sum_0^\infty f_k z^k\\
@@ -973,7 +973,7 @@ about integrating over the support of &lt;span class="math"&gt;\(f(x)\)&lt;/span
 M_X (t) &amp;amp;= \int_{-\infty}^{\infty} e^{tx} f(x) dx\\
 \end{align}&lt;/div&gt;
 &lt;p&gt;which might be recognized as the two-sided Laplace transform of the distribution &lt;span class="math"&gt;\(f(x)\)&lt;/span&gt;.
- &lt;a href="http://memoize.me/blog/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did I do all of
+ &lt;a href="http://memoizeme.com/blog/coupon-collector.html"&gt;Previously&lt;/a&gt;, we saw that one answer to "why did I do all of
 these contortions on PGFs" was that taking derivatives gave us nice and easy ways to calculate the
 mean, variance, etc. The MGFs also give us these as the moments of the distribution.  But the
 definition above provides us another trick, namely that if we are careful about the the above
